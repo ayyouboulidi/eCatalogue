@@ -4,10 +4,10 @@ import Connectuser from './userProfile'
 export default class Header extends React.Component{
   render() {
     return (
-      <div>
-        <span><img src="img/logo"/></span>
+      <header>
+        <div className="header_left"><img src="img/AIRBUS-LOGO.png"/><span className="main_title">{" "}My <b>airbus</b> - Online Catalog</span></div>
         <Connectuser/>
-      </div>
+      </header>
     )
   }
 }
