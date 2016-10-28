@@ -2,3 +2,5 @@
 /node_modules
 /data
 public/bundle.js
+.DS_Store
+public/.DS_Store
