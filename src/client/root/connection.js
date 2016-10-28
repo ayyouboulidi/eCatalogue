@@ -1,8 +1,6 @@
 import React from 'react'
-import { Link, Router, Route,IndexRoute, browserHistory } from 'react-router'
-import ConnectionBox from './ConnectionBox'
-import Dashboard from './dashboard'
-
+import { Link, Router, Route, IndexRoute, browserHistory } from 'react-router'
+import ConnectionBox from '../elements/ConnectionBox'
 
 export default class Connection extends React.Component{
   render() {
