@@ -1,10 +1,3 @@
-.menu{
-  color:white;
-}
-.test{
-  background:yellow;
-}
-
 html {
   height: 100%;
 }
@@ -14,7 +7,7 @@ body, #root, .connection {
 
 body{
   background: lightgrey;
-  font-family: Segoe UI, Arial, Helvetica, sans-serif;
+  font-family: "Segoe UI", Arial, Helvetica, sans-serif;
   height: 98%;
 }
 input[type="checkbox"]{
@@ -59,4 +52,54 @@ input[type="checkbox"]{
   position: absolute;
   right: 20%;
   bottom: 2em;
+}
+
+
+/*
+* Header Menu Style
+*/
+header {
+  position: relative;
+  background-color: black;
+  height: 3em;
+}
+.header_left, .user_profile {
+  margin: auto;
+  position: absolute;
+  display: inline;
+  color: white;
+}
+img {
+  vertical-align: middle;
+}
+.header_left {
+  top: 0.5em;
+  left: 1em;
+}
+.user_profile {
+  top: 0.75em;
+  right: 1em;
+}
+
+/*
+* Side Menu and Content location displays
+*/
+section {
+  position: relative;
+}
+section .side_menu, section .content {
+  display: inline-block;
+}
+section .side_menu {
+  left: 0;
+  width: 10%;
+}
+section .content {
+  position: relative;
+  top: 0;
+  right: 0;
+  width: 79%;
+}
+section .content .breadcrumb {
+  top: 5px;
 }
