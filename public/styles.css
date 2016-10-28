@@ -2,6 +2,7 @@ html {
   height: 100%;
 }
 body, #root, .connection {
+  margin: 0;
   min-height: 100%;
 }
 
@@ -17,6 +18,9 @@ input[type="checkbox"]{
 /*
 * Connection box relative CSS
 */
+.connection {
+  margin-top: 10%;
+}
 .connection_box{
   position: relative;
   background-color: lightgrey;
@@ -53,7 +57,6 @@ input[type="checkbox"]{
   right: 20%;
   bottom: 2em;
 }
-
 
 /*
 * Header Menu Style
