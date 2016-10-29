@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 
-class Customers extends Component {
+export default class lastUpdate extends Component {
     render(){
         return(
             <div>
+              last update
             </div>
         );
     }
 }
-export default Customers;

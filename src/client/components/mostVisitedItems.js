@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 
-class Updates extends Component {
+export default class mostVisitedItems extends Component {
     render(){
         return(
             <div>
+              most visited items
             </div>
         );
     }
 }
-export default Updates;
