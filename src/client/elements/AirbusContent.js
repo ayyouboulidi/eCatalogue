@@ -4,7 +4,7 @@ import Customers from './Customers';
 import Updates from './Updates';
 import MostViewed from './MostViewed';
 
-class MainContent extends Component {
+class AirbusContent extends Component {
     render(){
         return(
             <div className="content">
@@ -18,4 +18,4 @@ class MainContent extends Component {
         );
     }
 }
-export default MainContent;
+export default AirbusContent;

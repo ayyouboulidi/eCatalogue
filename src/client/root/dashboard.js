@@ -2,7 +2,8 @@ import React from 'react'
 import { Link } from 'react-router'
 import Header from '../elements/header'
 import SideMenu from '../elements/sideMenu'
-import MainContent from '../elements/MainContent'
+import AirlinesContent from '../elements/AirlinesContent'
+import AirbusContent from '../elements/AirbusContent'
 
 
 export default class Dashboard extends React.Component{
@@ -15,7 +16,7 @@ export default class Dashboard extends React.Component{
         <Header />
         <section>
           <SideMenu />
-          <MainContent />
+          <AirlinesContent />
         </section>
       </div>
     )
