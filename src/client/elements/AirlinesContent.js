@@ -7,7 +7,9 @@ class AirlinesContent extends Component {
             <div className="content">
                 <Breadcrumb location="Dashboard" />
                 <div className="overview">
-                    
+                    <Project title="My current project" />
+                    <Checklist title="My checklist" />
+                    <Contacts title="My Airbus contacts" />
                 </div>
             </div>
         );
