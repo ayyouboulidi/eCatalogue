@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+/*import React, { Component } from 'react';
 import Breadcrumb from './Breadcrumb';
 import Customers from './Customers';
 import Updates from './Updates';
@@ -18,4 +18,4 @@ class AirbusContent extends Component {
         );
     }
 }
-export default AirbusContent;
+export default AirbusContent;*/

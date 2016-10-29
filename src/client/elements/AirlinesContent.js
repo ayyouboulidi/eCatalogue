@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+/*import React, { Component } from 'react';
 import Breadcrumb from './Breadcrumb';
 
 class AirlinesContent extends Component {
@@ -15,4 +15,4 @@ class AirlinesContent extends Component {
         );
     }
 }
-export default AirlinesContent;
+export default AirlinesContent;*/
