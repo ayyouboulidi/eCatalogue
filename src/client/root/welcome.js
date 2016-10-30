@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link, Router, Route, IndexRoute, browserHistory } from 'react-router'
 import Header from '../elements/header';
 import PageTitle from '../elements/PageTitle';
-import Search from '../elements/Search';
+import Search from '../components/searchbox';
 import AircraftSelection from '../welcome/AircraftSelection';
 
 class Welcome extends Component {
