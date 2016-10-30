@@ -56,6 +56,10 @@
   position: absolute;
 }
 
+.pflex{
+  display: flex
+}
+
 .pbottom{
   bottom: 0;
 }
@@ -63,8 +67,15 @@
 .activeoverflow {
   overflow-y: scroll;
 }
+
+.activeoverflowx{
+  overflow-x: scroll;
+}
 .height400{
   height: 400px;
+}
+.height300{
+  height: 300px;
 }
 .height250{
   height: 250px;

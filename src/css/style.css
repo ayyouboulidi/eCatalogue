@@ -1,6 +1,8 @@
 @import "./common.css";
 @import "./scroll.css";
 @import "./accordion.css";
+@import "./carousel.css";
+
 
 html {
   height: 100%;

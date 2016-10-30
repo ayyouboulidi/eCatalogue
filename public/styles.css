@@ -6813,6 +6813,10 @@ button.close {
   position: absolute;
 }
 
+.pflex{
+  display: flex
+}
+
 .pbottom{
   bottom: 0;
 }
@@ -6820,8 +6824,15 @@ button.close {
 .activeoverflow {
   overflow-y: scroll;
 }
+
+.activeoverflowx{
+  overflow-x: scroll;
+}
 .height400{
   height: 400px;
+}
+.height300{
+  height: 300px;
 }
 .height250{
   height: 250px;
@@ -6857,6 +6868,11 @@ button.close {
 
 .mright{
   margin-right: 15px
+}
+.verticalScroll {
+    width: 20%;
+    min-width:150px;
+    text-align: center;
 }
 /*
 * accordion style
