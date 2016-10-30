@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router'
 import Header from '../elements/header'
 import SideMenu from '../elements/sideMenu'
+import CabinMainContent from '../elements/CabinMainContent'
 
 
 export default class Cabin extends React.Component{
@@ -13,7 +14,7 @@ export default class Cabin extends React.Component{
       <div>
         <Header />
         <SideMenu />
-        Cabin content
+        <CabinMainContent/>
       </div>
     )
   }

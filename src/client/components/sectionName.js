@@ -9,7 +9,7 @@ export default class sectionName extends React.Component {
             <div className="blockAlign2">
               <span className="title">{title}</span>
               <br/>
-              <span className="progress">{progress}</span>
+              <span className="progressarien">{progress}</span>
             </div>
         );
     }

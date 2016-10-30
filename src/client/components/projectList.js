@@ -1,31 +1,38 @@
 import React, { Component } from 'react'
+import projectStore from "../store/projectList"
 
 export default class projectList extends Component {
   constructor(props){
     super(props);
     this.state={
-      projects:[1,2,3,4,5,6,7,8,9,10,11,12,13,14]
+      projects:[]
     }
   }
-    render(){
-        return(
-            <table className="width100 padding2">
-              <tbody>
-                {
-                  this.state.projects.map(function(project,key){
-                    return(
-                    <tr key={key}>
-                      <td><input type="checkbox"/></td>
-                      <td>Option Name</td>
-                      <td>{project}</td>
-                      <td>29/10/2016</td>
-                      <td><img className="fright" src="img/DELETE-ICON-SMALL.png"/></td>
-                    </tr>
-                  )
-                  })
-                }
-              </tbody>
-            </table>
-        );
-    }
+  componentWillMount(){
+    this.state.projects = projectStore.getProjects()
+    this.setState(this.state)
+  }
+
+
+  render(){
+    return(
+      <table className="width100 padding2">
+      <tbody>
+      {
+        this.state.projects.map(function(project,key){
+          return(
+            <tr key={key}>
+            <td><input type="checkbox"/></td>
+            <td>{project.name}</td>
+            <td>{project.user}</td>
+            <td>{project.date}</td>
+            <td><img className="fright" src="img/DELETE-ICON-SMALL.png"/></td>
+            </tr>
+          )
+        })
+      }
+      </tbody>
+      </table>
+    );
+  }
 }

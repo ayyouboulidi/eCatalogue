@@ -1,0 +1,8 @@
+/*
+* accordion style
+*/
+.panel-body {
+    padding: 15px;
+    height: 150px;
+    overflow-y: auto;
+}

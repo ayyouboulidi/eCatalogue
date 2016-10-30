@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Bootstrap from 'bootstrap/dist/css/bootstrap.css';
+import '../css/style.css'
 import { Router, Route,IndexRoute, browserHistory } from 'react-router'
 import Connection from './root/connection'
 import Dashboard from './root/dashboard'
