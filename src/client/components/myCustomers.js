@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 
-class MostViewed extends Component {
+export default class myCustomers extends Component {
     render(){
         return(
             <div>
+              my customers
             </div>
         );
     }
 }
-export default MostViewed;

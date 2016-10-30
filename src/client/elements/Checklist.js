@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+/*import React, { Component } from 'react';
 
 class Checklist extends Component {
     render(){
@@ -8,4 +8,4 @@ class Checklist extends Component {
         );
     }
 }
-export default Checklist;
+export default Checklist;*/

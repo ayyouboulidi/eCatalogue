@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+/*import React, { Component } from 'react';
 
 class Project extends Component {
     render(){
@@ -8,4 +8,4 @@ class Project extends Component {
         );
     }
 }
-export default Project;
+export default Project;*/
