@@ -1,9 +1,154 @@
-@import './menu.css';
+@import "./common.css";
+@import "./scroll.css";
+@import "./accordion.css";
 
-.test{
-  background:yellow
+html {
+  height: 100%;
+}
+body, #root, .connection {
+  margin: 0;
+  min-height: 100%;
 }
 
 body{
-  background: darkgrey
+  background: lightgrey;
+  font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+  height: 98%;
+}
+input[type="checkbox"]{
+  margin: 0;
+}
+
+/*
+* Connection box relative CSS
+*/
+.connection {
+  padding-top: 10%;
+}
+.connection_box{
+  position: relative;
+  background-color: lightgrey;
+  border: 1px solid black;
+  border-radius: 3px;
+  height: 17em;
+  width: 25em;
+  margin: auto;
+  padding: auto;
+  text-align: center;
+}
+.connection_box label, .username, .password {
+  width: 60%;
+  text-align: left;
+}
+.connection_box .remember, .connection_box .forgot {
+  font-size: 10px;
+}
+.connection_box .remember {
+  position: absolute;
+  left: 20%;
+}
+.connection_box .forgot {
+  position: absolute;
+  right: 20%;
+}
+.connection_box .block {
+  position: relative;
+  margin: 5px auto;
+  display: block;
+}
+.connection_box .submit {
+  position: absolute;
+  right: 20%;
+  bottom: 2em;
+}
+
+/*
+* Header Menu Style
+*/
+header {
+  position: relative;
+  background-color: black;
+  height: 4em;
+}
+.header_left, .user_profile {
+  margin: auto;
+  position: absolute;
+  display: inline;
+  color: white;
+}
+img {
+  vertical-align: middle;
+}
+.header_left {
+  top: 0.5em;
+  left: 1em;
+}
+.user_profile {
+  top: 0.5em;
+  right: 1em;
+}
+
+/*
+* Side Menu and Content location displays
+*/
+.side_menu {
+  left: 0;
+  width: 10%;
+  float: left;
+}
+.content {
+  position: relative;
+  top: 0;
+  right: 0;
+  width: 89%;
+  float: right;
+  padding-right: 1%;
+}
+
+/*
+*  progress title part and search
+*/
+.progress_title, .search {
+  display: inline;
+}
+.search{
+  position:relative;
+  width: 75%;
+  float:right
+}
+
+.search * {
+  float:right;
+}
+.progress_title{
+  position:relative;
+  left:0;
+  width:25%;
+  display:flex;
+}
+
+.title{
+  font-size: 18px;
+  font-weight: 700
+}
+
+.progressarien{
+  font-size:14px;
+}
+/*
+* head dashboard
+*/
+.headdashboard{
+  height:5em;
+  display: flex;
+}
+
+.firstblockContent{
+  height:500px;
+  display:flex;
+}
+
+.secondblockContent{
+  height:300px;
+  display:flex
 }
