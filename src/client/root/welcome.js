@@ -4,8 +4,12 @@ import Header from '../elements/header';
 import Breadcrumb from '../elements/Breadcrumb';
 import PageTitle from '../elements/PageTitle';
 import Search from '../elements/Search';
+import AircraftSelection from '../elements/AircraftSelection';
 
 class Welcome extends Component {
+    constructor(){
+        super(...arguments);
+    };
     render(){
         return(
             <div className="welcome">
@@ -17,6 +21,7 @@ class Welcome extends Component {
                         <Search />
                     </div>
                     <div className="welcome-middle">
+                        <AircraftSelection />
                     </div>
                 </section>
             </div>
