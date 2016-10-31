@@ -13,26 +13,34 @@ class AircraftTypes extends Component {
         this.setState(this.state);
     }
     handleSelect(event){
-        console.log("Selected : " + event.target);
+        let newSelect = event.target.parentNode.getAttribute("name");
+        console.log("Selected : " + newSelect);
+        this.state.selected = newSelect;
+        this.setState(this.state);
+        console.log(this.state);
     }
     render(){
-        var self = this;
+        let self = this;
+        let imgStyle = {
+            "width": "100%",
+            "borderBottom": "1px solid grey"
+        }
         return(
             <div className="aircraft_types">
-                <div className="carousel">
-                Airbus Families
+                <div className="welcome-carousel">
                     {
                         this.state.families.map(function(family, key){
                             return(
-                                <div key={key} className="aircraft_card" onClick={self.handleSelect.bind(this)}>
-                                    <div name={family.name}>{family.name}</div>
-                                    <div>{family.description}</div>
+                                <div key={key} name={family.name} className={(self.state.selected == family.name) ? "aircraft_card selected": "aircraft_card" } onClick={self.handleSelect.bind(self)}>
+                                    <img style={imgStyle} src={family.image} />
+                                    <div className="card_text" name={family.name}>{family.name}</div>
+                                    <div className="card_text" name="description">{family.description}</div>
                                 </div>
                             )
                         })
                     }
                 </div>
-                <AircraftDescription selected={this.state.selected} />
+                <AircraftDescription selected={self.state.selected} />
             </div>
         );
     }
