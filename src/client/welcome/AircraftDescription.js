@@ -4,7 +4,7 @@ import welcome from '../store/welcome';
 class AircraftDescription extends Component {
     constructor(props){
         super(props);
-        this.state = {aircrafts: [], description: "No description for this aircraft model"};
+        this.state = {aircrafts: [], description: "", selected: ""};
     }
     componentWillMount(){
         let filter = this.props.selected;
@@ -12,6 +12,10 @@ class AircraftDescription extends Component {
         console.log("Searching for " + filter);
         aircrafts.forEach(function(aircraft) {
             if (aircraft.family == filter) {
+                if (this.state.selected == ""){
+                    this.state.selected = aircraft.type;
+                    this.state.description = aircraft.description;
+                }
                 this.state.aircrafts.push(aircraft);
             }
         }, this);
@@ -21,11 +25,16 @@ class AircraftDescription extends Component {
         let self = this;
         setTimeout(function(){
             self.state.aircrafts = [];
+            self.state.selected = "";
             let filter = self.props.selected;
             var aircrafts = welcome.getAircrafts();
             console.log("Searching for " + filter);
             aircrafts.forEach(function(aircraft) {
                 if (aircraft.family == filter) {
+                    if (self.state.selected == ""){
+                        self.state.selected = aircraft.type;
+                        self.state.description = aircraft.description;
+                    }
                     self.state.aircrafts.push(aircraft);
                 }
             }, self);
@@ -33,9 +42,17 @@ class AircraftDescription extends Component {
         });
     }
     handleSelect(event){
+        let self = this;
         console.log("Selected : " + event.target.getAttribute("name"));
-        var tabs = document.getElementsByClassName('tab');
-        console.log(tabs);
+        let select = event.target.getAttribute("name");
+        let aircrafts = this.state.aircrafts;
+        aircrafts.forEach(function(aircraft){
+            if (select == aircraft.type) {
+                self.state.selected = aircraft.type;
+                self.state.description = aircraft.description;
+            }
+        });
+        this.setState(this.state);
     }
     render(){
         return(
@@ -44,12 +61,16 @@ class AircraftDescription extends Component {
                     {
                         this.state.aircrafts.map((aircraft, key)=>{
                             return(
-                                    <div key={key} name={aircraft.type} className="tab" onClick={this.handleSelect.bind(this)}>{aircraft.type}</div>
+                                    <div key={key} name={aircraft.type} className={this.state.selected == aircraft.type ? "tab selected" : "tab"} onClick={this.handleSelect.bind(this)}>{aircraft.type}</div>
                             );
                         })
                     }
                 </div>
-                <div>{this.state.description}</div>
+                <div className="aircraft_details">
+                    <div className="description">{this.state.description}</div>
+                    <img className="diagram" src="" alt="circle diagram" />
+                    <img className="chart" src="" alt="chart" />
+                </div>
             </div>
         );
     }
