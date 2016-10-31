@@ -22,7 +22,7 @@ class Welcome extends Component {
                         <AircraftSelection />
                     </div>
                 </section>
-                <Link to="/dashboard"><input className="submit" type="submit" name="goToDashBoard" value="go To DashBoard" /></Link>
+                <Link to="/dashboard"><input className="submit" type="submit" name="goToDashBoard" value="Continue to Catalog" /></Link>
             </div>
         );
     }
