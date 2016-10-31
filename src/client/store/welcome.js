@@ -30,19 +30,23 @@ let aircrafts = [
 let family = [
     {
         name : "A320 Family",
-        description: "Aircraft short description"
+        description: "Aircraft short description",
+        image:"/img/aircraft.png"
     },
     {
         name : "A330 Family",
-        description: "Aircraft short description"
+        description: "Aircraft short description",
+        image:"/img/aircraft.png"
     },
     {
         name : "A350XWB",
-        description: "Aircraft short description"
+        description: "Aircraft short description",
+        image:"/img/aircraft.png"
     },
     {
         name : "A380",
-        description: "Aircraft short description"
+        description: "Aircraft short description",
+        image:"/img/aircraft.png"
     }
 ]
 
