@@ -14,7 +14,7 @@ class Welcome extends Component {
             <div className="welcome">
                 <Header />
                 <section className="welcome">
-                    <div className="welcome-top">
+                    <div className="headdashboard">
                         <PageTitle title="Welcome to My Airbus" excerpt="Please select an aircraft to continue" />
                         <Search />
                     </div>
