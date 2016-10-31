@@ -4,7 +4,7 @@ import welcome from '../store/welcome';
 class AircraftDescription extends Component {
     constructor(props){
         super(props);
-        this.state = {aircrafts: []};
+        this.state = {aircrafts: [], description: "No description for this aircraft model"};
     }
     componentWillMount(){
         let filter = this.props.selected;
@@ -15,28 +15,41 @@ class AircraftDescription extends Component {
                 this.state.aircrafts.push(aircraft);
             }
         }, this);
-        console.log(this.state);
         this.setState(this.state);
     }
+    componentWillReceiveProps(){
+        let self = this;
+        setTimeout(function(){
+            self.state.aircrafts = [];
+            let filter = self.props.selected;
+            var aircrafts = welcome.getAircrafts();
+            console.log("Searching for " + filter);
+            aircrafts.forEach(function(aircraft) {
+                if (aircraft.family == filter) {
+                    self.state.aircrafts.push(aircraft);
+                }
+            }, self);
+            self.setState(self.state);
+        });
+    }
     handleSelect(event){
-        console.log("Selected : " + event.target);
+        console.log("Selected : " + event.target.getAttribute("name"));
+        var tabs = document.getElementsByClassName('tab');
+        console.log(tabs);
     }
     render(){
         return(
             <div className="aircraft_description">
-                <div>
-                    {this.props.selected}
+                <div className="tablist">
+                    {
+                        this.state.aircrafts.map((aircraft, key)=>{
+                            return(
+                                    <div key={key} name={aircraft.type} className="tab" onClick={this.handleSelect.bind(this)}>{aircraft.type}</div>
+                            );
+                        })
+                    }
                 </div>
-                {
-                    this.state.aircrafts.map((aircraft, key)=>{
-                        return(
-                            <div key={key} onClick={this.handleSelect.bind(this)}>
-                                <div>{aircraft.type}</div>
-                                <div>{aircraft.description}</div>
-                            </div>
-                        );
-                    })
-                }
+                <div>{this.state.description}</div>
             </div>
         );
     }
