@@ -1,0 +1,44 @@
+/*
+* Side Menu Style
+*/
+.side_menu {
+    left: 0;
+    width: 90px;
+    float: left;
+}
+.side_menu_box {
+    width: 90px;
+    height: 90px;
+    border-top: 1px solid lightslategrey;
+    background-color: dimgrey;
+    text-decoration: none;
+    color: white;
+    padding: 20%;
+}
+.side_menu a {
+    width: 99%;
+    height: 80px;
+    margin: auto;
+    text-align: center;
+}
+.side_menu a:link {
+    text-decoration: none;
+    color: white;
+}
+.side_menu_box:hover {
+    background-color: dodgerblue;
+    color: white;
+}
+.side_menu_box.selected {
+    background-color: deepskyblue;
+}
+.side_menu_box img, .side_menu_box span {
+    display: block;
+}
+.side_menu_box img {
+    width: 63%;
+    margin: 0 auto 5px auto;
+}
+.side_menu_box span {
+    font-size: 0.7em;
+}
