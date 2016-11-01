@@ -1,16 +1,16 @@
 import React, { Component } from 'react'
-import AreaMode from "./AreaMode"
-import CatalogMode from "./CatalogMode"
-import HeadCabin from "../components/HeadCabin"
 import switcherView from "../store/switcherView"
+import SearchBox from "./searchbox"
+import Title from "./title"
 
-export default class MainContent extends Component {
+export default class HeadCabin extends Component {
   constructor(props){
     super(props)
     this.state={
       viewMode:null
     }
   }
+
   componentWillMount(){
     this.setState({viewMode:switcherView.getView()})
   }
@@ -26,13 +26,18 @@ export default class MainContent extends Component {
     this.disposable.dispose()
   }
 
-    render(){
-      let switcher = this.state.viewMode
-        return(
-            <div className="content">
-              <HeadCabin/>
-              {switcher === "Catalog"?<CatalogMode />:<AreaMode />}
-            </div>
-        );
-    }
+  switchMode(){
+    let mode = this.state.viewMode === "Catalog"?"Area":"Catalog"
+    switcherView.setView(mode)
+  }
+
+  render(){
+    return(
+      <div className="headdashboard">
+      <Title />
+      <button className="switchButton" onClick={this.switchMode.bind(this)}>{"Switch to "+this.state.viewMode+" Mode"}</button>
+      <SearchBox />
+      </div>
+    );
+  }
 }

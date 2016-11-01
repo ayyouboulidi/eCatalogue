@@ -6822,11 +6822,11 @@ button.close {
 }
 
 .activeoverflow {
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .activeoverflowx{
-  overflow-x: scroll;
+  overflow-x: auto;
 }
 .height400{
   height: 400px;
@@ -6868,6 +6868,14 @@ button.close {
 
 .mright{
   margin-right: 15px
+}
+
+.switchButton{
+
+    height: 50%;
+    margin: auto;
+    width: 20%;
+
 }
 .verticalScroll {
     width: 20%;
