@@ -17,58 +17,13 @@ body, #root, .connection {
 }
 
 body{
-  background: lightgrey;
+  background: linear-gradient(to right, lightgrey, #eee);
   font-family: "Segoe UI", Arial, Helvetica, sans-serif;
   height: 98%;
 }
 input[type="checkbox"]{
   margin: 0;
 }
-
-/*
-*  progress title part and search
-*/
-.progress_title, .search {
-  display: inline;
-}
-.search{
-  position:relative;
-  width: 75%;
-  float:right
-}
-
-.search * {
-  float:right;
-}
-.progress_title{
-  position:relative;
-  left:0;
-  width:25%;
-  display:flex;
-}
-
-.title{
-  font-size: 18px;
-  font-weight: 700
-}
-
-.progressarien{
-  font-size:14px;
-}
-/*
-* head dashboard
-*/
-.headdashboard{
-  height:5em;
-  display: flex;
-}
-
-.firstblockContent{
-  height:500px;
-  display:flex;
-}
-
-.secondblockContent{
-  height:300px;
-  display:flex
+a:hover {
+  text-decoration: none;
 }
