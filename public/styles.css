@@ -6990,24 +6990,7 @@ button.close {
 }
 .side_menu_box span {
     font-size: 0.7em;
-}html {
-  height: 100%;
-}
-body, #root, .connection {
-  margin: 0;
-  min-height: 100%;
-}
-
-body{
-  background: lightgrey;
-  font-family: "Segoe UI", Arial, Helvetica, sans-serif;
-  height: 98%;
-}
-input[type="checkbox"]{
-  margin: 0;
-}
-
-/*
+}/*
 * Connection box relative CSS
 */
 .connection {
@@ -7049,6 +7032,23 @@ input[type="checkbox"]{
   right: 20%;
   bottom: 2em;
 }
+html {
+  height: 100%;
+}
+body, #root, .connection {
+  margin: 0;
+  min-height: 100%;
+}
+
+body{
+  background: lightgrey;
+  font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+  height: 98%;
+}
+input[type="checkbox"]{
+  margin: 0;
+}
+
 
 /*
 * Header Menu Style
