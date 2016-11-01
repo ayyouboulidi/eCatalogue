@@ -3,7 +3,8 @@
 @import "./accordion.css";
 @import "./carousel.css";
 @import "./welcome.css";
-
+@import "./dashboard.css";
+@import "./sideMenu.css";
 
 html {
   height: 100%;
@@ -92,13 +93,8 @@ img {
 }
 
 /*
-* Side Menu and Content location displays
+* Content location displays
 */
-.side_menu {
-  left: 0;
-  width: 10%;
-  float: left;
-}
 .content {
   position: relative;
   top: 0;
