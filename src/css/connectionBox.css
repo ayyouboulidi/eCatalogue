@@ -1,0 +1,42 @@
+/*
+* Connection box relative CSS
+*/
+.connection {
+  padding-top: 10%;
+}
+.connection_box{
+  position: relative;
+  background-color: lightgrey;
+  border: 1px solid black;
+  border-radius: 3px;
+  height: 17em;
+  width: 25em;
+  margin: auto;
+  padding: auto;
+  text-align: center;
+}
+.connection_box label, .username, .password {
+  width: 60%;
+  text-align: left;
+}
+.connection_box .remember, .connection_box .forgot {
+  font-size: 10px;
+}
+.connection_box .remember {
+  position: absolute;
+  left: 20%;
+}
+.connection_box .forgot {
+  position: absolute;
+  right: 20%;
+}
+.connection_box .block {
+  position: relative;
+  margin: 5px auto;
+  display: block;
+}
+.connection_box .submit {
+  position: absolute;
+  right: 20%;
+  bottom: 2em;
+}
