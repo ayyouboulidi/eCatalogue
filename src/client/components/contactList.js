@@ -10,7 +10,7 @@ export default class contactList extends Component {
     render(){
         return(
             <div className="width25 fright bgcontact">
-              My Airbus Contacts
+              <div className="second_title">My Airbus Contacts</div>
               <table className="width100 padding2">
                 <tbody>
                   {
