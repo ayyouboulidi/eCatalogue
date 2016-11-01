@@ -112,3 +112,11 @@
 .mright{
   margin-right: 15px
 }
+
+.switchButton{
+
+    height: 50%;
+    margin: auto;
+    width: 20%;
+
+}
