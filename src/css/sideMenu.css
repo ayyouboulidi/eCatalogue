@@ -2,14 +2,17 @@
 * Side Menu Style
 */
 .side_menu {
+    position: relative;
+    z-index: 1;
     left: 0;
     width: 90px;
+    height: 100%;
     float: left;
 }
 .side_menu_box {
     width: 90px;
     height: 90px;
-    border-top: 1px solid lightslategrey;
+    border-bottom: 1px solid lightslategrey;
     background-color: dimgrey;
     text-decoration: none;
     color: white;
