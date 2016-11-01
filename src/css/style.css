@@ -2,6 +2,7 @@
 @import "./scroll.css";
 @import "./accordion.css";
 @import "./carousel.css";
+@import "./header.css";
 @import "./welcome.css";
 @import "./dashboard.css";
 @import "./sideMenu.css";
@@ -22,45 +23,6 @@ body{
 }
 input[type="checkbox"]{
   margin: 0;
-}
-
-
-/*
-* Header Menu Style
-*/
-header {
-  position: relative;
-  background-color: black;
-  height: 4em;
-}
-.header_left, .user_profile {
-  margin: auto;
-  position: absolute;
-  display: inline;
-  color: white;
-}
-img {
-  vertical-align: middle;
-}
-.header_left {
-  top: 0.5em;
-  left: 1em;
-}
-.user_profile {
-  top: 0.5em;
-  right: 1em;
-}
-
-/*
-* Content location displays
-*/
-.content {
-  position: relative;
-  top: 0;
-  right: 0;
-  width: 89%;
-  float: right;
-  padding-right: 1%;
 }
 
 /*
