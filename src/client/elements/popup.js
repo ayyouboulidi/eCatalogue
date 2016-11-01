@@ -6,7 +6,8 @@ export default class popup extends Component {
   constructor(props){
     super(props)
     this.state = {
-      item:{id:null,display:false}
+      item:{id:null,display:false},
+      display:{}
     }
   }
 
@@ -19,6 +20,8 @@ export default class popup extends Component {
   open(e){
     let item = e.currentTarget.id
     popupStore.setItem({id:item,display:true})
+    this.state.display[item] = true
+    this.setState(this.state)
   }
 
   componentWillMount(){
@@ -44,10 +47,12 @@ export default class popup extends Component {
       backgroundColor: 'rgba(0, 0, 0, 0.13)',
     }
 
+    let disp = this.state.item
+
     return (
       <span className='modal-example'>
         <span id={this.props.id} onClick={this.open.bind(this)}>{this.props.children}</span>
-        <Modal id="popup" aria-labelledby='modal-label' backdropStyle={backdropStyle} show={this.state.item.display} onHide={this.close.bind(this)}>
+        <Modal id={"popup"+disp.id} aria-labelledby='modal-label' backdropStyle={backdropStyle} show={this.state.display[disp.id]} onHide={this.close.bind(this)}>
           <div>
             <h4 id='modal-label'></h4>
             <img src="img/CHECKED-ICON.png" onClick={this.close.bind(this)}/>

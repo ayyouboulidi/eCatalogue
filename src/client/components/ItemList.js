@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PopupItem from '../elements/popup'
 
 export default class ItemList extends Component {
     constructor(props){
@@ -13,7 +14,9 @@ export default class ItemList extends Component {
             <div className="width75 bgcurrentproject activeoverflow height300">
               {items.map(function(item,key){
                 return(
-                  <img key={key} src="img/galley.png"/>
+                  <PopupItem id={item} key={key}>
+                    <img src="img/galley.png"/>
+                  </PopupItem>
                 )
               })}
             </div>

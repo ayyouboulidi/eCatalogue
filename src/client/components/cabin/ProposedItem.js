@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import zoneFilter from '../../store/ZoneFilter'
 import AccordionFilter from '../../store/AccordionFilter'
-import Test from '../../elements/popup'
+import PopupItem from '../../elements/popup'
 
 export default class ProposedItem extends Component {
   constructor(props){
@@ -53,13 +53,13 @@ componentWillUnmount() {
               displayItems ?
               proposedItems.map(function(proposedItem,key){
                 return(
-                  <Test id={proposedItem} key={key}>
+                  <PopupItem id={proposedItem} key={key}>
                     <div className="verticalScroll" >
                       <div><img src="img/galley.png"/></div>
                       <div><b>Galley</b></div>
                       <div>Description {proposedItem}</div>
                     </div>
-                  </Test>
+                  </PopupItem>
                 )
               })
               : null
