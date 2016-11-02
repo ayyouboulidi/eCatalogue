@@ -16,15 +16,20 @@ function Monument(id,name,description,url){
  */
 function Monuments(database) {
 	this.database = database;
-    getMonuments(function(m,i=0){
+    this.monumentsArray = [];
+    var that = this;
+    this.getMonuments(function(m,i=0){
         if (m==undefined && i<10){
-            getMonuments(this,i+1);
+            that.getMonuments(this,i+1);
         }else if (m==undefined){
             var err = new Object();
             err.message = "CRITICAL : can't get monuments from database";
             err.type = "CustomException";
             throw err;
         }else{
+            m.forEach(function(val,index){
+                that.monumentsArray.push(val.name);
+            });
             return true;
         }
     });
@@ -35,24 +40,25 @@ function Monuments(database) {
 ** this function takes as parameters the callback that should be call when it finishes it's work. 
 ** The callback will have as a parameter the result of the call.
 */
-Items.prototype.getMonuments = function(callback) {
+Monuments.prototype.getMonuments = function(callback) {
 	if (this.monuments == undefined){
-    var statement = "SELECT id, url, name, description from monuments";				
-	this.database.all(statement,params
-	    , function(err, rows) {
-			if (err){
-				callback(undefined);
-			}else{
-				rows.forEach(function (row) {
-					result.push(new Monument(row.id,row.name,row.description));
-				});
-				this.monuments = result;
-				callback(this.monuments,arguments[1]);
-			}
-	});
-    } else {
-        callback(this.monuments,arguments[1]);
-    }
+        var result = [];
+        var statement = "SELECT id, url, name, description from monuments";				
+        this.database.all(statement
+            , function(err, rows) {
+                if (err){
+                    callback(undefined);
+                }else{
+                    rows.forEach(function (row) {
+                        result.push(new Monument(row.id,row.name,row.description,row.url));
+                    });
+                    this.monuments = result;
+                    callback(this.monuments,arguments[1]);
+                }
+        });
+     } else {
+            callback(this.monuments,arguments[1]);
+     }
 }
 
 

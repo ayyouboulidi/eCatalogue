@@ -5,7 +5,8 @@ var Filters = require('./models/filter');
 var Database = require('./models/database');
 var Monuments = require ('./models/monuments');
 var db = new Database();
-var monuments = new Monuments(db);
+var monuments = new Monuments(db.db);
+
 
 
 const app = express();
@@ -18,27 +19,21 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
 
 app.post("/GetItems",function(req,res){
 	res.setHeader('Content-Type', 'application/json');
-	if (req.body!= undefined && req.body.type!=undefined && req.body.filter != undefined){
-		var items = new Items( req.body.type,req.body.filter,db.db);
-		items.getItems(function(result){
-			if (result != undefined)
-				res.send({"code":0,"result":result});
-			else	
-				res.json({"code":-1});	
-		});
-		db.db.close();
-	}else{
-		//res.send(JSON.stringify({"code":-1}));
-		res.json({"code":-1});
-	}
+	var items = new Items( req.body.monument,req.body.supplier,req.body.filter,db.db,monuments.monumentsArray);
+	items.getItems(function(result){
+		if (result != undefined)
+			res.send({"code":0,"result":result});
+		else	
+			res.json({"code":-1});	
+	});
 });
 
 app.post("/GetFilters",function(req,res){
-	res.setHeader('Content-Type', 'application/json');
-	if (req.body!= undefined && req.body.catalogue!=undefined){
-		var filters = new Filters(req.body.catalogue,db.db);
+ 	res.setHeader('Content-Type', 'application/json'); 
+	if (req.body!= undefined && req.body.monument!=undefined){
+		var filters = new Filters(req.body.monument,db.db,monuments.monumentsArray);
 		filters.getFilters(function(result){
-			if (result != undefined)
+			if (result)
 				res.send({"code":0,"result":result});
 			else	
 				res.json({"code":-1});	
@@ -51,7 +46,10 @@ app.post("/GetFilters",function(req,res){
 
 app.post("/GetMonuments",function(req,res){
 	res.setHeader('Content-Type', 'application/json');
-	res.json({"code":0,"result":monuments});
+	monuments.getMonuments(function(r){
+		res.json({"code":0,"result":r});
+		console.log(monuments.monumentsArray);	
+	});
 });
 
 
