@@ -7,19 +7,27 @@
   top: 0;
   right: 0;
   width: 100%;
-  padding-left: 90px;
+  font-size: 1.5vh;
+  padding-left: 13vh;
+}
+.title {
+    font-size: 3vh;
+}
+.progressarien {
+    font-size: 2vh
 }
 .second_title {
-    font-size: 1.6em;
+    font-size: 2.5vh;
 }
 
 /*
 * head dashboard
 */
 .headdashboard{
-  height: 90px;
-  border-bottom: 1px solid lightgrey;
+  height: 13.1vh;
+  border-bottom: 0.35vh solid lightgrey;
   display: flex;
+  font-size: 3vh;
 }
 
 
@@ -27,8 +35,8 @@
 * Shared Styles
 */
 .bgcurrentproject, .bgchecklist, .bgcontact {
-    border: 1px solid lightgrey;
-    padding: 5px 1em;
+    border: 0.1vh solid lightgrey;
+    padding-left: 1vh;
 }
 
 /*
@@ -38,12 +46,15 @@
     position: relative;
     background: linear-gradient(to right, #eee, #ddd);
 }
+.bgcurrentproject .height50 {
+    height: 4vh;
+}
 .bgcurrentproject .activeoverflow {
     overflow-y: auto;
-    height: 165px;
+    height: 30vh;
 }
 tr {
-    height: 2.1em;
+    height: 2.1vh;
 }
 tr.stripped {
     background: linear-gradient(to right, grey, darkgrey);
@@ -68,16 +79,19 @@ td input[type="checkbox"] {
 input.view_details {
     padding: 5px 15px;
     box-shadow: none;
-    border-top-left-radius: 15px 50%;
-    border-top-right-radius: 15px 50%;
-    border-bottom-left-radius: 15px 50%;
-    border-bottom-right-radius: 15px 50%;
+    border-top-left-radius: 2vh 50%;
+    border-top-right-radius: 2vh 50%;
+    border-bottom-left-radius: 2vh 50%;
+    border-bottom-right-radius: 2vh 50%;
 }
 /*
 * Checklist Styles
 */
 .bgchecklist {
     background: #eee;
+}
+.bgchecklist .height50 {
+    height: 4vh;
 }
 .bgcurrentproject--accordion {
     height: 200px;
