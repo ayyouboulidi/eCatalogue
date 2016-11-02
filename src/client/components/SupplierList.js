@@ -1,21 +1,29 @@
 import React, { Component } from 'react'
+import categoryStroe from "../store/selectedCategoryStore"
 
 export default class SupplierList extends Component {
     constructor(props){
       super(props)
       this.state={
-        suppliers:[1,2,3,4,5,6,7,8,9,10,22]
+        suppliers:[{name:"Neil",id:1},{name:"Neil",id:1},{name:"Neil",id:1},{name:"Neil",id:1},{name:"Neil",id:1}]
       }
     }
+
+    setSelectedCategory(e){
+      let name = e.currentTarget.id
+      categoryStroe.setSelectedCategory({name:name,state:true})
+    }
+
     render(){
       let suppliers = this.state.suppliers
+      let _this = this
         return(
             <div className="pflex activeoverflowx height100">
               {suppliers.map(function(supplier,key){
                 return(
-                  <div className="verticalScroll" key={key}>
+                  <div className="verticalScroll" key={key}  id={supplier.name} onClick={_this.setSelectedCategory.bind(_this)}>
                     <div><img src="img/galley.png"/></div>
-                    <div>Name {supplier}</div>
+                    <div>Name {supplier.id}</div>
                   </div>
                 )
               })}
