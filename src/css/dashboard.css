@@ -37,6 +37,8 @@
 .bgcurrentproject, .bgchecklist, .bgcontact {
     border: 0.1vh solid lightgrey;
     padding-left: 1vh;
+    padding-top: 1vh;
+    padding-right: 1vw;
 }
 
 /*
@@ -49,9 +51,14 @@
 .bgcurrentproject .height50 {
     height: 4vh;
 }
+.fright img {
+    height: 2.4vh;
+}
 .bgcurrentproject .activeoverflow {
     overflow-y: auto;
-    height: 30vh;
+    height: 25.3vh;
+    width: 98%;
+    font-size: 2.25vh;
 }
 tr {
     height: 2.1vh;
@@ -67,22 +74,27 @@ td input[type="checkbox"] {
     width: 2em;
     height: 2em;
 }
+td img {
+    height: 3vh;
+    width: auto;
+}
 .pbottom {
     width: 90%;
-    /*padding-right: 2em;*/
-    padding-bottom: 5px;
+    font-size: 2vh;
+    padding-bottom: 2vh;
 }
 .pbottom .fleft {
     margin-top: 0.5em;
     font-size: 1.25em;
 }
 input.view_details {
-    padding: 5px 15px;
+    transform: translateY(5%);
+    padding: 1vh 1.5vh;
     box-shadow: none;
-    border-top-left-radius: 2vh 50%;
-    border-top-right-radius: 2vh 50%;
-    border-bottom-left-radius: 2vh 50%;
-    border-bottom-right-radius: 2vh 50%;
+    border-top-left-radius: 1.5vh 50%;
+    border-top-right-radius: 1.5vh 50%;
+    border-bottom-left-radius: 1.5vh 50%;
+    border-bottom-right-radius: 1.5vh 50%;
 }
 /*
 * Checklist Styles
@@ -124,7 +136,7 @@ input.view_details {
     height: 220px;
 }
 /*
-* Newws Styles
+* News Styles
 */
 .bgnews {
     background: linear-gradient(to bottom, lightskyblue, white, lightgrey);
