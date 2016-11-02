@@ -20,9 +20,9 @@ class Welcome extends Component {
                     </div>
                     <div className="welcome-middle">
                         <AircraftSelection />
+                        <Link to="/dashboard"><input className="submit" type="submit" name="goToDashBoard" value="Continue to Catalog" /></Link>
                     </div>
                 </section>
-                <Link to="/dashboard"><input className="submit" type="submit" name="goToDashBoard" value="Continue to Catalog" /></Link>
             </div>
         );
     }

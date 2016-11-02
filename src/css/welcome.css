@@ -1,6 +1,9 @@
 /*
-* Welcome view style
+* Welcome view style 
 */
+section {
+    padding: 1em;
+}
 .page_title {
     width: 60%;
 }
@@ -27,13 +30,6 @@
 .card_text {
     width: 95%;
     margin: 2px auto;
-}
-
-/*
-* For Generic purpose
-*/
-.hidden {
-    display: none;
 }
 
 /*
