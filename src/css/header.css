@@ -13,31 +13,28 @@ header {
 }
 span.main_title{
   position: relative;
-  margin-left: 5px;
+  margin-left: 1vw;
 }
 .header_left {
-  font-size: 5vh;
+  font-size: 3.5vh;
   height: 100%;
-  left: 0.5vh;
+  left: 1.5vh;
 }
-.header_left a img {
-  width: 7vh;
+.header_left a img, .user_profile img {
+  width: 5vh;
   height: auto;
+  margin-top: 1.5vh;
+  vertical-align: -25%;
 }
 .user_profile {
   overflow-x: auto;
-  padding-left: 0.5vh;
-  font-size: 3.5vh;
+  padding-left: 2vh;
+  font-size: 3vh;
   width: 30vw;
   height: 100%;
   background: #333;
   right: 0;
 }
 .user_profile img {
-  width: 7vh;
-  height: auto;
-}
-.user_profile img, .header_left img {
-  vertical-align: middle;
-  margin-top: 0.5vh;
+  vertical-align: -35%;
 }
