@@ -5,31 +5,39 @@ header {
   position: relative;
   top: 0;
   background-color: black;
-  height: 4em;
+  height: 8vh;
 }
 .header_left, .user_profile {
-  margin-top: 2em;
-  transform: translateY(-50%);
   position: absolute;
   color: white;
 }
 span.main_title{
+  position: relative;
   margin-left: 5px;
-  font-size: 1.35em;
 }
 .header_left {
+  font-size: 5vh;
   height: 100%;
-  left: 1em;
+  left: 0.5vh;
+}
+.header_left a img {
+  width: 7vh;
+  height: auto;
 }
 .user_profile {
-  padding-left: 0.75em;
-  font-size: 1em;
-  width: 150px;
+  overflow-x: auto;
+  padding-left: 0.5vh;
+  font-size: 3.5vh;
+  width: 30vw;
   height: 100%;
   background: #333;
   right: 0;
 }
+.user_profile img {
+  width: 7vh;
+  height: auto;
+}
 .user_profile img, .header_left img {
-  margin-top: 3.75vh;
-  transform: translateY(-50%);
+  vertical-align: middle;
+  margin-top: 0.5vh;
 }
