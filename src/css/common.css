@@ -140,9 +140,16 @@ button, input[type="submit"] {
   padding-right: 1em;
 }
 .search .blockAlign {
+  position: relative;
+  margin-right: 1vw;
     width: 5vh;
     height: 5vh;
-    border: 0.5vh solid grey;
+    border: 0.3vh solid grey;
+    border-radius: 50%;
+}
+.search .blockAlign img {
+  width: auto;
+  margin: 1vh 1vw;
 }
 .search * {
   float:right;
