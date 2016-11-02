@@ -36,15 +36,6 @@
   float:right;
   padding-right: 1em;
 }
-input[type="search"] {
-    margin-left: 5px;
-    background: none;
-    border: 2px solid grey;
-    border-top-left-radius: 15px 50%;
-    border-top-right-radius: 15px 50%;
-    border-bottom-left-radius: 15px 50%;
-    border-bottom-right-radius: 15px 50%;
-}
 
 .search * {
   float:right;

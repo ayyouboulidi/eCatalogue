@@ -19,10 +19,24 @@ body{
   font-family: "Segoe UI", Arial, Helvetica, sans-serif;
   height: 98%;
 }
-
+h2 {
+  font-size: 4vh;
+}
+h3 {
+  font-size: 3vh;
+}
 /*
 * Default elements Style
 */
+input[type="search"] {
+    margin-left: 5px;
+    background: none;
+    border: 2px solid grey;
+    border-top-left-radius: 15px 50%;
+    border-top-right-radius: 15px 50%;
+    border-bottom-left-radius: 15px 50%;
+    border-bottom-right-radius: 15px 50%;
+}
 input[type="checkbox"]{
   margin: 0;
 }
