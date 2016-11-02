@@ -31,11 +31,11 @@ h3 {
 input[type="search"] {
     margin-left: 5px;
     background: none;
-    border: 2px solid grey;
-    border-top-left-radius: 15px 50%;
-    border-top-right-radius: 15px 50%;
-    border-bottom-left-radius: 15px 50%;
-    border-bottom-right-radius: 15px 50%;
+    border: 0.30vh solid grey;
+    border-top-left-radius: 2vh 50%;
+    border-top-right-radius: 2vh 50%;
+    border-bottom-left-radius: 2vh 50%;
+    border-bottom-right-radius: 2vh 50%;
 }
 input[type="checkbox"]{
   margin: 0;
