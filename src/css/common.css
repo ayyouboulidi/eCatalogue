@@ -114,6 +114,7 @@
 }
 
 button, input[type="submit"] {
+  padding: 1vh 2vh;
   border: 0.25vh solid grey;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
@@ -123,4 +124,58 @@ button, input[type="submit"] {
     margin: auto;
     width: 20%;
 
+}
+/*
+*  progress title part and search
+*/
+.progress_title, .search {
+  display: inline;
+  padding-left: 1em;
+}
+.search{
+  position:relative;
+  top: 2vh;
+  width: 50%;
+  float:right;
+  padding-right: 1em;
+}
+.search .blockAlign {
+    width: 5vh;
+    height: 5vh;
+    border: 0.5vh solid grey;
+}
+.search * {
+  float:right;
+}
+.progress_title{
+  position:relative;
+  left:0;
+  width:50%;
+  display:flex;
+}
+
+.title{
+  font-size: 18px;
+  font-weight: 700;
+  display: block;
+}
+
+.progressarien{
+  font-size:14px;
+  float: right;
+  right: 1em;
+  display: block;
+}
+
+/*
+* Rows
+*/
+.firstblockContent{
+  height:270px;
+  display:flex;
+}
+
+.secondblockContent{
+  height:270px;
+  display:flex
 }

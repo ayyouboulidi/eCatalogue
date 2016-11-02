@@ -22,56 +22,6 @@
   display: flex;
 }
 
-/*
-*  progress title part and search
-*/
-.progress_title, .search {
-  display: inline;
-  padding-left: 1em;
-}
-.search{
-  position:relative;
-  top: 2vh;
-  width: 50%;
-  float:right;
-  padding-right: 1em;
-}
-
-.search * {
-  float:right;
-}
-.progress_title{
-  position:relative;
-  left:0;
-  width:50%;
-  display:flex;
-}
-
-.title{
-  font-size: 18px;
-  font-weight: 700;
-  display: block;
-}
-
-.progressarien{
-  font-size:14px;
-  float: right;
-  right: 1em;
-  display: block;
-}
-
-/*
-* Rows
-*/
-.firstblockContent{
-  height:270px;
-  display:flex;
-}
-
-.secondblockContent{
-  height:270px;
-  display:flex
-}
 
 /*
 * Shared Styles
