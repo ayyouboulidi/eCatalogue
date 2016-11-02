@@ -9,7 +9,7 @@ export default class title extends React.Component {
         return(
             <div className="progress_title">
                 <SectionName title={title} progress={progress} />
-                <div className="blockAlign5"><img src="img/PROJECT-ICON.png" /></div>
+                <div className="blockAlign5"><img src="" /></div>
             </div>
         );
     }
