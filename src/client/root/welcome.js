@@ -11,7 +11,7 @@ class Welcome extends Component {
     };
     render(){
         return(
-            <div className="welcome">
+            <div className="welcome_page">
                 <Header />
                 <section className="welcome">
                     <div className="headdashboard">
