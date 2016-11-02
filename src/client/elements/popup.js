@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import popupStore from "../store/popupElement"
+import switcherStore from "../store/switcherView"
 import {Modal, Button} from 'react-bootstrap'
 
 export default class popup extends Component {
@@ -39,7 +40,9 @@ export default class popup extends Component {
     this.disposable.dispose()
   }
 
-
+configSwitch(){
+  switcherStore.setView("Config")
+}
 
   render() {
 
@@ -57,6 +60,7 @@ export default class popup extends Component {
             <h4 id='modal-label'></h4>
             <img src="img/CHECKED-ICON.png" onClick={this.close.bind(this)}/>
             <div>blablab blba {this.state.item.id}</div>
+            <button onClick={this.configSwitch.bind(this)}>Config component</button>
           </div>
         </Modal>
       </span>
