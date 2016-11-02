@@ -61982,6 +61982,10 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _selectedCategoryStore = __webpack_require__(564);
+
+	var _selectedCategoryStore2 = _interopRequireDefault(_selectedCategoryStore);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var MonumentsList = function (_Component) {
@@ -62008,16 +62012,23 @@
 	      }, "json");
 	    }
 	  }, {
+	    key: 'setSelectedCategory',
+	    value: function setSelectedCategory(e) {
+	      var name = e.currentTarget.id;
+	      _selectedCategoryStore2.default.setSelectedCategory({ name: name, state: true });
+	    }
+	  }, {
 	    key: 'render',
 	    value: function render() {
 	      var monuments = this.state.monuments;
+	      var _this = this;
 	      return _react2.default.createElement(
 	        'div',
 	        { className: 'pflex activeoverflowx height100' },
 	        monuments.map(function (monument, key) {
 	          return _react2.default.createElement(
 	            'div',
-	            { className: 'verticalScroll', key: key },
+	            { className: 'verticalScroll', key: key, id: monument.name, onClick: _this.setSelectedCategory.bind(_this) },
 	            _react2.default.createElement(
 	              'div',
 	              null,
@@ -72310,6 +72321,10 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _selectedCategoryStore = __webpack_require__(564);
+
+	var _selectedCategoryStore2 = _interopRequireDefault(_selectedCategoryStore);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var SupplierList = function (_Component) {
@@ -72318,25 +72333,32 @@
 	  function SupplierList(props) {
 	    (0, _classCallCheck3.default)(this, SupplierList);
 
-	    var _this = (0, _possibleConstructorReturn3.default)(this, (SupplierList.__proto__ || (0, _getPrototypeOf2.default)(SupplierList)).call(this, props));
+	    var _this2 = (0, _possibleConstructorReturn3.default)(this, (SupplierList.__proto__ || (0, _getPrototypeOf2.default)(SupplierList)).call(this, props));
 
-	    _this.state = {
-	      suppliers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 22]
+	    _this2.state = {
+	      suppliers: [{ name: "Neil", id: 1 }, { name: "Neil", id: 1 }, { name: "Neil", id: 1 }, { name: "Neil", id: 1 }, { name: "Neil", id: 1 }]
 	    };
-	    return _this;
+	    return _this2;
 	  }
 
 	  (0, _createClass3.default)(SupplierList, [{
+	    key: "setSelectedCategory",
+	    value: function setSelectedCategory(e) {
+	      var name = e.currentTarget.id;
+	      _selectedCategoryStore2.default.setSelectedCategory({ name: name, state: true });
+	    }
+	  }, {
 	    key: "render",
 	    value: function render() {
 	      var suppliers = this.state.suppliers;
+	      var _this = this;
 	      return _react2.default.createElement(
 	        "div",
 	        { className: "pflex activeoverflowx height100" },
 	        suppliers.map(function (supplier, key) {
 	          return _react2.default.createElement(
 	            "div",
-	            { className: "verticalScroll", key: key },
+	            { className: "verticalScroll", key: key, id: supplier.name, onClick: _this.setSelectedCategory.bind(_this) },
 	            _react2.default.createElement(
 	              "div",
 	              null,
@@ -72346,7 +72368,7 @@
 	              "div",
 	              null,
 	              "Name ",
-	              supplier
+	              supplier.id
 	            )
 	          );
 	        })
@@ -72362,7 +72384,7 @@
 /* 560 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function($) {'use strict';
+	/* WEBPACK VAR INJECTION */(function($) {"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
@@ -72392,6 +72414,10 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _selectedCategoryStore = __webpack_require__(564);
+
+	var _selectedCategoryStore2 = _interopRequireDefault(_selectedCategoryStore);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var FilterPanel = function (_Component) {
@@ -72403,62 +72429,91 @@
 	    var _this2 = (0, _possibleConstructorReturn3.default)(this, (FilterPanel.__proto__ || (0, _getPrototypeOf2.default)(FilterPanel)).call(this, props));
 
 	    _this2.state = {
+	      displayFilters: { name: "", state: false },
 	      filters: []
 	    };
 	    return _this2;
 	  }
 
 	  (0, _createClass3.default)(FilterPanel, [{
-	    key: 'componentWillMount',
+	    key: "componentWillMount",
 	    value: function componentWillMount() {
-	      var _this = this;
-	      $.post('/GetFilters', { monument: "Galley" }, function (data) {
-	        _this.state.filters = data.result;
-	        _this.setState(_this.state);
-	      }, "json");
+	      this.setState({ displayFilters: _selectedCategoryStore2.default.getSelectedCategory() });
 	    }
 	  }, {
-	    key: 'render',
+	    key: "componentDidMount",
+	    value: function componentDidMount() {
+	      var _this3 = this;
+
+	      this.disposable = _selectedCategoryStore2.default.getStore$().subscribe(function (newCategory) {
+	        _this3.state.displayFilters = newCategory;
+	        _this3.setState(_this3.state);
+	        var _this = _this3;
+	        if (_this3.state.displayFilters.state) {
+	          $.post('/GetFilters', { monument: _this.state.displayFilters.name }, function (data) {
+	            if (data.code === 0) {
+	              console.log(data.result);
+	              _this.state.filters = data.result;
+	            } else {
+	              _this.state.displayFilters.state = false;
+	            }
+	            _this.setState(_this.state);
+	          }, "json");
+	        }
+	      });
+	    }
+	  }, {
+	    key: "componentWillUnmount",
+	    value: function componentWillUnmount() {
+	      this.disposable.dispose();
+	    }
+	  }, {
+	    key: "render",
 	    value: function render() {
 	      var filters = this.state.filters;
+	      var displayFilters = this.state.displayFilters.state;
 	      return _react2.default.createElement(
-	        'div',
-	        { className: 'width25' },
-	        'Filter by:',
-	        filters.map(function (filt, key) {
+	        "div",
+	        { className: "width25" },
+	        "Filter by:",
+	        displayFilters ? filters.map(function (filt, key) {
 	          return _react2.default.createElement(
-	            'div',
+	            "div",
 	            { key: key },
 	            _react2.default.createElement(
-	              'select',
+	              "select",
 	              null,
 	              _react2.default.createElement(
-	                'option',
+	                "option",
 	                null,
 	                filt.name
 	              ),
 	              filt.values.map(function (val, key) {
 	                return _react2.default.createElement(
-	                  'option',
+	                  "option",
 	                  { key: key, value: val },
 	                  val
 	                );
 	              })
 	            )
 	          );
-	        }),
-	        'Order By:',
+	        }) : _react2.default.createElement(
+	          "div",
+	          null,
+	          "Select monument or family to display filters"
+	        ),
+	        "Order By:",
 	        _react2.default.createElement(
-	          'div',
+	          "div",
 	          null,
 	          _react2.default.createElement(
-	            'form',
+	            "form",
 	            null,
-	            _react2.default.createElement('input', { type: 'radio', name: 'order', value: 'new', defaultChecked: true }),
-	            ' New',
-	            _react2.default.createElement('br', null),
-	            _react2.default.createElement('input', { type: 'radio', name: 'order', value: 'popular' }),
-	            ' Popular'
+	            _react2.default.createElement("input", { type: "radio", name: "order", value: "new", defaultChecked: true }),
+	            " New",
+	            _react2.default.createElement("br", null),
+	            _react2.default.createElement("input", { type: "radio", name: "order", value: "popular" }),
+	            " Popular"
 	          )
 	        )
 	      );
@@ -72687,6 +72742,41 @@
 	  },
 	  getView: function getView() {
 	    return view;
+	  }
+	};
+
+/***/ },
+/* 564 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _store = __webpack_require__(341);
+
+	var _store2 = _interopRequireDefault(_store);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var store = (0, _store2.default)();
+	var category = { name: "", state: false };
+
+	store.getStore$().subscribe(function (newCategory) {
+	  category = newCategory;
+	});
+
+	exports.default = {
+	  getStore$: function getStore$() {
+	    return store.getStore$();
+	  },
+	  setSelectedCategory: function setSelectedCategory(newCategory) {
+	    store.updateStore(newCategory);
+	  },
+	  getSelectedCategory: function getSelectedCategory() {
+	    return category;
 	  }
 	};
 

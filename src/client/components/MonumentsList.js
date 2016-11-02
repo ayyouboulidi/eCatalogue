@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import categoryStroe from "../store/selectedCategoryStore"
 
 export default class MonumentsList extends Component {
     constructor(props){
@@ -16,13 +17,19 @@ export default class MonumentsList extends Component {
       },"json")
     }
 
+    setSelectedCategory(e){
+      let name = e.currentTarget.id
+      categoryStroe.setSelectedCategory({name:name,state:true})
+    }
+
     render(){
       let monuments = this.state.monuments
+      let _this = this
         return(
             <div className="pflex activeoverflowx height100">
               {monuments.map(function(monument,key){
                 return(
-                  <div className="verticalScroll" key={key}>
+                  <div className="verticalScroll" key={key} id={monument.name} onClick={_this.setSelectedCategory.bind(_this)}>
                     <div><img src="img/galley.png"/></div>
                     <div><b>{monument.name}</b></div>
                     <div>{monument.description} id {monument.id}</div>
