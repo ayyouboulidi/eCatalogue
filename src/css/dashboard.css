@@ -70,7 +70,7 @@ td input[type="checkbox"] {
     border-radius: none;
     border-color: black;
     color: green;
-    background: rgba(0, 0, 0, 0);
+    background-color: rgba(0, 0, 0, 0);
     width: 2em;
     height: 2em;
 }
@@ -106,7 +106,7 @@ input.view_details {
     height: 4vh;
 }
 .bgcurrentproject--accordion {
-    height: 200px;
+    height: 30vh;
     padding-top: -10px;
     overflow-y: auto;
 }
@@ -114,10 +114,13 @@ input.view_details {
     border-radius: 0;
     margin: 0;
     background: transparent;
-    border: 1px solid grey;
+    border: 0.2vh solid grey;
+}
+.panel-title {
+    font-size: 2vh;
 }
 .panel-title a:before {
-    background-image: url(/img/ARROW-DOWN-ICON.png);
+    background-image: url("/img/ARROW-DOWN-ICON.png");
 }
 /*
 * Contact Styles
