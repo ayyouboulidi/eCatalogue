@@ -8,19 +8,21 @@
 @import "./sideMenu.css";
 @import "./connectionBox.css";
 
+/*
+* Basic shape style surface pro 4 2736*1824
+*/
 html {
   height: 100%;
 }
-body, #root, .connection {
-  margin: 0;
-  min-height: 100%;
-}
-
 body{
   background: linear-gradient(to right, lightgrey, #eee);
   font-family: "Segoe UI", Arial, Helvetica, sans-serif;
   height: 98%;
 }
+
+/*
+* Default elements Style
+*/
 input[type="checkbox"]{
   margin: 0;
 }
@@ -29,4 +31,11 @@ img {
 }
 a:hover {
   text-decoration: none;
+}
+
+/*
+* For Generic purpose
+*/
+.hidden {
+    display: none;
 }
