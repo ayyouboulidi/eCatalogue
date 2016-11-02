@@ -1,0 +1,56 @@
+/*
+* Welcome view style
+*/
+.page_title {
+    width: 60%;
+}
+.welcome-carousel {
+    width: 90%;
+    margin: 3em auto;
+}
+
+.aircraft_card {
+    background-color: white;
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+    border: 1px solid grey;
+    display: inline-block;
+    overflowY: auto;
+}
+.aircraft_card.selected {
+    border-color: red;
+}
+.aircraft_card:hover {
+    border-color: blue;
+}
+.card_text {
+    width: 95%;
+    margin: 2px auto;
+}
+
+/*
+* For Generic purpose
+*/
+.hidden {
+    display: none;
+}
+
+/*
+* Tabs styles
+*/
+.tablist {
+    margin-left: 1em;
+    margin-right: 1em;
+    border-bottom: 1px solid black;
+}
+.tablist div {
+    padding: 3px 2px;
+    border: 1px solid black;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 7px;
+    display: inline;
+}
+.tab.selected {
+    color: red;
+}

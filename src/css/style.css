@@ -1,9 +1,29 @@
-@import './menu.css';
+@import "./common.css";
+@import "./scroll.css";
+@import "./accordion.css";
+@import "./carousel.css";
+@import "./header.css";
+@import "./welcome.css";
+@import "./dashboard.css";
+@import "./sideMenu.css";
+@import "./connectionBox.css";
 
-.test{
-  background:yellow
+html {
+  height: 100%;
+}
+body, #root, .connection {
+  margin: 0;
+  min-height: 100%;
 }
 
 body{
-  background: green
+  background: linear-gradient(to right, lightgrey, #eee);
+  font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+  height: 98%;
+}
+input[type="checkbox"]{
+  margin: 0;
+}
+a:hover {
+  text-decoration: none;
 }

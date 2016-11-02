@@ -1,13 +1,14 @@
-import React from 'react'
-import Connectuser from './userProfile'
+import React, { Component } from 'react'
+import { Link } from 'react-router'
+import UserProfile from './userProfile'
 
-export default class Header extends React.Component{
+export default class Header extends Component{
   render() {
     return (
-      <div>
-        <span><img src="img/logo"/></span>
-        <Connectuser/>
-      </div>
+      <header>
+        <div className="header_left"><Link to="/"><img src="img/AIRBUS-LOGO.png"/></Link><span className="main_title">{" "}My <b>airbus</b> - Online Catalog</span></div>
+        <UserProfile/>
+      </header>
     )
   }
 }

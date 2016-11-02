@@ -1,15 +1,26 @@
 import React from 'react'
 import { Link } from 'react-router'
+import Header from '../elements/header'
+import SideMenu from '../elements/sideMenu'
+import MainContent from '../elements/MainContent'
+//import AirlinesContent from '../elements/AirlinesContent'
+//import AirbusContent from '../elements/AirbusContent'
+
 
 export default class Dashboard extends React.Component{
+  constructor(){
+    super(...arguments);
+  }
   render() {
     return (
       <div>
-        <h1>Dashboard</h1>
-        <ul>
-          <li><Link to="/dashboard">dashboard</Link></li>
-          <li><Link to="/">cabine</Link></li>
-        </ul>
+        <Header />
+        <SideMenu />
+        <MainContent />
+        {/*<section>
+          <SideMenu />
+          <AirlinesContent />
+        </section>*/}
       </div>
     )
   }

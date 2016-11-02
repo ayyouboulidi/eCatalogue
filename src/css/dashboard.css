@@ -1,0 +1,183 @@
+/*
+* Dashboard view Style
+*/
+.content {
+  z-index: 0;
+  position: relative;
+  top: 0;
+  right: 0;
+  width: 100%;
+  padding-left: 90px;
+}
+.second_title {
+    font-size: 1.6em;
+}
+
+/*
+* head dashboard
+*/
+.headdashboard{
+  height: 90px;
+  border-bottom: 1px solid lightgrey;
+  display: flex;
+}
+
+/*
+*  progress title part and search
+*/
+.progress_title, .search {
+  display: inline;
+  padding-left: 1em;
+}
+.search{
+  position:relative;
+  top: 2vh;
+  width: 50%;
+  float:right;
+  padding-right: 1em;
+}
+input[type="search"] {
+    margin-left: 5px;
+    background: none;
+    border: 2px solid grey;
+    border-top-left-radius: 15px 50%;
+    border-top-right-radius: 15px 50%;
+    border-bottom-left-radius: 15px 50%;
+    border-bottom-right-radius: 15px 50%;
+}
+
+.search * {
+  float:right;
+}
+.progress_title{
+  position:relative;
+  left:0;
+  width:50%;
+  display:flex;
+}
+
+.title{
+  font-size: 18px;
+  font-weight: 700;
+  display: block;
+}
+
+.progressarien{
+  font-size:14px;
+  float: right;
+  right: 1em;
+  display: block;
+}
+
+/*
+* Rows
+*/
+.firstblockContent{
+  height:270px;
+  display:flex;
+}
+
+.secondblockContent{
+  height:270px;
+  display:flex
+}
+
+/*
+* Shared Styles
+*/
+.bgcurrentproject, .bgchecklist, .bgcontact {
+    border: 1px solid lightgrey;
+    padding: 5px 1em;
+}
+
+/*
+* Current Project Styles
+*/
+.bgcurrentproject {
+    position: relative;
+    background: linear-gradient(to right, #eee, #ddd);
+}
+.bgcurrentproject .activeoverflow {
+    overflow-y: auto;
+    height: 165px;
+}
+tr {
+    height: 2.1em;
+}
+tr.stripped {
+    background: linear-gradient(to right, grey, darkgrey);
+}
+td input[type="checkbox"] {
+    border-radius: none;
+    border-color: black;
+    color: green;
+    background: rgba(0, 0, 0, 0);
+    width: 2em;
+    height: 2em;
+}
+.pbottom {
+    width: 90%;
+    /*padding-right: 2em;*/
+    padding-bottom: 5px;
+}
+.pbottom .fleft {
+    margin-top: 0.5em;
+    font-size: 1.25em;
+}
+input.view_details {
+    padding: 5px 15px;
+    box-shadow: none;
+    border-top-left-radius: 15px 50%;
+    border-top-right-radius: 15px 50%;
+    border-bottom-left-radius: 15px 50%;
+    border-bottom-right-radius: 15px 50%;
+}
+/*
+* Checklist Styles
+*/
+.bgchecklist {
+    background: #eee;
+}
+.bgcurrentproject--accordion {
+    height: 200px;
+    padding-top: -10px;
+    overflow-y: auto;
+}
+.bgcurrentproject--accordion .panel-group .panel.panel-default {
+    border-radius: 0;
+    margin: 0;
+    background: transparent;
+    border: 1px solid grey;
+}
+.panel-title a:before {
+    background-image: url(/img/ARROW-DOWN-ICON.png);
+}
+/*
+* Contact Styles
+*/
+.bgcontact {
+    background: #ddd;
+}
+
+/*
+* Last visits Styles
+*/
+.width25.fleft.bgcontact {
+    background: linear-gradient(to right, lightgrey, #eee);
+}
+.width25.fleft.bgcontact .activeoverflow.height250 {
+    height: 220px;
+}
+/*
+* Newws Styles
+*/
+.bgnews {
+    background: linear-gradient(to bottom, lightskyblue, white, lightgrey);
+    position: relative;
+    z-index: -1;
+    overflow: hidden;
+}
+.bgnews img {
+    width: 100%;
+    height: auto;
+}

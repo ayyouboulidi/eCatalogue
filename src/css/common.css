@@ -1,0 +1,126 @@
+/* global css
+*/
+.blockAlign5{
+  vertical-align: middle;
+  line-height: 5em
+}
+.blockAlign2{
+  vertical-align: middle;
+  line-height: 2.5em
+}
+
+.width50{
+  width:50%;
+}
+.width25{
+  width:25%;
+}
+
+.fleft{
+  float:left;
+}
+
+.fright{
+  float:right
+}
+
+.width100{
+  width:100%
+}
+
+.width75{
+  width:75%
+}
+
+.bgcurrentproject{
+  background:white
+}
+
+.bgchecklist{
+  background: yellow
+}
+
+.bgcontact{
+  background: green
+}
+
+.bgnews{
+  background: red;
+}
+
+.prelative{
+  position: relative;
+}
+
+.pabsolute{
+  position: absolute;
+}
+
+.pflex{
+  display: flex
+}
+
+.pbottom{
+  bottom: 0;
+}
+
+.activeoverflow {
+  overflow-y: auto;
+}
+
+.activeoverflowx{
+  overflow-x: auto;
+}
+.height400{
+  height: 400px;
+}
+.height300{
+  height: 300px;
+}
+.height250{
+  height: 250px;
+}
+.height50{
+  height: 50px
+}
+
+.padding2{
+  padding:2px;
+}
+
+.padding2 img{
+  padding-left:4px;
+  padding-right:4px;
+}
+
+.mleft{
+  margin-left:10px
+}
+
+.maxheight100{
+  max-height:100%
+}
+
+.height100{
+  height:100%
+}
+
+.maxwidtht100{
+  max-width:100%
+}
+
+.mright{
+  margin-right: 15px
+}
+
+.switchButton{
+
+    height: 50%;
+    margin: auto;
+    width: 20%;
+
+}
+.button, input[type="submit"] {
+  border: 1px solid grey;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
