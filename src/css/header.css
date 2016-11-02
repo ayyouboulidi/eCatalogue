@@ -13,16 +13,23 @@ header {
   position: absolute;
   color: white;
 }
-img {
-  vertical-align: middle;
-}
 span.main_title{
   margin-left: 5px;
   font-size: 1.35em;
 }
 .header_left {
+  height: 100%;
   left: 1em;
 }
 .user_profile {
-  right: 1em;
+  padding-left: 0.75em;
+  font-size: 1em;
+  width: 150px;
+  height: 100%;
+  background: #333;
+  right: 0;
+}
+.user_profile img, .header_left img {
+  margin-top: 3.75vh;
+  transform: translateY(-50%);
 }
