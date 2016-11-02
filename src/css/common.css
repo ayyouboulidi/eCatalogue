@@ -32,19 +32,23 @@
   width:75%
 }
 
-.bgcurrentproject{
+.width33{
+  width:33.33%
+}
+
+.bgw{
   background:white
 }
 
-.bgchecklist{
+.bgy{
   background: yellow
 }
 
-.bgcontact{
+.bgg{
   background: green
 }
 
-.bgnews{
+.bgr{
   background: red;
 }
 

@@ -61088,6 +61088,10 @@
 
 	var _CatalogMode2 = _interopRequireDefault(_CatalogMode);
 
+	var _ConfigMode = __webpack_require__(565);
+
+	var _ConfigMode2 = _interopRequireDefault(_ConfigMode);
+
 	var _HeadCabin = __webpack_require__(562);
 
 	var _HeadCabin2 = _interopRequireDefault(_HeadCabin);
@@ -61140,7 +61144,7 @@
 	        "div",
 	        { className: "content" },
 	        _react2.default.createElement(_HeadCabin2.default, null),
-	        switcher === "Catalog" ? _react2.default.createElement(_CatalogMode2.default, null) : _react2.default.createElement(_AreaMode2.default, null)
+	        switcher === "Catalog" ? _react2.default.createElement(_CatalogMode2.default, null) : switcher === "Area" ? _react2.default.createElement(_AreaMode2.default, null) : _react2.default.createElement(_ConfigMode2.default, null)
 	      );
 	    }
 	  }]);
@@ -61551,7 +61555,7 @@
 /* 553 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
@@ -61585,6 +61589,10 @@
 
 	var _popupElement2 = _interopRequireDefault(_popupElement);
 
+	var _switcherView = __webpack_require__(563);
+
+	var _switcherView2 = _interopRequireDefault(_switcherView);
+
 	var _reactBootstrap = __webpack_require__(361);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -61605,14 +61613,14 @@
 	  }
 
 	  (0, _createClass3.default)(popup, [{
-	    key: 'close',
+	    key: "close",
 	    value: function close() {
 	      this.state.item.display = false;
 	      this.setState(this.state);
 	      _popupElement2.default.resetItem();
 	    }
 	  }, {
-	    key: 'open',
+	    key: "open",
 	    value: function open(e) {
 	      var item = e.currentTarget.id;
 	      _popupElement2.default.setItem({ id: item, display: true });
@@ -61620,12 +61628,12 @@
 	      this.setState(this.state);
 	    }
 	  }, {
-	    key: 'componentWillMount',
+	    key: "componentWillMount",
 	    value: function componentWillMount() {
 	      this.setState({ item: _popupElement2.default.getItem() });
 	    }
 	  }, {
-	    key: 'componentDidMount',
+	    key: "componentDidMount",
 	    value: function componentDidMount() {
 	      var _this2 = this;
 
@@ -61635,12 +61643,17 @@
 	      });
 	    }
 	  }, {
-	    key: 'componentWillUnmount',
+	    key: "componentWillUnmount",
 	    value: function componentWillUnmount() {
 	      this.disposable.dispose();
 	    }
 	  }, {
-	    key: 'render',
+	    key: "configSwitch",
+	    value: function configSwitch() {
+	      _switcherView2.default.setView("Config");
+	    }
+	  }, {
+	    key: "render",
 	    value: function render() {
 
 	      var backdropStyle = {
@@ -61650,26 +61663,31 @@
 	      var disp = this.state.item;
 
 	      return _react2.default.createElement(
-	        'span',
-	        { className: 'modal-example' },
+	        "span",
+	        { className: "modal-example" },
 	        _react2.default.createElement(
-	          'span',
+	          "span",
 	          { id: this.props.id, onClick: this.open.bind(this) },
 	          this.props.children
 	        ),
 	        _react2.default.createElement(
 	          _reactBootstrap.Modal,
-	          { id: "popup" + disp.id, 'aria-labelledby': 'modal-label', backdropStyle: backdropStyle, show: this.state.display[disp.id], onHide: this.close.bind(this) },
+	          { id: "popup" + disp.id, "aria-labelledby": "modal-label", backdropStyle: backdropStyle, show: this.state.display[disp.id], onHide: this.close.bind(this) },
 	          _react2.default.createElement(
-	            'div',
+	            "div",
 	            null,
-	            _react2.default.createElement('h4', { id: 'modal-label' }),
-	            _react2.default.createElement('img', { src: 'img/CHECKED-ICON.png', onClick: this.close.bind(this) }),
+	            _react2.default.createElement("h4", { id: "modal-label" }),
+	            _react2.default.createElement("img", { src: "img/CHECKED-ICON.png", onClick: this.close.bind(this) }),
 	            _react2.default.createElement(
-	              'div',
+	              "div",
 	              null,
-	              'blablab blba ',
+	              "blablab blba ",
 	              this.state.item.id
+	            ),
+	            _react2.default.createElement(
+	              "button",
+	              { onClick: this.configSwitch.bind(this) },
+	              "Config component"
 	            )
 	          )
 	        )
@@ -72690,16 +72708,31 @@
 	      _switcherView2.default.setView(mode);
 	    }
 	  }, {
+	    key: "setModeCatalog",
+	    value: function setModeCatalog() {
+	      var mode = "Catalog";
+	      _switcherView2.default.setView(mode);
+	    }
+	  }, {
 	    key: "render",
 	    value: function render() {
 	      return _react2.default.createElement(
 	        "div",
 	        { className: "headdashboard" },
 	        _react2.default.createElement(_title2.default, null),
-	        _react2.default.createElement(
+	        this.state.viewMode != "Config" ? _react2.default.createElement(
 	          "button",
 	          { className: "switchButton", onClick: this.switchMode.bind(this) },
 	          "Switch to " + this.state.viewMode + " Mode"
+	        ) : _react2.default.createElement(
+	          "span",
+	          null,
+	          "You are in the config mode ",
+	          _react2.default.createElement(
+	            "button",
+	            { onClick: this.setModeCatalog.bind(this) },
+	            "go back to catalog"
+	          )
 	        ),
 	        _react2.default.createElement(_searchbox2.default, null)
 	      );
@@ -72779,6 +72812,282 @@
 	    return category;
 	  }
 	};
+
+/***/ },
+/* 565 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _getPrototypeOf = __webpack_require__(253);
+
+	var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+
+	var _classCallCheck2 = __webpack_require__(279);
+
+	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+	var _createClass2 = __webpack_require__(280);
+
+	var _createClass3 = _interopRequireDefault(_createClass2);
+
+	var _possibleConstructorReturn2 = __webpack_require__(284);
+
+	var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+
+	var _inherits2 = __webpack_require__(331);
+
+	var _inherits3 = _interopRequireDefault(_inherits2);
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _popupElement = __webpack_require__(554);
+
+	var _popupElement2 = _interopRequireDefault(_popupElement);
+
+	var _ThreeDModel = __webpack_require__(566);
+
+	var _ThreeDModel2 = _interopRequireDefault(_ThreeDModel);
+
+	var _Positions = __webpack_require__(567);
+
+	var _Positions2 = _interopRequireDefault(_Positions);
+
+	var _Features = __webpack_require__(568);
+
+	var _Features2 = _interopRequireDefault(_Features);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var ConfigMode = function (_Component) {
+	  (0, _inherits3.default)(ConfigMode, _Component);
+
+	  function ConfigMode(props) {
+	    (0, _classCallCheck3.default)(this, ConfigMode);
+
+	    var _this = (0, _possibleConstructorReturn3.default)(this, (ConfigMode.__proto__ || (0, _getPrototypeOf2.default)(ConfigMode)).call(this, props));
+
+	    _this.state = {
+	      item: null
+	    };
+	    return _this;
+	  }
+
+	  (0, _createClass3.default)(ConfigMode, [{
+	    key: "componentWillMount",
+	    value: function componentWillMount() {
+	      var item = _popupElement2.default.getItem().id;
+	      this.setState({ item: item });
+	    }
+	  }, {
+	    key: "render",
+	    value: function render() {
+	      return _react2.default.createElement(
+	        "div",
+	        null,
+	        _react2.default.createElement(
+	          "div",
+	          { className: "pflex" },
+	          _react2.default.createElement(_ThreeDModel2.default, null),
+	          _react2.default.createElement(_Positions2.default, null),
+	          _react2.default.createElement(_Features2.default, null)
+	        ),
+	        _react2.default.createElement(
+	          "div",
+	          null,
+	          "Config Hahaha je suis l'element ca doit etre une matrice ",
+	          this.state.item
+	        )
+	      );
+	    }
+	  }]);
+	  return ConfigMode;
+	}(_react.Component);
+
+	exports.default = ConfigMode;
+
+/***/ },
+/* 566 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _getPrototypeOf = __webpack_require__(253);
+
+	var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+
+	var _classCallCheck2 = __webpack_require__(279);
+
+	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+	var _createClass2 = __webpack_require__(280);
+
+	var _createClass3 = _interopRequireDefault(_createClass2);
+
+	var _possibleConstructorReturn2 = __webpack_require__(284);
+
+	var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+
+	var _inherits2 = __webpack_require__(331);
+
+	var _inherits3 = _interopRequireDefault(_inherits2);
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var ConfigMode = function (_Component) {
+	    (0, _inherits3.default)(ConfigMode, _Component);
+
+	    function ConfigMode() {
+	        (0, _classCallCheck3.default)(this, ConfigMode);
+	        return (0, _possibleConstructorReturn3.default)(this, (ConfigMode.__proto__ || (0, _getPrototypeOf2.default)(ConfigMode)).apply(this, arguments));
+	    }
+
+	    (0, _createClass3.default)(ConfigMode, [{
+	        key: "render",
+	        value: function render() {
+	            return _react2.default.createElement(
+	                "div",
+	                { className: "width33 bgg height250" },
+	                "Model 3 D"
+	            );
+	        }
+	    }]);
+	    return ConfigMode;
+	}(_react.Component);
+
+	exports.default = ConfigMode;
+
+/***/ },
+/* 567 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _getPrototypeOf = __webpack_require__(253);
+
+	var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+
+	var _classCallCheck2 = __webpack_require__(279);
+
+	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+	var _createClass2 = __webpack_require__(280);
+
+	var _createClass3 = _interopRequireDefault(_createClass2);
+
+	var _possibleConstructorReturn2 = __webpack_require__(284);
+
+	var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+
+	var _inherits2 = __webpack_require__(331);
+
+	var _inherits3 = _interopRequireDefault(_inherits2);
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Positions = function (_Component) {
+	    (0, _inherits3.default)(Positions, _Component);
+
+	    function Positions() {
+	        (0, _classCallCheck3.default)(this, Positions);
+	        return (0, _possibleConstructorReturn3.default)(this, (Positions.__proto__ || (0, _getPrototypeOf2.default)(Positions)).apply(this, arguments));
+	    }
+
+	    (0, _createClass3.default)(Positions, [{
+	        key: "render",
+	        value: function render() {
+	            return _react2.default.createElement(
+	                "div",
+	                { className: "width33 bgy height250" },
+	                "Positions"
+	            );
+	        }
+	    }]);
+	    return Positions;
+	}(_react.Component);
+
+	exports.default = Positions;
+
+/***/ },
+/* 568 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _getPrototypeOf = __webpack_require__(253);
+
+	var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+
+	var _classCallCheck2 = __webpack_require__(279);
+
+	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+	var _createClass2 = __webpack_require__(280);
+
+	var _createClass3 = _interopRequireDefault(_createClass2);
+
+	var _possibleConstructorReturn2 = __webpack_require__(284);
+
+	var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+
+	var _inherits2 = __webpack_require__(331);
+
+	var _inherits3 = _interopRequireDefault(_inherits2);
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Features = function (_Component) {
+	    (0, _inherits3.default)(Features, _Component);
+
+	    function Features() {
+	        (0, _classCallCheck3.default)(this, Features);
+	        return (0, _possibleConstructorReturn3.default)(this, (Features.__proto__ || (0, _getPrototypeOf2.default)(Features)).apply(this, arguments));
+	    }
+
+	    (0, _createClass3.default)(Features, [{
+	        key: "render",
+	        value: function render() {
+	            return _react2.default.createElement(
+	                "div",
+	                { className: "width33 bgw height250" },
+	                "Features"
+	            );
+	        }
+	    }]);
+	    return Features;
+	}(_react.Component);
+
+	exports.default = Features;
 
 /***/ }
 /******/ ]);

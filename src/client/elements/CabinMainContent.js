@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import AreaMode from "./AreaMode"
 import CatalogMode from "./CatalogMode"
+import ConfigMode from "./ConfigMode"
 import HeadCabin from "../components/HeadCabin"
 import switcherView from "../store/switcherView"
 
@@ -31,7 +32,13 @@ export default class MainContent extends Component {
         return(
             <div className="content">
               <HeadCabin/>
-              {switcher === "Catalog"?<CatalogMode />:<AreaMode />}
+              {
+                switcher === "Catalog"?
+                <CatalogMode />
+                :switcher === "Area"?
+                <AreaMode />
+                :<ConfigMode/>
+              }
             </div>
         );
     }

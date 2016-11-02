@@ -31,11 +31,21 @@ export default class HeadCabin extends Component {
     switcherView.setView(mode)
   }
 
+  setModeCatalog(){
+    let mode =  "Catalog"
+    switcherView.setView(mode)
+  }
+
   render(){
     return(
       <div className="headdashboard">
       <Title />
-      <button className="switchButton" onClick={this.switchMode.bind(this)}>{"Switch to "+this.state.viewMode+" Mode"}</button>
+      {this.state.viewMode != "Config"?
+      <button className="switchButton" onClick={this.switchMode.bind(this)}>
+        {"Switch to "+this.state.viewMode+" Mode"}
+      </button>
+      :<span>You are in the config mode <button onClick={this.setModeCatalog.bind(this)}>go back to catalog</button></span>
+      }
       <SearchBox />
       </div>
     );
