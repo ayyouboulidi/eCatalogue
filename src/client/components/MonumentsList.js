@@ -4,9 +4,18 @@ export default class MonumentsList extends Component {
     constructor(props){
       super(props)
       this.state={
-        monuments:[1,2,3,4,5,6,7,8,9,10,22]
+        monuments:[]
       }
     }
+
+    componentWillMount(){
+      let _this = this
+      $.post('/GetMonuments',function(data){
+        _this.state.monuments=data.result
+        _this.setState(_this.state)
+      },"json")
+    }
+
     render(){
       let monuments = this.state.monuments
         return(
@@ -15,8 +24,8 @@ export default class MonumentsList extends Component {
                 return(
                   <div className="verticalScroll" key={key}>
                     <div><img src="img/galley.png"/></div>
-                    <div><b>Galley</b></div>
-                    <div>Description {monument}</div>
+                    <div><b>{monument.name}</b></div>
+                    <div>{monument.description} id {monument.id}</div>
                   </div>
                 )
               })}
