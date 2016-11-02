@@ -4,9 +4,18 @@ export default class FilterPanel extends Component {
     constructor(props){
       super(props)
       this.state={
-        filters:[{name:"Equipment",values:["oven","galley"]},{name:"Supplier",values:["zain","nail"]},{name:"System",values:["sys1","sys2"]}]
+        filters:[]
       }
     }
+
+    componentWillMount(){
+      let _this = this
+      $.post('/GetFilters',{monument:"Galley"},function(data){
+        _this.state.filters=data.result
+        _this.setState(_this.state)
+      },"json")
+    }
+
     render(){
       let filters = this.state.filters
         return(
