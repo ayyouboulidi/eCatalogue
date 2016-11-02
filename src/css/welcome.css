@@ -1,25 +1,42 @@
 /*
 * Welcome view style 
 */
+@media (width: 1024px) {
+    .welcome_page {
+        height: 768px;
+    }
+    section {
+        font-size: 2vh;
+    }
+}
+@media (width: 2736px) {
+    .welcome_page {
+        height: 1824px;
+    }
+}
+.welcome .headdashboard {
+    font-size: 3vh;
+}
 section {
+    font-size: 2.5vh;
     padding: 1em;
 }
 .page_title {
-    width: 60%;
+    width: 60vw;
 }
 .welcome-carousel {
-    width: 90%;
+    width: 95%;
     margin: 3em auto;
 }
 
 .aircraft_card {
     background-color: white;
-    width: 200px;
-    height: 200px;
-    margin: 10px;
-    border: 1px solid grey;
+    width: 21vw;
+    height: 21vw;
+    margin: 0.6vw;
+    border: 0.1vh solid grey;
     display: inline-block;
-    overflowY: auto;
+    overflow-y: auto;
 }
 .aircraft_card.selected {
     border-color: red;
@@ -42,11 +59,20 @@ section {
 }
 .tablist div {
     padding: 3px 2px;
-    border: 1px solid black;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
     border-top-left-radius: 5px;
     border-top-right-radius: 7px;
     display: inline;
 }
 .tab.selected {
     color: red;
+}
+.welcome-middle {
+    position: relative;
+}
+.welcome-middle a {
+    float: right;
+    right: 0;
 }
