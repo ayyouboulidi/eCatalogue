@@ -178,11 +178,11 @@ button, input[type="submit"] {
 * Rows
 */
 .firstblockContent{
-  height:270px;
+  height:39.4vh;
   display:flex;
 }
 
 .secondblockContent{
-  height:270px;
+  height:39.4vh;
   display:flex
 }
