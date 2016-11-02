@@ -1,6 +1,9 @@
 /*
 * Dashboard view Style
 */
+@media (width: 1024px) {
+    
+}
 .content {
   z-index: 0;
   position: relative;
@@ -88,6 +91,7 @@ td img {
     font-size: 1.25em;
 }
 input.view_details {
+    background-color: none;
     transform: translateY(5%);
     padding: 1vh 1.5vh;
     box-shadow: none;
@@ -107,21 +111,51 @@ input.view_details {
 }
 .bgcurrentproject--accordion {
     height: 30vh;
-    padding-top: -10px;
     overflow-y: auto;
+    border-top: 0.2vh solid grey;
 }
 .bgcurrentproject--accordion .panel-group .panel.panel-default {
     border-radius: 0;
     margin: 0;
     background: transparent;
-    border: 0.2vh solid grey;
+    border-bottom: 0.2vh solid grey;
+    border-right: 0.2vh solid grey;
+    border-left: 0.2vh solid grey;
 }
 .panel-title {
-    font-size: 2vh;
+    width: 98%;
+    padding-top: 0.5vh;
+    height: 2.5vh;
+    font-size: 1.5vh;
 }
 .panel-title a:before {
     background-image: url("/img/ARROW-DOWN-ICON.png");
+    background-size: 2vh 1vh;
+    background-repeat: no-repeat;
+    display: inline-block;
+    width: 2vh;
+    height: 1vh;
+    content: "";
+    padding-right: 2vw;
 }
+.panel-title a:after {
+    background-image: url("/img/CHECKED-ICON.png");
+    background-size: 3.5vh 3.5vh;
+    background-repeat: no-repeat;
+    display: inline-block;
+    width: 3.5vh;
+    height: 3.5vh;
+    content: "";
+    transform: translateY(-26.5%);
+    float: right;
+}
+.panel-title a img {
+    width: 10%;
+}
+.panel-body {
+    height: 10vh;
+}
+
 /*
 * Contact Styles
 */
