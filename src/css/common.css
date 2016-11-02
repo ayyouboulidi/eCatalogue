@@ -113,14 +113,14 @@
   margin-right: 15px
 }
 
+button, input[type="submit"] {
+  border: 1px solid grey;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
 .switchButton{
 
     height: 50%;
     margin: auto;
     width: 20%;
 
-}
-.button, input[type="submit"] {
-  border: 1px solid grey;
-  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
