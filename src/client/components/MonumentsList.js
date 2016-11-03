@@ -19,7 +19,7 @@ export default class MonumentsList extends Component {
 
     setSelectedCategory(e){
       let name = e.currentTarget.id
-      categoryStroe.setSelectedCategory({name:name,state:true})
+      categoryStroe.setSelectedCategory({name:name,state:true,type:"monument"})
     }
 
     render(){

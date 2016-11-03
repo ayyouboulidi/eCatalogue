@@ -5,7 +5,7 @@ export default class FilterPanel extends Component {
     constructor(props){
       super(props)
       this.state={
-        displayFilters:{name:"",state:false},
+        displayFilters:{name:"",state:false,type:""},
         filters:[]
       }
     }
@@ -22,7 +22,6 @@ export default class FilterPanel extends Component {
         if(this.state.displayFilters.state){
           $.post('/GetFilters',{monument:_this.state.displayFilters.name},function(data){
             if(data.code === 0){
-              console.log(data.result)
               _this.state.filters=data.result
             }else{
               _this.state.displayFilters.state=false

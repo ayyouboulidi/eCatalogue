@@ -1,7 +1,7 @@
 import Store from './store'
 
 const store = Store();
-let category= {name:"",state:false};
+let category= {name:"",state:false,type:""};
 
 store.getStore$().subscribe((newCategory) => {
   category = newCategory
