@@ -16,8 +16,6 @@ function Monument(id,name,description,url){
  */
 function Monuments(database) {
 	this.database = database;
-    this.monumentsArray = [];
-    var that = this;
     this.getMonuments(function(m,i=0){
         if (m==undefined && i<10){
             that.getMonuments(this,i+1);
@@ -27,9 +25,6 @@ function Monuments(database) {
             err.type = "CustomException";
             throw err;
         }else{
-            m.forEach(function(val,index){
-                that.monumentsArray.push(val.name);
-            });
             return true;
         }
     });
@@ -42,15 +37,18 @@ function Monuments(database) {
 */
 Monuments.prototype.getMonuments = function(callback) {
 	if (this.monuments == undefined){
+        var t = this;
         var result = [];
         var statement = "SELECT id, url, name, description from monuments";				
         this.database.all(statement
             , function(err, rows) {
+                t.monumentsArray = [];
                 if (err){
                     callback(undefined);
                 }else{
                     rows.forEach(function (row) {
                         result.push(new Monument(row.id,row.name,row.description,row.url));
+                        t.monumentsArray.push(row.name);
                     });
                     this.monuments = result;
                     callback(this.monuments,arguments[1]);

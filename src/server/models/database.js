@@ -8,31 +8,56 @@ function Database(name="eCatalogue") {
 	db.serialize(function() {
 	if(!exists) {
 	
-		db.run("CREATE TABLE IF NOT EXISTS catalogue("
-		+"id  INTEGER PRIMARY KEY AUTOINCREMENT   NOT NULL,"
-		+"name                         TEXT    NOT NULL"
+		db.run("CREATE TABLE IF NOT EXISTS monuments("
+		+"id  INTEGER PRIMARY KEY AUTOINCREMENT    NOT NULL,"
+		+"name                             TEXT    NOT NULL,"
+		+"description                      TEXT    NOT NULL,"
+		+"url                              TEXT    NOT NULL "
 		+");");
 		
 		db.run("CREATE TABLE IF NOT EXISTS items("
 		+"id         INTEGER PRIMARY KEY AUTOINCREMENT   NOT NULL,"
-		+"id_catalogue                         INTEGER   NOT NULL,"
+		+"id_monument                          INTEGER   NOT NULL,"
+		+"id_supplier                          INTEGER   NOT NULL,"
 		+"name                                    TEXT   NOT NULL,"
 		+"title                                   TEXT   NOT NULL,"
 		+"date                                    TEXT   NOT NULL,"
 		+"description                             TEXT   NOT NULL,"
 		+"score                                INTEGER   NOT NULL,"
-		+"url_image                               TEXT   NOT NULL"
+		+"url_image                               TEXT   NOT NULL "
 		//+" FOREIGN KEY(id_catalogue) REFERENCES catalogue(id)"+
 		+");");
 		
 		db.run("CREATE TABLE IF NOT EXISTS filter("
 		+"id         INTEGER PRIMARY KEY AUTOINCREMENT   NOT NULL,"
 		+"id_item                              INTEGER   NOT NULL,"
-		+"name                                     TEXT   NOT NULL,"
-		+"value                                  TEXT   NOT NULL"
+		+"name                                    TEXT   NOT NULL,"
+		+"value                                   TEXT   NOT NULL "
 		+");");
+		
+		db.run("CREATE TABLE IF NOT EXISTS `contacts` ("
+		+" `id` INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,"
+		+" `name` TEXT NOT NULL,"
+		+" `tel` TEXT NOT NULL "
+		+")");
+		
+		db.run("CREATE TABLE IF NOT EXISTS `projects` ("
+		+"`id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,"
+		+"`id_item`	TEXT NOT NULL,"
+		+"`date`	TEXT NOT NULL,"
+		+"`quantity`	INTEGER NOT NULL"
+		+");");
+		
+		db.run("CREATE TABLE IF NOT EXISTS `supplier` ("
+		+"`id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,"
+		+"`name`	TEXT NOT NULL,"
+		+"`description`	TEXT,"
+		+"`url`	TEXT"
+		+");");
+		
 		var inserted=false;
 	
+		/*
 		var stmt = db.prepare("INSERT INTO catalogue(name) " 
 		+"SELECT ? " 
 		+"WHERE NOT EXISTS ( SELECT 1 FROM catalogue WHERE name = ?)");
@@ -61,6 +86,7 @@ function Database(name="eCatalogue") {
 				+'WHERE name = "Galley";');
 		stmt.run();
     	stmt.finalize();
+		*/
 	}
 });
 }
