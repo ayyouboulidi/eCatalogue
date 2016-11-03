@@ -63,6 +63,9 @@
     width: 98%;
     font-size: 2.25vh;
 }
+.bgcurrentproject .activeoverflow::-webkit-scrollbar {
+    display: none;
+}
 tr {
     height: 2.1vh;
 }
@@ -114,6 +117,9 @@ input.view_details {
     overflow-y: auto;
     border-top: 0.2vh solid grey;
 }
+.bgcurrentproject--accordion::-webkit-scrollbar {
+    display: none;
+}
 .bgcurrentproject--accordion .panel-group .panel.panel-default {
     border-radius: 0;
     margin: 0;
@@ -161,6 +167,23 @@ input.view_details {
 */
 .bgcontact {
     background: #ddd;
+}
+.contact-list tr {
+    border: 1vh solid #ddd;
+    font-size: 2vh;
+}
+.contact-list img {
+    width: 80%;
+    height: auto;
+}
+.contact-list-name {
+    width: 70%;
+}
+.contact-list-settings {
+    width: 15%;
+}
+.contact-list-mail {
+    width: 15%;
 }
 
 /*
