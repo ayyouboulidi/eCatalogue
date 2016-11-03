@@ -117,6 +117,11 @@ input[type="radio"] {
     width: 79.9%;
     height: 100%;
 }
-.item-list .modal-example span img {
+.item-list .modal-example {
+    padding: 1vh;
     width: 20%;
+    display: inline-block;
+}
+.item-list .modal-example img {
+    height: 10vh;
 }
