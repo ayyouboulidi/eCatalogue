@@ -42,12 +42,12 @@ export default class FilterPanel extends Component {
       let displayFilters = this.state.displayFilters.state
         return(
             <div className="width25 filter-panel">
-              Filter by:
+              <div className="filter-text">Filter by:</div>
               {displayFilters ?
                 filters.map(function(filt,key){
                   return(
                     <div className="filters-list" key={key}>
-                      <select>
+                      <select className="filters">
                           <option>{filt.name}</option>
                           {filt.values.map(function(val,key){
                             return(
@@ -60,7 +60,7 @@ export default class FilterPanel extends Component {
                 })
                 : <div className="how-to">Select monument or family to display filters</div>
               }
-              Order By:
+              <div className="order-text">Order By:</div>
               <div className="order-by">
                 <form>
                   <input type="radio" name="order" value="new" defaultChecked/> New<br/>
