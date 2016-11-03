@@ -10,9 +10,11 @@ export default class CatalogMode extends Component {
         return(
             <div className="catalog_mode">
               <div className="monument_list">
+                <div className="monument-left-title">MONUMENTS</div>
                 <MonumentsList />
               </div>
               <div className="supplier_list">
+                <div className="features-left-title">FEATURES</div>
                 <SupplierList />
               </div>
               <div className="cabin_bottom_block">
