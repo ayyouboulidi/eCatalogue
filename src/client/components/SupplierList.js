@@ -5,13 +5,21 @@ export default class SupplierList extends Component {
     constructor(props){
       super(props)
       this.state={
-        suppliers:[{name:"Neil",id:1},{name:"Neil",id:1},{name:"Neil",id:1},{name:"Neil",id:1},{name:"Neil",id:1}]
+        suppliers:[]
       }
+    }
+
+    componentWillMount(){
+      let _this = this
+      $.post('/GetSuppliers',function(data){
+        _this.state.suppliers=data.result
+        _this.setState(_this.state)
+      },"json")
     }
 
     setSelectedCategory(e){
       let name = e.currentTarget.id
-      categoryStroe.setSelectedCategory({name:name,state:true,type:"supplier"})
+      categoryStroe.setSelectedCategory({name:name,state:true,type:"monument"})
     }
 
     render(){
@@ -23,7 +31,7 @@ export default class SupplierList extends Component {
                 return(
                   <div className="verticalScroll" key={key}  id={supplier.name} onClick={_this.setSelectedCategory.bind(_this)}>
                     <div><img src="img/galley.png"/></div>
-                    <div>Name {supplier.id}</div>
+                    <div>{supplier.name} {supplier.id}</div>
                   </div>
                 )
               })}
