@@ -4,7 +4,7 @@ export default class tooltip extends Component {
     render(){
         return(
             <div className="blockAlign">
-              <img src="img/MAIL-ICON.png"/>
+              <img src=""/>
             </div>
         );
     }

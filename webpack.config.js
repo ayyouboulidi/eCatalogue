@@ -1,4 +1,5 @@
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var webpack = require("webpack");
 
 module.exports = {
   entry: './src/client/index.js',
@@ -37,7 +38,11 @@ module.exports = {
     ]
   },
   plugins: [
-    new ExtractTextPlugin("styles.css")
+    new ExtractTextPlugin("styles.css"),
+    new webpack.ProvidePlugin({
+           $: "jquery",
+           jQuery: "jquery"
+       })
   ],
   resolve: {
     extensions: ['', '.js', '.json','.css']

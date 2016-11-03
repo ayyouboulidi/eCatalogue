@@ -1,22 +1,43 @@
 /*
-* Welcome view style
+* Welcome view style 
 */
+@media (width: 1024px) {
+    .welcome_page {
+        height: 768px;
+    }
+    .card_text {
+        font-size: 2vh;
+    }
+}
+@media (width: 2736px) {
+    .welcome_page {
+        height: 1824px;
+    }
+}
+.welcome .headdashboard {
+    height: 13.5vh;
+    font-size: 3vh;
+}
+section {
+    font-size: 2.5vh;
+    padding-left: 1em;
+}
 .page_title {
-    width: 60%;
+    width: 60vw;
 }
 .welcome-carousel {
-    width: 90%;
-    margin: 3em auto;
+    width: 95%;
+    margin: 1.5vh auto;
 }
 
 .aircraft_card {
     background-color: white;
-    width: 200px;
-    height: 200px;
-    margin: 10px;
-    border: 1px solid grey;
+    width: 21vw;
+    height: 21vw;
+    margin: 0.6vw;
+    border: 0.1vh solid grey;
     display: inline-block;
-    overflowY: auto;
+    overflow-y: auto;
 }
 .aircraft_card.selected {
     border-color: red;
@@ -30,27 +51,62 @@
 }
 
 /*
-* For Generic purpose
-*/
-.hidden {
-    display: none;
-}
-
-/*
 * Tabs styles
 */
 .tablist {
-    margin-left: 1em;
-    margin-right: 1em;
-    border-bottom: 1px solid black;
+    border-bottom: 0.3vh solid #eee;
 }
 .tablist div {
-    padding: 3px 2px;
-    border: 1px solid black;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 7px;
+    padding: 1vh 2vw;
+    border-top: 0.3vh solid #eee;
+    border-left: 0.3vh solid #eee;
+    border-right: 0.3vh solid #eee;
+    border-top-left-radius: 0.5vh;
+    border-top-right-radius: 0.7vh;
     display: inline;
 }
 .tab.selected {
+    background-color: #eee;
     color: red;
+}
+
+/*
+* Description styles
+*/
+.aircraft_details {
+    background-color: #eee;
+    height: 28vh;
+    overflow: hidden;
+}
+.aircraft_details .description, .aircraft_details .diagram, .aircraft_details .chart {
+    display: inline-block;
+}
+.aircraft_details .description {
+    width: 40vw;
+    height: 98%;
+    padding: 1em;
+    overflow: auto;
+}
+.aircraft_details .diagram {
+    width: 20vw;
+    height: 26vh;
+    vertical-align: top;
+}
+.aircraft_details .chart {
+    width: 30vw;
+    height: 26vh;
+    vertical-align: top;
+}
+
+
+/*
+* Bottom link Styles and position
+*/
+.welcome-middle {
+    position: relative;
+}
+.welcome-middle a {
+    position: fixed;
+    right: 4vw;
+    bottom: 2vh;
 }

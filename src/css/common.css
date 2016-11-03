@@ -32,19 +32,23 @@
   width:75%
 }
 
-.bgcurrentproject{
+.width33{
+  width:33.33%
+}
+
+.bgw{
   background:white
 }
 
-.bgchecklist{
+.bgy{
   background: yellow
 }
 
-.bgcontact{
+.bgg{
   background: green
 }
 
-.bgnews{
+.bgr{
   background: red;
 }
 
@@ -113,6 +117,11 @@
   margin-right: 15px
 }
 
+button, input[type="submit"] {
+  padding: 1vh 2vh;
+  border: 0.25vh solid grey;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
 .switchButton{
 
     height: 50%;
@@ -120,7 +129,63 @@
     width: 20%;
 
 }
-.button, input[type="submit"] {
-  border: 1px solid grey;
-  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+/*
+*  progress title part and search
+*/
+.progress_title, .search {
+  display: inline;
+  padding-left: 1em;
+}
+.search{
+  position:relative;
+  top: 2vh;
+  width: 50%;
+  float:right;
+  padding-right: 1em;
+}
+.search .blockAlign {
+  position: relative;
+  margin-right: 1vw;
+    width: 5vh;
+    height: 5vh;
+    border: 0.3vh solid grey;
+    border-radius: 50%;
+}
+.search .blockAlign img {
+  width: auto;
+  margin: 1vh 1vw;
+}
+.search * {
+  float:right;
+}
+.progress_title{
+  position:relative;
+  left:0;
+  width:50%;
+  display:flex;
+}
+
+.title{
+  font-size: 18px;
+  font-weight: 700;
+  display: block;
+}
+
+.progressarien{
+  font-size:14px;
+  right: 1em;
+  display: block;
+}
+
+/*
+* Rows
+*/
+.firstblockContent{
+  height:39.4vh;
+  display:flex;
+}
+
+.secondblockContent{
+  height:39.4vh;
+  display:flex
 }

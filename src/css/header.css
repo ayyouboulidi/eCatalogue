@@ -5,24 +5,49 @@ header {
   position: relative;
   top: 0;
   background-color: black;
-  height: 4em;
+  height: 8vh;
 }
 .header_left, .user_profile {
-  margin-top: 2em;
-  transform: translateY(-50%);
   position: absolute;
   color: white;
 }
-img {
-  vertical-align: middle;
-}
 span.main_title{
-  margin-left: 5px;
-  font-size: 1.35em;
+  position: relative;
+  margin-left: 1vw;
 }
 .header_left {
-  left: 1em;
+  font-size: 3.5vh;
+  height: 100%;
+  left: 1.5vh;
+}
+.header_left a img, .user_profile img {
+  width: 5vh;
+  height: auto;
+  margin-top: 1.5vh;
+  vertical-align: -25%;
 }
 .user_profile {
-  right: 1em;
+  overflow-x: auto;
+  padding-left: 2vh;
+  font-size: 3vh;
+  width: 30vw;
+  height: 100%;
+  background: #333;
+  right: 0;
 }
+.user_profile img {
+  vertical-align: -35%;
+}
+
+/*
+* Waiting for design
+*/
+/*.user_profile .main_title:after {
+  background-image: url("/img/ARROW-DOWN-ICON.png");
+  background-size: 2vh 1vh;
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 2vh;
+  height: 1vh;
+  content:"";
+}*/

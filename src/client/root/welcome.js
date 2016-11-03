@@ -11,7 +11,7 @@ class Welcome extends Component {
     };
     render(){
         return(
-            <div className="welcome">
+            <div className="welcome_page">
                 <Header />
                 <section className="welcome">
                     <div className="headdashboard">
@@ -20,9 +20,9 @@ class Welcome extends Component {
                     </div>
                     <div className="welcome-middle">
                         <AircraftSelection />
+                        <Link to="/dashboard"><input className="submit" type="submit" name="goToDashBoard" value="Continue to Catalog" /></Link>
                     </div>
                 </section>
-                <Link to="/dashboard"><input className="submit" type="submit" name="goToDashBoard" value="Continue to Catalog" /></Link>
             </div>
         );
     }

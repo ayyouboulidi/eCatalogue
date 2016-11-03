@@ -1,93 +1,47 @@
 /*
 * Dashboard view Style
 */
+@media (width: 1024px) {
+    
+}
 .content {
   z-index: 0;
   position: relative;
   top: 0;
   right: 0;
   width: 100%;
-  padding-left: 90px;
+  font-size: 1.5vh;
+  padding-left: 13vh;
+}
+.title {
+    font-size: 3vh;
+}
+.progressarien {
+    font-size: 2vh
 }
 .second_title {
-    font-size: 1.6em;
+    font-size: 2.5vh;
 }
 
 /*
 * head dashboard
 */
 .headdashboard{
-  height: 90px;
-  border-bottom: 1px solid lightgrey;
+  height: 13.1vh;
+  border-bottom: 0.35vh solid lightgrey;
   display: flex;
+  font-size: 3vh;
 }
 
-/*
-*  progress title part and search
-*/
-.progress_title, .search {
-  display: inline;
-  padding-left: 1em;
-}
-.search{
-  position:relative;
-  top: 2vh;
-  width: 50%;
-  float:right;
-  padding-right: 1em;
-}
-input[type="search"] {
-    margin-left: 5px;
-    background: none;
-    border: 2px solid grey;
-    border-top-left-radius: 15px 50%;
-    border-top-right-radius: 15px 50%;
-    border-bottom-left-radius: 15px 50%;
-    border-bottom-right-radius: 15px 50%;
-}
-
-.search * {
-  float:right;
-}
-.progress_title{
-  position:relative;
-  left:0;
-  width:50%;
-  display:flex;
-}
-
-.title{
-  font-size: 18px;
-  font-weight: 700;
-  display: block;
-}
-
-.progressarien{
-  font-size:14px;
-  float: right;
-  right: 1em;
-  display: block;
-}
-
-/*
-* Rows
-*/
-.firstblockContent{
-  height:270px;
-  display:flex;
-}
-
-.secondblockContent{
-  height:270px;
-  display:flex
-}
 
 /*
 * Shared Styles
 */
 .bgcurrentproject, .bgchecklist, .bgcontact {
-    border: 1px solid lightgrey;
-    padding: 5px 1em;
+    border: 0.1vh solid lightgrey;
+    padding-left: 1vh;
+    padding-top: 1vh;
+    padding-right: 1vw;
 }
 
 /*
@@ -97,12 +51,23 @@ input[type="search"] {
     position: relative;
     background: linear-gradient(to right, #eee, #ddd);
 }
+.bgcurrentproject .height50 {
+    height: 4vh;
+}
+.fright img {
+    height: 2.4vh;
+}
 .bgcurrentproject .activeoverflow {
     overflow-y: auto;
-    height: 165px;
+    height: 25.3vh;
+    width: 98%;
+    font-size: 2.25vh;
+}
+.bgcurrentproject .activeoverflow::-webkit-scrollbar {
+    display: none;
 }
 tr {
-    height: 2.1em;
+    height: 2.1vh;
 }
 tr.stripped {
     background: linear-gradient(to right, grey, darkgrey);
@@ -111,26 +76,32 @@ td input[type="checkbox"] {
     border-radius: none;
     border-color: black;
     color: green;
-    background: rgba(0, 0, 0, 0);
+    background-color: rgba(0, 0, 0, 0);
     width: 2em;
     height: 2em;
 }
+td img {
+    height: 3vh;
+    width: auto;
+}
 .pbottom {
     width: 90%;
-    /*padding-right: 2em;*/
-    padding-bottom: 5px;
+    font-size: 2vh;
+    padding-bottom: 2vh;
 }
 .pbottom .fleft {
     margin-top: 0.5em;
     font-size: 1.25em;
 }
 input.view_details {
-    padding: 5px 15px;
+    background-color: none;
+    transform: translateY(5%);
+    padding: 1vh 1.5vh;
     box-shadow: none;
-    border-top-left-radius: 15px 50%;
-    border-top-right-radius: 15px 50%;
-    border-bottom-left-radius: 15px 50%;
-    border-bottom-right-radius: 15px 50%;
+    border-top-left-radius: 1.5vh 50%;
+    border-top-right-radius: 1.5vh 50%;
+    border-bottom-left-radius: 1.5vh 50%;
+    border-bottom-right-radius: 1.5vh 50%;
 }
 /*
 * Checklist Styles
@@ -138,25 +109,81 @@ input.view_details {
 .bgchecklist {
     background: #eee;
 }
+.bgchecklist .height50 {
+    height: 4vh;
+}
 .bgcurrentproject--accordion {
-    height: 200px;
-    padding-top: -10px;
+    height: 30vh;
     overflow-y: auto;
+    border-top: 0.2vh solid grey;
+}
+.bgcurrentproject--accordion::-webkit-scrollbar {
+    display: none;
 }
 .bgcurrentproject--accordion .panel-group .panel.panel-default {
     border-radius: 0;
     margin: 0;
     background: transparent;
-    border: 1px solid grey;
+    border-bottom: 0.2vh solid grey;
+    border-right: 0.2vh solid grey;
+    border-left: 0.2vh solid grey;
+}
+.panel-title {
+    width: 98%;
+    padding-top: 0.5vh;
+    height: 2.5vh;
+    font-size: 1.5vh;
 }
 .panel-title a:before {
-    background-image: url(/img/ARROW-DOWN-ICON.png);
+    background-image: url("/img/ARROW-DOWN-ICON.png");
+    background-size: 2vh 1vh;
+    background-repeat: no-repeat;
+    display: inline-block;
+    width: 2vh;
+    height: 1vh;
+    content: "";
+    padding-right: 2vw;
 }
+.panel-title a:after {
+    background-image: url("/img/CHECKED-ICON.png");
+    background-size: 3.5vh 3.5vh;
+    background-repeat: no-repeat;
+    display: inline-block;
+    width: 3.5vh;
+    height: 3.5vh;
+    content: "";
+    transform: translateY(-26.5%);
+    float: right;
+}
+.panel-title a img {
+    width: 10%;
+}
+.panel-body {
+    height: 10vh;
+}
+
 /*
 * Contact Styles
 */
 .bgcontact {
     background: #ddd;
+}
+.contact-list tr {
+    border: 1vh solid #ddd;
+    font-size: 2vh;
+}
+.contact-list img {
+    width: 80%;
+    height: auto;
+}
+.contact-list-name {
+    width: 70%;
+}
+.contact-list-settings {
+    width: 15%;
+}
+.contact-list-mail {
+    width: 15%;
 }
 
 /*
@@ -169,7 +196,7 @@ input.view_details {
     height: 220px;
 }
 /*
-* Newws Styles
+* News Styles
 */
 .bgnews {
     background: linear-gradient(to bottom, lightskyblue, white, lightgrey);
