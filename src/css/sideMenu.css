@@ -40,9 +40,13 @@
     display: block;
 }
 .side_menu_box img {
-    width: 63%;
+    height: 63%;
+    width: auto;
     margin: 0 auto 0.5vh auto;
 }
 .side_menu_box span {
     font-size: 0.7em;
+}
+.cabin_system img, .emergency img {
+    transform: translateY(-50%);
 }
