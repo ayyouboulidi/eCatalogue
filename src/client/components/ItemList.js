@@ -16,8 +16,8 @@ export default class ItemList extends Component {
       $.post('/GetItems',function(data){
         if(data.code === 0){
           _this.state.items=data.result
+          _this.setState(_this.state)
         }
-        _this.setState(_this.state)
       },"json")
     }
 
@@ -32,12 +32,18 @@ export default class ItemList extends Component {
         if(this.state.filterItems.state){
           $.post('/GetItems',obj,function(data){
             if(data.code === 0){
+              console.log(obj)
+              console.log(data.result)
               _this.state.items=data.result
               _this.setState(_this.state)
             }
           },"json")
         }
       })
+    }
+
+    componentWillUnmount() {
+      this.disposable.dispose()
     }
 
     render(){
