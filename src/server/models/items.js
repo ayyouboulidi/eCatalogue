@@ -13,12 +13,12 @@ function Item(id,name,title,date,description,score,url_image){
 
 /**
  *  the class Items takes as an argument the class filter for selecting the right item
- *  Argument: type     : the type of the item
- *            filter   : the class filter that contains all the selection that have to be done in DB
- *            database : instance of the sqlite database (see getdatabase() of database.js)
+ *  Argument: database : instance of the sqlite database (see getdatabase() of database.js)
+ * 			  type     : the type of the item
+ *            filter   : the class filter that contains all the selection that have to be done in DB            
  * 			  monuments: array containing all possible monuments name 
  */
-function Items(type,supplier,filters,database,monuments) {
+function Items(database,type,supplier,filters,monuments) {
 	this.type = type;
 	this.database = database;
 	this.supplier = supplier;
@@ -71,22 +71,24 @@ Items.prototype.getItems = function(callback) {
 				+" ) filters,";
 			}
 		statement+=" monuments, supplier"
- 		 +" WHERE monuments.id = items.id_monument AND supplier.id = items.id_supplier ";
+ 		 +" WHERE 1 ";
 		  if (this.filters){
 			  statement +=" AND filters.id_item = items.id ";
 		  }
 		  if (this.type){
-			  statement+="AND monuments.name=? ";
+			  statement+="AND monuments.id = monuments.id "
+			  		   + "AND monuments.name=? ";
 			  params.push(this.type);
 		  }
 		  if (this.supplier){
-			  statement+="AND supplier.name=? ";
+			  statement+="AND supplier.id = items.id "
+			           + "AND supplier.name=? ";
 			  params.push(this.supplier);
 		  }
-			
-			console.log(statement);
+		  statement+="group by items.id";
+		  console.log(statement);
 				
-			this.database.all(statement,params
+		  this.database.all(statement,params
 			, function(err, rows) {
 					if (err){
 						callback(undefined);
@@ -106,5 +108,24 @@ Items.prototype.getItems = function(callback) {
 	
 	
 };
+
+Items.prototype.searchItems = function(callback,pattern) {
+	var statement = "SELECT * FROM items WHERE name REGEXP ? OR description REGEXP ? OR title REGEXP ?";
+	if (pattern == undefined)
+		pattern ="";
+	this.database.all(statement,new Array(pattern,pattern,pattern)
+			, function(err, rows) {
+					if (err){
+						console.log(err);
+						callback(undefined);
+					}else{
+						rows.forEach(function (row) {
+							result.push(new Item(row.id,row.name,row.title,row.date,row.description,row.score,row.url_image));
+						});
+						this.items = result;
+						callback(this.items);
+					}
+			});
+}
 
 module.exports = Items;
