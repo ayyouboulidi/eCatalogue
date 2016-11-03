@@ -19,7 +19,7 @@ export default class SupplierList extends Component {
 
     setSelectedCategory(e){
       let name = e.currentTarget.id
-      categoryStroe.setSelectedCategory({name:name,state:true,type:"monument"})
+      categoryStroe.setSelectedCategory({name:name,state:true,type:"supplier"})
     }
 
     render(){
