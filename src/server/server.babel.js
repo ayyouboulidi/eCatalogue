@@ -46,6 +46,7 @@ app.post("/GetItems",function(req,res){
 		else	
 			res.json({"code":-1});	
 	});
+	console.log("/GetItem: arguments:"+JSON.stringify(req.body));
 });
 
 app.post("/SearchItems",function(req,res){
@@ -56,7 +57,8 @@ app.post("/SearchItems",function(req,res){
 			res.send({"code":0,"result":result});
 		else	
 			res.json({"code":-1});	
-	},req.body.pattern);
+	},req.body.req);
+	console.log("/SearchItem: arguments:"+JSON.stringify(req.body));
 });
 
 app.post("/GetFilters",function(req,res){
@@ -72,6 +74,7 @@ app.post("/GetFilters",function(req,res){
 	}else{
 		res.json({"code":-1});
 	}
+	console.log("/GetFilters: arguments:"+JSON.stringify(req.body));
 });
 
 app.post("/GetContacts",function(req,res){
@@ -87,6 +90,7 @@ app.post("/GetContacts",function(req,res){
 		else	
 			res.json({"code":-1});
 	});
+	console.log("/GetContacts: arguments:"+JSON.stringify(req.body));
 });
 
 app.post("/GetMonuments",function(req,res){
@@ -99,6 +103,7 @@ app.post("/GetMonuments",function(req,res){
 	monuments.getMonuments(function(r){
 		res.json({"code":0,"result":r});	
 	});
+	console.log("/GetMonuments: arguments:"+JSON.stringify(req.body));
 });
 
 app.post("/GetSuppliers",function(req,res){
@@ -114,6 +119,7 @@ app.post("/GetSuppliers",function(req,res){
 		else	
 			res.json({"code":-1});	
 	});
+	console.log("/GetSuppliers: arguments:"+JSON.stringify(req.body));
 });
 
 

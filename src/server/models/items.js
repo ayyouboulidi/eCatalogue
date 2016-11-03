@@ -6,7 +6,7 @@ function Item(id,name,title,date,description,score,url_image){
 	this.name = name;
 	this.title = title;
 	this.date = date;
-	this.description = this.description;
+	this.description = description;
 	this.score = score;
 	this.url_image;
 }
@@ -110,15 +110,15 @@ Items.prototype.getItems = function(callback) {
 };
 
 Items.prototype.searchItems = function(callback,pattern) {
-	var statement = "SELECT * FROM items WHERE name REGEXP ? OR description REGEXP ? OR title REGEXP ?";
-	if (pattern == undefined)
-		pattern ="";
-	this.database.all(statement,new Array(pattern,pattern,pattern)
+  	var statement = "SELECT * FROM items WHERE name LIKE $pattern OR title LIKE $pattern OR description LIKE $pattern ";
+	pattern="%"+pattern+"%";
+	this.database.all(statement,{$pattern:pattern}
 			, function(err, rows) {
 					if (err){
 						console.log(err);
 						callback(undefined);
 					}else{
+						var result = [];
 						rows.forEach(function (row) {
 							result.push(new Item(row.id,row.name,row.title,row.date,row.description,row.score,row.url_image));
 						});
