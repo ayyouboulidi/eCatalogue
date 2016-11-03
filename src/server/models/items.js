@@ -76,7 +76,7 @@ Items.prototype.getItems = function(callback) {
 			  statement +=" AND filters.id_item = items.id ";
 		  }
 		  if (this.type){
-			  statement+="AND items.id = monuments.id "
+			  statement+="AND items.id_monument = monuments.id "
 			  		   + "AND monuments.name=? ";
 			  params.push(this.type);
 		  }
@@ -86,7 +86,7 @@ Items.prototype.getItems = function(callback) {
 			  params.push(this.supplier);
 		  }
 		  statement+="group by items.id";
-		 // console.log(statement);
+		 //console.log(statement);
 				
 		  this.database.all(statement,params
 			, function(err, rows) {
