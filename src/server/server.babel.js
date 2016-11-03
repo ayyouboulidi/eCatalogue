@@ -46,7 +46,7 @@ app.post("/GetItems",function(req,res){
 		else	
 			res.json({"code":-1});	
 	});
-	console.log("/GetItem: arguments:"+JSON.stringify(req.body));
+	console.log("/GetItems: arguments:"+JSON.stringify(req.body));
 });
 
 app.post("/SearchItems",function(req,res){

@@ -53,7 +53,7 @@ export default class ItemList extends Component {
               {items.map(function(item,key){
                 return(
                   <PopupItem className="popup-item" id={item.id} key={key}>
-                      <div>
+                      <div className="item">
                           <div><img src="img/galley.png"/></div>
                           <div><b>{item.name}</b></div>
                           <div>{item.title} id {item.id}</div>
