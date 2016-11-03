@@ -12,9 +12,6 @@ function Filter(name,values){
 Filters.prototype.getFilters = function(callback) {
 	if (this.filters==undefined){
 		var result = [];
- 		console.log(this.monuments);
-		console.log(this.monument);
-		console.log(this.monuments.indexOf(this.monument)==-1);
 		 if (this.monuments.indexOf(this.monument)>-1){	
 			if (result!=undefined){
 				var statement = "Select DISTINCT filter.name, filter.value from filter,items,monuments "

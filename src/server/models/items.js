@@ -45,14 +45,14 @@ Items.prototype.getItems = function(callback) {
 			var params = [];
 			var statement = "SELECT items.id, items.name AS name, items.title AS title, items.date AS date, "
 			+"items.description AS description, items.score AS score, items.url_image AS url_image "
-			+"FROM items, "
-			+"( "
-			+" SELECT *" 
-			+" FROM filter" 
-			+" WHERE id_item IN ("
-		 	+"   SELECT id_item"
-		    +"   FROM filter";
-			if (this.filters!=undefined)
+			+"FROM items, ";
+			if (this.filters!=undefined){
+				statement+="( "
+				+" SELECT *" 
+				+" FROM filter" 
+				+" WHERE id_item IN ("
+				+"   SELECT id_item"
+				+"   FROM filter ";
 				this.filters.forEach(function(val,indx){
 					if (indx == 0){
 						statement += "WHERE (name=? AND value=?) ";
@@ -61,22 +61,27 @@ Items.prototype.getItems = function(callback) {
 					}	
 					params.push(val.name,val.value);
 				});
-		 statement+= "  GROUP BY id_item ";
-		 if (this.filters && this.filters.length>0){
-			 statement+= "  HAVING count(*)=? ";
-			 params.push(this.filters.length);
-		 }
-		 statement+= ") "
-		 +"  GROUP BY id_item "
-		 +" ) filters, catalogue, supplier"
- 		 +" WHERE filters.id_item = items.id AND catalogue.id = items.id_catalogue AND supplier.id = items.id_supplier ";
+		 		statement+= "  GROUP BY id_item ";
+				if (this.filters.length>0){
+					statement+= "  HAVING count(*)=? ";
+					params.push(this.filters.length);
+				}
+				statement+= ") "
+				+"  GROUP BY id_item "
+				+" ) filters,";
+			}
+		statement+=" monuments, supplier"
+ 		 +" WHERE monuments.id = items.id_monument AND supplier.id = items.id_supplier ";
+		  if (this.filters){
+			  statement +=" AND filters.id_item = items.id ";
+		  }
 		  if (this.type){
-			  statement+="AND catalogue.name=?";
+			  statement+="AND monuments.name=? ";
 			  params.push(this.type);
 		  }
 		  if (this.supplier){
-			  statement+="AND supplier.name=?";
-			  params.push(this.type);
+			  statement+="AND supplier.name=? ";
+			  params.push(this.supplier);
 		  }
 			
 			console.log(statement);
