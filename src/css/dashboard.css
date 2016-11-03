@@ -225,13 +225,13 @@ input.view_details {
 /*
 * News Styles
 */
-.bgnews {
+.dashboard-news {
     background: linear-gradient(to bottom, lightskyblue, white, lightgrey);
     position: relative;
     z-index: -1;
     overflow: hidden;
 }
-.bgnews img {
+.dashboard-news img {
     width: 100%;
-    height: auto;
+    height: 100%;
 }
