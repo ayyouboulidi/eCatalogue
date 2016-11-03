@@ -86,7 +86,7 @@ Items.prototype.getItems = function(callback) {
 			  params.push(this.supplier);
 		  }
 		  statement+="group by items.id";
-		 console.log(statement);
+		 //console.log(statement);
 				
 		  this.database.all(statement,params
 			, function(err, rows) {
