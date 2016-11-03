@@ -18,12 +18,12 @@ export default class SupplierList extends Component {
       let suppliers = this.state.suppliers
       let _this = this
         return(
-            <div className="pflex activeoverflowx height100">
+            <div className="pflex activeoverflowx height100 supplier-list">
               {suppliers.map(function(supplier,key){
                 return(
                   <div className="verticalScroll" key={key}  id={supplier.name} onClick={_this.setSelectedCategory.bind(_this)}>
                     <div><img src="img/galley.png"/></div>
-                    <div>Name {supplier.id}</div>
+                    <div className="supplier-id">Name {supplier.id}</div>
                   </div>
                 )
               })}
