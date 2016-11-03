@@ -1,14 +1,64 @@
 /*
 * Cabin View Styles
 */
+.headdashboard .switchButton {
+    font-size: 2vh;
+    margin-top: 1vh;
+}
+
 .monument_list {
-    height: 40vh;
+    position:relative;
+    height: 22vh;
+}
+.monument_list .activeoverflowx {
+    background-color: #ddd;
+}
+.monument-left-title {
+    width: 22vh;
+    height: 4vh;
+    transform: translate(-18vh) rotate(-90deg);
+    transform-origin: 20vh;
+}
+.monument-list {
+    height: 100%;
+    margin-left: 2.75vw;
+    transform: translateX(0%) translateY(-19%);
 }
 
 .supplier_list {
-    height: 20vh
+    height: 18vh;
+}
+.features-left-title {
+    width: 21vh;
+    height: 4vh;
+    transform: translate(-14vh) rotate(-90deg);
+    transform-origin: 16vh;
+}
+.supplier-list {
+    transform: translateY(-10%);
+}
+/*
+* Titles shared styles
+*/
+.monument-left-title, .features-left-title {
+    padding-top: 1vh;
+    text-align: center;
+    background-color: #eee;
 }
 
+
 .cabin_bottom_block {
-    height: 50vh;
+    height: 38.9vh;
+    background-color: lightgrey;
+}
+.filter-panel, .item-list {
+    display: inline-block;
+}
+.filter-panel {
+    width: 20%;
+    vertical-align: top;
+}
+.item-list {
+    width: 79.9%;
+    height: 100%;
 }
