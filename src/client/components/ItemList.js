@@ -43,10 +43,10 @@ export default class ItemList extends Component {
     render(){
       let items = this.state.items
         return(
-            <div className="width75 bgcurrentproject activeoverflow height300">
+            <div className="width75 bgcurrentproject activeoverflow height300 item-list">
               {items.map(function(item,key){
                 return(
-                  <PopupItem id={item.id} key={key}>
+                  <PopupItem className="popup-item" id={item.id} key={key}>
                       <div>
                           <div><img src="img/galley.png"/></div>
                           <div><b>{item.name}</b></div>

@@ -8,14 +8,16 @@ export default class CatalogMode extends Component {
 
     render(){
         return(
-            <div>
-              <div className="height250 bgcurrentproject monument_list">
+            <div className="catalog_mode">
+              <div className="monument_list">
+                <div className="monument-left-title">MONUMENTS</div>
                 <MonumentsList />
               </div>
-              <div className="height250 bgchecklist supplier_list">
+              <div className="supplier_list">
+                <div className="features-left-title">FEATURES</div>
                 <SupplierList />
               </div>
-              <div className="height300 bgcontact pflex cabin_bottom_block">
+              <div className="cabin_bottom_block">
                 <FilterPanel/>
                 <ItemList />
               </div>
