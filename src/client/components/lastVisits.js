@@ -10,7 +10,7 @@ export default class lastVisits extends Component {
     render(){
         return(
             <div className="width25 fleft bgcontact">
-              <div className="second_title">Last visits</div><img src="/img/TRASH-ICON.png" />
+              <div className="second_title"><span>Last visits</span><img src="/img/TRASH-ICON.png" /></div>
               <div className="activeoverflow height250">
                 <table className="width100 padding2 last-visits-list">
                   <tbody>
