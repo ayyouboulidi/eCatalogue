@@ -4,15 +4,6 @@
 @media (width: 1024px) {
     
 }
-.content {
-  z-index: 0;
-  position: relative;
-  top: 0;
-  right: 0;
-  width: 100%;
-  font-size: 1.5vh;
-  padding-left: 13vh;
-}
 .title {
     font-size: 3vh;
 }
