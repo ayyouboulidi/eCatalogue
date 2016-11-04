@@ -79,10 +79,10 @@ class AircraftDescription extends Component {
                 </div>
                 <div className="aircraft_details">
                     <div className="description"><p>{this.state.description.title}</p><span dangerouslySetInnerHTML={{__html:this.state.description.text}} /></div>
-                    <img className="diagram" src={this.state.description.donutChart} alt="circle diagram" />
-                    <img className="chart" src={this.state.description.lineChart} alt="chart" />
-                </div>
+                    <div className="diagram"><img src={this.state.description.donutChart} alt="circle diagram" /></div>
+                    <div className="chart"><img src={this.state.description.lineChart} alt="chart" /></div>
                     <Link className="continue" to="/dashboard"><input className="submit" type="submit" name="goToDashBoard" value="Continue" /></Link>
+                </div>
             </div>
         );
     }
