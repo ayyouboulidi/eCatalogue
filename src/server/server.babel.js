@@ -136,7 +136,7 @@ app.post("/GetProjects",function(req,res){
 			res.json({"code":0,"result":p});
 		else	
 			res.json({"code":-1});
-	});
+	},req.body.user);
 	console.log("/GetProjects : arguments="+JSON.stringify(req.body));
 });
 
