@@ -5,45 +5,67 @@
   .connection {
     height: 1824px;
   }
-  .connection_box {
-    padding-top: 1vh;
-  }
-  .connection_box h3 {
-    font-size: 4vh;
-  }
-  .connection_box label, .connection_box input {
-    font-size: 3vh;
-  }
-  .remember input[type="checkbox"] {
-    width: 2vh;
-    height: 2vh;
-  }
 }
 @media (width: 1024px) {
   .connection {
     height: 768px;
   }
-  .connection_box {
-    height: 20em;
-    width: 25em;
-  }
+}
+.A320, .A330, .A350, .A380 {
+  position: fixed;
+}
+.A320, .A330, .A350 {
+  z-index: 0.5;
+}
+.A320 {
+  top: 34vh;
+  left: 97vh;
+  width: 40vh;
+}
+.A330 {
+  top: 47vh;
+  left: 3vh;
+  width: 50vh;
+}
+.A350 {
+  top: 75vh;
+  left: 72vh;
+  width: 50vh;
+}
+.A380 {
+  z-index: 1;
+  top: 12vh;
+  left: 8vh;
+  width: 60vh;
 }
   .connection {
+    background-image: url("/img/login/ILLUSTRATION-AIRBUS.png");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position-y: 40vh;
     position: relative;
   }
   .connection_box{
+    padding-top: 1vh;
     position: relative;
-    background-color: lightgrey;
-    border: 0.2vh solid black;
-    width: 40vw;
+    background-color: #eee;
+    width: 30vw;
     height: 48vh;
-    border-radius: 3%;
-    margin: 30vh auto;
+    margin: 0vh auto;
+    transform: translateY(19vh);
     text-align: center;
   }
   .connection_box label, .username, .password {
+    font-size: 2vh;
+    font-weight: -10;
     width: 80%;
     text-align: left;
+  }
+  .username, .password {
+    margin-top: 1vh;
+    background-color: transparent;
+    border: 0.3vh solid gray;
+    border-radius: 0.5vh;
   }
   .connection_box .remember, .connection_box .forgot {
     font-size: 2vh;
@@ -51,6 +73,14 @@
   .connection_box .remember {
     position: absolute;
     left: 10%;
+  }
+  .remember input[type="checkbox"] {
+    width: 3vh;
+    height: 3vh;
+    transform: translateY(0.75vh);
+  }
+  .forgot {
+    transform: translateY(1vh);
   }
   .connection_box .forgot {
     position: absolute;
@@ -62,7 +92,15 @@
     display: block;
   }
   .connection_box .submit {
-    position: absolute;
-    right: 10%;
-    bottom: 5%;
+    padding: 2vh;
+    background-color: dodgerblue;
+    border: none;
+    border-top-left-radius: 2vw 50%;
+    border-top-right-radius: 2vw 50%;
+    border-bottom-left-radius: 2vw 50%;
+    border-bottom-right-radius: 2vw 50%;
+    color: white;
+    font-size: 2vh;
+    width: 13vh;
+    margin: 10vh auto;
   }
