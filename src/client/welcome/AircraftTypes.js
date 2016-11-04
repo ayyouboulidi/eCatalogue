@@ -38,10 +38,12 @@ class AircraftTypes extends Component {
                         this.state.families.map(function(family, key){
                             return(
                                 <div key={key} name={family.name} className={(self.state.selected == family.name) ? "aircraft_card selected": "aircraft_card" } onClick={self.handleSelect.bind(self)}>
-                                    <div className="inside-block">
-                                        <img src={family.image} />
-                                        <div className="card_text-title" name={family.name}>{family.name}</div>
-                                        <div className="card_text-description" name="description">{family.description}</div>
+                                    <div className="clicker-zone">
+                                        <div className="inside-block">
+                                            <img src={family.image} />
+                                            <div className="card_text-title" name={family.name}>{family.name}</div>
+                                            <div className="card_text-description" name="description">{family.description}</div>
+                                        </div>
                                     </div>
                                 </div>
                             )
