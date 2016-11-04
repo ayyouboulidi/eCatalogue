@@ -37,10 +37,10 @@ class AircraftDescription extends Component {
                 if (aircraft.family == filter) {
                     if (self.state.selected == ""){
                         self.state.selected = aircraft.type;
-                        this.state.description.text = aircraft.text;
-                        this.state.description.title = aircraft.title;
-                        this.state.description.lineChart = aircraft.lineChart;
-                        this.state.description.donutChart = aircraft.donutChart;
+                        self.state.description.text = aircraft.text;
+                        self.state.description.title = aircraft.title;
+                        self.state.description.lineChart = aircraft.lineChart;
+                        self.state.description.donutChart = aircraft.donutChart;
                     }
                     self.state.aircrafts.push(aircraft);
                 }
@@ -56,10 +56,10 @@ class AircraftDescription extends Component {
         aircrafts.forEach(function(aircraft){
             if (select == aircraft.type) {
                 self.state.selected = aircraft.type;
-                    this.state.description.text = aircraft.text;
-                    this.state.description.title = aircraft.title;
-                    this.state.description.lineChart = aircraft.lineChart;
-                    this.state.description.donutChart = aircraft.donutChart;
+                    self.state.description.text = aircraft.text;
+                    self.state.description.title = aircraft.title;
+                    self.state.description.lineChart = aircraft.lineChart;
+                    self.state.description.donutChart = aircraft.donutChart;
             }
         });
         this.setState(this.state);
