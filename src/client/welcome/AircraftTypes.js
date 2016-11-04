@@ -22,8 +22,6 @@ class AircraftTypes extends Component {
     render(){
         let self = this;
         let imgStyle = {
-            "width": "100%",
-            "borderBottom": "1px solid grey"
         }
         return(
             <div className="aircraft_types">
@@ -32,9 +30,11 @@ class AircraftTypes extends Component {
                         this.state.families.map(function(family, key){
                             return(
                                 <div key={key} name={family.name} className={(self.state.selected == family.name) ? "aircraft_card selected": "aircraft_card" } onClick={self.handleSelect.bind(self)}>
-                                    <img style={imgStyle} src={family.image} />
-                                    <div className="card_text" name={family.name}>{family.name}</div>
-                                    <div className="card_text" name="description">{family.description}</div>
+                                    <div className="inside-block">
+                                        <img src={family.image} />
+                                        <div className="card_text-title" name={family.name}>{family.name}</div>
+                                        <div className="card_text-description" name="description">{family.description}</div>
+                                    </div>
                                 </div>
                             )
                         })
