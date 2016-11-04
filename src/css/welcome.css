@@ -35,24 +35,30 @@ section {
 .welcome-carousel {
     background-color: rgb(230, 230, 230);
     height: 25vh;
-    width: 100vw;
+    width: 100%;
 }
 
 .aircraft_card {
     background-color: inherit;
-    width: 25vw;
-    height: 100%;
+    width: 25%;
+    height: 83%;
     display: inline-block;
     overflow-y: auto;
-    position: relative;
+    transform: translateY(2.2vh);
 }
-.aircraft_card > img {
+.aircraft_card + div {
+    border-left: 0.4vh solid lightgrey;
+}
+.aircraft_card img {
     left: 50%;
     transform: translateX(-50%);
-    top: 2vh;
     position: relative;
     width: 22vw;
-    filter: drop-shadow(0vh 2vh 0.5vh, lightgrey);
+    filter: drop-shadow(0vh 2vh 0.5vh, grey);
+}
+.clicker-zone {
+    width: 100%;
+    height: 100%;
 }
 .inside-block {
     height: 80%;
@@ -60,11 +66,13 @@ section {
     position: relative;
     top: 3vh;
 }
-.inside-block + .inside-block {
+.inside-block + .inside-block::before {
     border-left: 0.2vh solid black;
 }
 .aircraft_card.selected {
-    border-color: red;
+    border-left: 0.5vh solid dodgerblue;
+    border-right: 0.5vh solid dodgerblue;
+    border-color: dodgerblue;
 }
 .aircraft_card:hover {
     border-left: 0.3vh solid blue;
@@ -73,7 +81,7 @@ section {
 }
 .card_text-title {
     width:100%;
-    top: 14vh;
+    top: 12vh;
     position: absolute;
     text-align: center;
     font-size: 2vh;
@@ -81,7 +89,7 @@ section {
 .card_text-description {
     position: absolute;
     width: 100%;
-    top: 17vh;
+    top: 15vh;
     color: gray;
     font-size: 1.5vh;
     font-weight: lighter;
@@ -92,48 +100,92 @@ section {
 * Tabs styles
 */
 .tablist {
-    border-bottom: 0.3vh solid #eee;
+    margin-bottom: 2vh;
+    background-color: #eee;
+    border-bottom: 0.3vh solid #ccc;
+    height: 4.3vh;
 }
 .tablist div {
     padding: 1vh 2vw;
-    border-top: 0.3vh solid #eee;
-    border-left: 0.3vh solid #eee;
-    border-right: 0.3vh solid #eee;
-    border-top-left-radius: 0.5vh;
-    border-top-right-radius: 0.7vh;
     display: inline;
 }
+.tab {
+    background-color: transparent;
+    color: #ccc;
+    font-weight: 100;
+}
+.tab:hover {
+    color: black;
+    cursor: pointer;
+}
 .tab.selected {
-    background-color: #eee;
-    color: red;
+    color: dodgerblue;
+    border-bottom: 0.5vh solid dodgerblue;
 }
 
 /*
 * Description styles
 */
-.aircraft_details {
+.aircraft_description {
+    padding: 1em;
     background-color: #eee;
-    height: 28vh;
+    height: 53.3vh;
+}
+.aircraft_details {
+    background-color: inherit;
+    color: black;
+    height: auto;
     overflow: hidden;
+    display: inline;
+    width: 87%;
 }
 .aircraft_details .description, .aircraft_details .diagram, .aircraft_details .chart {
     display: inline-block;
 }
 .aircraft_details .description {
-    width: 40vw;
-    height: 98%;
-    padding: 1em;
+    width: 40%;
+    height: 38vh;
+    color: grey;
+    font-size: 1.5vh;
     overflow: auto;
+    padding-right: 2em;
+    border-right: 0.3vh solid lightgrey;
+    margin-right: 2em;
+}
+.aircraft_details .description p {
+    font-weight: bold;
+    font-size: 2vh;
 }
 .aircraft_details .diagram {
-    width: 20vw;
-    height: 26vh;
+    padding-right: 1em;
+    width: 27vw;
+    height: 35vh;
     vertical-align: top;
 }
+.diagram:before {
+    content: "Sells and delivers";
+} 
 .aircraft_details .chart {
-    width: 30vw;
-    height: 26vh;
+    width: 20%;
+    height: 35vh;
     vertical-align: top;
+}
+.aircraft_details .chart img {
+    max-width: 100%;
+    height: 35vh;
+}
+.chart:before {
+    content: "Progression of sells";
+}
+.diagram:before, .chart:before {
+    width: 80%;
+    margin-left: 20%;
+    font-size: 2vh;
+    color: #555;
+}
+.aircraft_details img {
+    max-width: 100%;
+    height: 35vh;
 }
 
 
@@ -143,8 +195,20 @@ section {
 .welcome-middle {
     position: relative;
 }
-.welcome-middle a {
-    position: fixed;
-    right: 4vw;
-    bottom: 2vh;
+.welcome-middle a input {
+    transform: translateY(-34%) translateX(10%) scaleY(1);
+    color: grey;
+    border-top-left-radius: 2vh 50%;
+    border-top-right-radius: 2vh 50%;
+    border-bottom-left-radius: 2vh 50%;
+    border-bottom-right-radius: 2vh 50%;
+    background-color: transparent;
 }
+.welcome-middle a input:hover {
+    color: black;
+}
+/*.welcome-middle a:after {
+    content: ">";
+    font-size: 1vh;
+    margin: 0vh 0vh 0vh 0vh;
+}*/
