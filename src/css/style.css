@@ -12,18 +12,11 @@
 /*
 * Basic shape style surface pro 4 2736*1824
 */
-@media (width: 1024px) {
-    .welcome_page {
-        height: 768px;
-    }
-    .card_text {
-        font-size: 2vh;
-    }
+label {
+  font-weight: lighter;
 }
-@media (width: 2736px) {
-    .welcome_page {
-        height: 1824px;
-    }
+input[type="text"] {
+  margin-top: 0;
 }
 html {
   height: 100%;
