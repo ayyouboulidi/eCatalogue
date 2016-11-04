@@ -2,8 +2,9 @@ function Contacts(db) {
 	this.db = db;
 }
 
-function Contact(name,email,tel){
+function Contact(name,role,email,tel){
     this.name = name;
+	this.role = role;
 	this.email = email;
     this.tel = tel;
 }
@@ -20,7 +21,7 @@ Contacts.prototype.getContacts = function(callback) {
 						console.log(err);
 					}else{
 						rows.forEach(function (row) {
-								result.push(new Contact(row.name,row.email,row.tel));
+								result.push(new Contact(row.name,row.role,row.email,row.tel));
 						});
 						this.contacts = result;
 						callback(this.contacts);
