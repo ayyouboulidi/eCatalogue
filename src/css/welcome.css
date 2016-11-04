@@ -70,8 +70,9 @@ section {
     border-left: 0.2vh solid black;
 }
 .aircraft_card.selected {
-    border: 0.2vh solid red;
-    border-color: red;
+    border-left: 0.5vh solid dodgerblue;
+    border-right: 0.5vh solid dodgerblue;
+    border-color: dodgerblue;
 }
 .aircraft_card:hover {
     border-left: 0.3vh solid blue;
