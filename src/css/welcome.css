@@ -1,19 +1,6 @@
 /*
 * Welcome view style 
 */
-@media (width: 1024px) {
-    .welcome_page {
-        height: 768px;
-    }
-    .card_text {
-        font-size: 2vh;
-    }
-}
-@media (width: 2736px) {
-    .welcome_page {
-        height: 1824px;
-    }
-}
 .welcome .headdashboard {
     height: 13.5vh;
     font-size: 3vh;
