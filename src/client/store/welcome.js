@@ -21,8 +21,8 @@ let aircrafts = [
                 {
                     family: "A350XWB",
                     type: "A350-900",
-                    title : "Lorem ipsum",
-                        text : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
+                    title : "The Optimised Baseline",
+                        text : "The A350-900 is the cornerstone member of Airbus' all-new A350 XWB Family, which is well-suited to meet airline's market requirements in medium, long, and ultra-long-haul operations.<br> As the first A350 XWB version to enter airline service, the A350-900 has the same optimised cabin cross-section as the other A350 XWB versions which ensures maximum comfort for both passengers and crew while guaranteeing operators optimum revenue potential and operating efficiency.<br> This jetliner accomodates 325 passengers in a standard three-class configuration, while offering unbeatable economics in high-density seating and true long-haul capability with a range of up  to 8,100 nautical miles.<br> The A350-900 is one of the first Airbus jetliners to apply the Airspace by Aibus cabin concept, which creates the perfect space for passenger well-being and airline performance.<br> Airspace by Airbus delivers a next generation flying experience with four key pillars:<br> comfort, service, ambience and design.",
                         lineChart : "/img/aircraft/AREA-LINE-CHART.png",
                         donutChart : "/img/aircraft/DONUT-CHART-1.png"
                 },
