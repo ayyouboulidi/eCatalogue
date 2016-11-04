@@ -40,7 +40,7 @@ class AircraftDescription extends Component {
                 }
             }, self);
             self.setState(self.state);
-        });
+        }, 500);
     }
     handleSelect(event){
         let self = this;
