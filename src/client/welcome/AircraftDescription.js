@@ -5,7 +5,7 @@ import welcome from '../store/welcome';
 class AircraftDescription extends Component {
     constructor(props){
         super(props);
-        this.state = {aircrafts: [], description: "", selected: ""};
+        this.state = {aircrafts: [], description: {text:"",title:"", lineChart:"", donutChart:""}, selected: ""};
     }
     componentWillMount(){
         let filter = this.props.selected;
@@ -15,7 +15,10 @@ class AircraftDescription extends Component {
             if (aircraft.family == filter) {
                 if (this.state.selected == ""){
                     this.state.selected = aircraft.type;
-                    this.state.description = aircraft.description;
+                    this.state.description.text = aircraft.text;
+                    this.state.description.title = aircraft.title;
+                    this.state.description.lineChart = aircraft.lineChart;
+                    this.state.description.donutChart = aircraft.donutChart;
                 }
                 this.state.aircrafts.push(aircraft);
             }
@@ -34,7 +37,10 @@ class AircraftDescription extends Component {
                 if (aircraft.family == filter) {
                     if (self.state.selected == ""){
                         self.state.selected = aircraft.type;
-                        self.state.description = aircraft.description;
+                        this.state.description.text = aircraft.text;
+                        this.state.description.title = aircraft.title;
+                        this.state.description.lineChart = aircraft.lineChart;
+                        this.state.description.donutChart = aircraft.donutChart;
                     }
                     self.state.aircrafts.push(aircraft);
                 }
@@ -50,12 +56,16 @@ class AircraftDescription extends Component {
         aircrafts.forEach(function(aircraft){
             if (select == aircraft.type) {
                 self.state.selected = aircraft.type;
-                self.state.description = aircraft.description;
+                    this.state.description.text = aircraft.text;
+                    this.state.description.title = aircraft.title;
+                    this.state.description.lineChart = aircraft.lineChart;
+                    this.state.description.donutChart = aircraft.donutChart;
             }
         });
         this.setState(this.state);
     }
     render(){
+
         return(
             <div className="aircraft_description">
                 <div className="tablist">
@@ -68,9 +78,9 @@ class AircraftDescription extends Component {
                     }
                 </div>
                 <div className="aircraft_details">
-                    <div className="description">{this.state.description}</div>
-                    <img className="diagram" src="" alt="circle diagram" />
-                    <img className="chart" src="" alt="chart" />
+                    <div className="description"><p>{this.state.description.title}</p>{this.state.description.text}</div>
+                    <img className="diagram" src={this.state.description.donutChart} alt="circle diagram" />
+                    <img className="chart" src={this.state.description.lineChart} alt="chart" />
                 </div>
                     <Link className="continue" to="/dashboard"><input className="submit" type="submit" name="goToDashBoard" value="Continue" /></Link>
             </div>
