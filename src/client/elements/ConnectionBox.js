@@ -22,13 +22,13 @@ class ConnectionBox extends Component {
     render(){
         return(
             <div className="connection_box">
-                <h3>{this.props.text}</h3>
-                <label className="block">Username</label>
-                <input className="username block" type="text" name="username" placeholder="username" value={this.state.userName} onChange={this.setUserName.bind(this)} />
-                <label className="block">Password</label>
-                <input className="password block" type="password" name="password" placeholder="password" />
+                <h3>My <b>{this.props.text}</b></h3>
+                <label className="block">Login :</label>
+                <input className="username block" type="text" name="username" value={this.state.userName} onChange={this.setUserName.bind(this)} />
+                <label className="block">Password :</label>
+                <input className="password block" type="password" name="password" />
                 <div className="block"><div className="remember"><input type="checkbox" />{" "}Remember me{" "}</div><a className="forgot" href="#">Forgot password ?</a></div>
-                <Link to="/welcome"><input className="submit" type="submit" name="submit" value="Log In" onClick={this.goToWelcome.bind(this)} /></Link>
+                <Link to="/welcome"><input className="submit" type="submit" name="submit" value="Login" onClick={this.goToWelcome.bind(this)} /></Link>
             </div>
         );
     }
