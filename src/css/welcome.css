@@ -46,7 +46,7 @@ section {
     overflow-y: auto;
     position: relative;
 }
-.aircraft_card > img {
+.aircraft_card img {
     left: 50%;
     transform: translateX(-50%);
     top: 2vh;

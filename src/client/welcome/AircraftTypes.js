@@ -13,11 +13,19 @@ class AircraftTypes extends Component {
         this.setState(this.state);
     }
     handleSelect(event){
-        let newSelect = event.target.parentNode.getAttribute("name");
-        console.log("Selected : " + newSelect);
-        this.state.selected = newSelect;
-        this.setState(this.state);
-        console.log(this.state);
+        this.getName(event.target.parentNode);
+    }
+    getName(node){
+        let name = node.getAttribute("name");
+        console.log(name);
+        if ( name == null ) {
+            this.getName(node.parentNode);
+        } else {
+            console.log("Selected : " + name);
+            this.state.selected = name;
+            this.setState(this.state);
+            console.log(this.state);
+        }
     }
     render(){
         let self = this;
@@ -30,9 +38,11 @@ class AircraftTypes extends Component {
                         this.state.families.map(function(family, key){
                             return(
                                 <div key={key} name={family.name} className={(self.state.selected == family.name) ? "aircraft_card selected": "aircraft_card" } onClick={self.handleSelect.bind(self)}>
+                                    <div className="inside-block">
                                         <img src={family.image} />
                                         <div className="card_text-title" name={family.name}>{family.name}</div>
                                         <div className="card_text-description" name="description">{family.description}</div>
+                                    </div>
                                 </div>
                             )
                         })
