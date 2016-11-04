@@ -1,6 +1,7 @@
 /*
 * Cabin View Styles
 */
+
 .headdashboard .switchButton {
     padding: 0.25vh 1vw;
     font-size: 2vh;
@@ -14,9 +15,10 @@
 .monument_list {
     position:relative;
     height: 22vh;
+    background-color: #eee;
 }
 .monument_list .activeoverflowx {
-    background-color: #ddd;
+    background-color: inherit;
 }
 .monument-left-title {
     width: 22vh;
@@ -26,27 +28,28 @@
 }
 .monument-list {
     height: 100%;
-    transform: translateX(0.5%) translateY(-18.5%);
+    transform: translateX(0.5vh) translateY(-18.5%);
 }
 .monument-list .verticalScroll {
     width: 25%;
 }
-.supplier-list .verticalScroll {
-    width: 20%;
+.monument-list .verticalScroll img {
+    height: 13vh;
+}
+.monument-name {
+    font-size: 2.5vh;
+}
+.monument-description {
+    font-size: 2vh;
 }
 
-.verticalScroll img {
-    width: 70%;
-}
-.verticalScroll {
-    margin: 1vh;
-    padding: 1vh;
-}
+
 
 /*
 * Features Styles
 */
 .supplier_list {
+    background-color: rgba(225, 225, 225, 1);
     height: 18vh;
 }
 .features-left-title {
@@ -56,19 +59,43 @@
     transform-origin: 16vh;
 }
 .supplier-list {
-    transform: translateX(0.5%) translateY(-23%);
+    overflow: auto;
+    background-color: inherit;
+    transform: translateX(0.5vh) translateY(-23%);
 }
+.supplier-list .verticalScroll {
+    width: 20%;
+    height: auto;
+}
+.supplier-list .verticalScroll img {
+    height: 13vh;
+}
+.supplier-id {
+    font-size: 2vh;
+}
+
 /*
 * Titles shared styles
 */
 .monument-list, .supplier-list {
+    overflow-y: hidden;
+    overflow-x: auto;
     margin-left: 2.75vw;
 }
+.monument-list::-webkit-scrollbar, .supplier-list::-webkit-scrollbar {
+    width: 0.3vh;
+    display: none;
+}
 .monument-left-title, .features-left-title {
-    padding-top: 1vh;
+    padding-top: 0.35vh;
+    font-size: 2vh;
+    color: #555;
     text-align: center;
     background-color: #eee;
     border: 0.2vh solid #ddd;
+}
+.verticalScroll {
+    padding: 2vh 1vh 1vh 1vh;
 }
 
 /*
@@ -86,6 +113,8 @@
     display: inline-block;
 }
 .filter-panel {
+    height: 100%;
+    background-color: #eee;
     font-size: 2vh;
     padding: 1vh;
     width: 20%;
@@ -103,11 +132,11 @@
     background-color: unset;
     width: 90%;
     margin: 0.5vh 0;
-    padding: 0.25vh;
+    padding: 0.8vh;
     border: 0.3vh solid grey;
     border-radius: 1vh;
 }
-.filters option:after {
+.filters:first-child:after {
     content: "|";
     width: 20%;
     float:right;
@@ -126,9 +155,11 @@ input[type="radio"] {
     height: 100%;
 }
 .item-list .modal-example {
+    text-align: center;
+    font-size: 2vh;
     padding: 1vh;
-    width: 16%;
-    height: 50%;
+    width: 16.6%;
+    height: 40%;
     display: inline-block;
 }
 .item-list .modal-example img {
