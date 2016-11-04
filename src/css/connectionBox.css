@@ -19,26 +19,27 @@
 }
 .A320 {
   top: 34vh;
-  left: 97vh;
+  left: 66vw;
   width: 40vh;
 }
 .A330 {
   top: 47vh;
-  left: 3vh;
+  left: 2vw;
   width: 50vh;
 }
 .A350 {
   top: 75vh;
-  left: 72vh;
+  left: 49vw;
   width: 50vh;
 }
 .A380 {
   z-index: 1;
   top: 12vh;
-  left: 8vh;
+  left: 8vw;
   width: 60vh;
 }
   .connection {
+    height: 100vh;
     background-image: url("/img/login/ILLUSTRATION-AIRBUS.png");
     background-repeat: no-repeat;
     background-size: 100% auto;
@@ -109,5 +110,5 @@
     color: white;
     font-size: 1.5vh;
     width: 13vh;
-    margin: 5vh auto;
+    margin: 6vh auto;
   }
