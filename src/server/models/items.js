@@ -81,7 +81,7 @@ Items.prototype.getItems = function(callback) {
 			  params.push(this.type);
 		  }
 		  if (this.supplier){
-			  statement+="AND supplier.id = items.id "
+			  statement+="AND supplier.id = items.id_supplier "
 			           + "AND supplier.name=? ";
 			  params.push(this.supplier);
 		  }
