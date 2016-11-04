@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router';
 import welcome from '../store/welcome';
 
 class AircraftDescription extends Component {
@@ -71,6 +72,7 @@ class AircraftDescription extends Component {
                     <img className="diagram" src="" alt="circle diagram" />
                     <img className="chart" src="" alt="chart" />
                 </div>
+                    <Link className="continue" to="/dashboard"><input className="submit" type="submit" name="goToDashBoard" value="Continue" /></Link>
             </div>
         );
     }

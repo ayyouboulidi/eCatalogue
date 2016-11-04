@@ -12,6 +12,12 @@
 /*
 * Basic shape style surface pro 4 2736*1824
 */
+label {
+  font-weight: lighter;
+}
+input[type="text"] {
+  margin-top: 0;
+}
 html {
   height: 100%;
 }
@@ -24,6 +30,7 @@ h2 {
   font-size: 4vh;
 }
 h3 {
+  font-weight: lighter;
   font-size: 3vh;
 }
 .content {
