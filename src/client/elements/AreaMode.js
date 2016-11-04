@@ -6,7 +6,7 @@ import AccordionElements from "../components/cabin/AccordionElements"
 export default class AreaMode extends Component {
     render(){
         return(
-            <div>
+            <div className="area-mode">
                 <Cigare />
                 <ProposedItem />
                 <AccordionElements />

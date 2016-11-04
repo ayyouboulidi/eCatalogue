@@ -53,7 +53,7 @@ componentWillUnmount() {
                 this.state.aircraftselectedzone && !this.state.accordionselectedelement ?
                 "clicked":"selected"
         return(
-            <div>
+            <div className="cigare">
               <img src={"img/cigare-"+img+".png"} onClick={this.selectZone.bind(this)}/>
             </div>
         );

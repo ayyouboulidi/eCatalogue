@@ -1,5 +1,5 @@
 /*
-* Cabin View Styles
+* Cabin Area-Mode View Styles
 */
 
 .headdashboard .switchButton {
@@ -32,6 +32,9 @@
 }
 .monument-list .verticalScroll {
     width: 25%;
+}
+.monument-list .verticalScroll + .monument-list .verticalScroll {
+    margin-left:10vh;
 }
 .monument-list .verticalScroll img {
     height: 13vh;
@@ -156,12 +159,23 @@ input[type="radio"] {
 }
 .item-list .modal-example {
     text-align: center;
-    font-size: 2vh;
+    font-size: 1.75vh;
     padding: 1vh;
     width: 16.6%;
     height: 40%;
     display: inline-block;
+    border-bottom: 0.2vh solid gray;
 }
 .item-list .modal-example img {
-    height: 10vh;
+    height: 8vh;
+}
+
+/*
+* Cabin Catalog Mode Styles
+*/
+.area-mode {
+    padding: 1.5vh;
+}
+.cigare img {
+    width: 100%;
 }
