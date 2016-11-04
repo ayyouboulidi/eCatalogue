@@ -16,11 +16,9 @@ class Welcome extends Component {
                 <section className="welcome">
                     <div className="headdashboard">
                         <PageTitle title="Welcome to My Airbus" excerpt="Please select an aircraft to continue" />
-                        <Search />
                     </div>
                     <div className="welcome-middle">
                         <AircraftSelection />
-                        <Link to="/dashboard"><input className="submit" type="submit" name="goToDashBoard" value="Continue to Catalog" /></Link>
                     </div>
                 </section>
             </div>

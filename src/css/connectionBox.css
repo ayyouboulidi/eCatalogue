@@ -19,26 +19,27 @@
 }
 .A320 {
   top: 34vh;
-  left: 97vh;
+  left: 66vw;
   width: 40vh;
 }
 .A330 {
   top: 47vh;
-  left: 3vh;
+  left: 2vw;
   width: 50vh;
 }
 .A350 {
   top: 75vh;
-  left: 72vh;
+  left: 49vw;
   width: 50vh;
 }
 .A380 {
   z-index: 1;
   top: 12vh;
-  left: 8vh;
+  left: 8vw;
   width: 60vh;
 }
   .connection {
+    height: 100vh;
     background-image: url("/img/login/ILLUSTRATION-AIRBUS.png");
     background-repeat: no-repeat;
     background-size: 100% auto;
@@ -55,20 +56,27 @@
     transform: translateY(19vh);
     text-align: center;
   }
+  .connection_box h3 {
+    margin-top: 2vh;
+    margin-bottom: 7vh;
+  }
   .connection_box label, .username, .password {
+    color: #777;
     font-size: 2vh;
     font-weight: -10;
     width: 80%;
     text-align: left;
   }
   .username, .password {
+    padding: 1vh;
     margin-top: 1vh;
     background-color: transparent;
-    border: 0.3vh solid gray;
-    border-radius: 0.5vh;
+    border: 0.3vh solid #777;
+    border-radius: 1vh;
   }
   .connection_box .remember, .connection_box .forgot {
-    font-size: 2vh;
+    font-size: 1.5vh;
+    display: inline-block;
   }
   .connection_box .remember {
     position: absolute;
@@ -80,7 +88,7 @@
     transform: translateY(0.75vh);
   }
   .forgot {
-    transform: translateY(1vh);
+    transform: translateY(1.25vh);
   }
   .connection_box .forgot {
     position: absolute;
@@ -88,19 +96,19 @@
   }
   .connection_box .block {
     position: relative;
-    margin: 1.25vh auto;
+    margin: 0.25vh auto 1vh;
     display: block;
   }
   .connection_box .submit {
-    padding: 2vh;
+    padding: 1.5vh;
     background-color: dodgerblue;
     border: none;
-    border-top-left-radius: 2vw 50%;
-    border-top-right-radius: 2vw 50%;
-    border-bottom-left-radius: 2vw 50%;
-    border-bottom-right-radius: 2vw 50%;
+    border-top-left-radius: 1.5vw 50%;
+    border-top-right-radius: 1.5vw 50%;
+    border-bottom-left-radius: 1.5vw 50%;
+    border-bottom-right-radius: 1.5vw 50%;
     color: white;
-    font-size: 2vh;
+    font-size: 1.5vh;
     width: 13vh;
-    margin: 10vh auto;
+    margin: 6vh auto;
   }

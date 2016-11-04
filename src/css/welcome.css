@@ -2,52 +2,90 @@
 * Welcome view style 
 */
 @media (width: 1024px) {
-    .welcome_page {
-        height: 768px;
-    }
     .card_text {
         font-size: 2vh;
     }
 }
-@media (width: 2736px) {
-    .welcome_page {
-        height: 1824px;
-    }
+.welcome_page {
+    height: 100vh;
 }
 .welcome .headdashboard {
+    background-color: rgb(215,215,215);
     height: 13.5vh;
     font-size: 3vh;
 }
 section {
     font-size: 2.5vh;
-    padding-left: 1em;
 }
 .page_title {
+    text-align: center;
     width: 60vw;
+    margin: auto;
+}
+.page_title h2 {
+    margin-top: 1vh;
+    margin-bottom: 0.5vh;
+}
+.page_title h3 {
+    color: gray;
+    font-weight: lighter;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 .welcome-carousel {
-    width: 95%;
-    margin: 1.5vh auto;
+    background-color: rgb(230, 230, 230);
+    height: 25vh;
+    width: 100vw;
 }
 
 .aircraft_card {
-    background-color: white;
-    width: 21vw;
-    height: 21vw;
-    margin: 0.6vw;
-    border: 0.1vh solid grey;
+    background-color: inherit;
+    width: 25vw;
+    height: 100%;
     display: inline-block;
     overflow-y: auto;
+    position: relative;
+}
+.aircraft_card > .inside-block > img {
+    left: 50%;
+    transform: translateX(-50%);
+    top: 2vh;
+    position: relative;
+    width: 22vw;
+    filter: drop-shadow(0vh 2vh 0.5vh, lightgrey);
+}
+.inside-block {
+    height: 80%;
+    width: 100%;
+    position: relative;
+    top: 3vh;
+}
+.inside-block + .inside-block {
+    border-left: 0.2vh solid black;
 }
 .aircraft_card.selected {
     border-color: red;
 }
 .aircraft_card:hover {
+    border-left: 0.3vh solid blue;
+    border-right: 0.3vh solid blue;
     border-color: blue;
 }
-.card_text {
-    width: 95%;
-    margin: 2px auto;
+.card_text-title {
+    width:100%;
+    top: 14vh;
+    position: absolute;
+    text-align: center;
+    font-size: 2vh;
+}
+.card_text-description {
+    position: absolute;
+    width: 100%;
+    top: 17vh;
+    color: gray;
+    font-size: 1.5vh;
+    font-weight: lighter;
+    text-align: center;
 }
 
 /*

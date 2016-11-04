@@ -30,23 +30,23 @@ let aircrafts = [
 let family = [
     {
         name : "A320 Family",
-        description: "Aircraft short description",
-        image:"/img/aircraft.png"
+        description: "The Market Leader",
+        image:"/img/aircraft/A320.png"
     },
     {
         name : "A330 Family",
-        description: "Aircraft short description",
-        image:"/img/aircraft.png"
+        description: "Modern, Versatile and efficient aircraft",
+        image:"/img/aircraft/A330.png"
     },
     {
         name : "A350XWB",
-        description: "Aircraft short description",
-        image:"/img/aircraft.png"
+        description: "New-generation flying experience",
+        image:"/img/aircraft/A350.png"
     },
     {
         name : "A380",
-        description: "Aircraft short description",
-        image:"/img/aircraft.png"
+        description: "The best solution for 21st century growth",
+        image:"/img/aircraft/A380.png"
     }
 ]
 
