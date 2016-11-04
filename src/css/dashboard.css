@@ -119,13 +119,13 @@ input.view_details {
     border-right: 0.2vh solid grey;
     border-left: 0.2vh solid grey;
 }
-.panel-title {
+.bgchecklist .panel-title {
     width: 98%;
     padding-top: 0.5vh;
     height: 2.5vh;
     font-size: 1.5vh;
 }
-.panel-title a:before {
+.bgchecklist .panel-title a:before {
     background-image: url("/img/ARROW-DOWN-ICON.png");
     background-size: 2vh 1vh;
     background-repeat: no-repeat;
@@ -135,7 +135,7 @@ input.view_details {
     content: "";
     padding-right: 2vw;
 }
-.panel-title a:after {
+.bgchecklist .panel-title a:after {
     background-image: url("/img/CHECKED-ICON.png");
     background-size: 3.5vh 3.5vh;
     background-repeat: no-repeat;
@@ -146,10 +146,10 @@ input.view_details {
     transform: translateY(-26.5%);
     float: right;
 }
-.panel-title a img {
+.bgchecklist .panel-title a img {
     width: 10%;
 }
-.panel-body {
+.bgchecklist .panel-body {
     height: 10vh;
 }
 
