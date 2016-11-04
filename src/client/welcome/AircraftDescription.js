@@ -78,7 +78,7 @@ class AircraftDescription extends Component {
                     }
                 </div>
                 <div className="aircraft_details">
-                    <div className="description"><p>{this.state.description.title}</p>{this.state.description.text}</div>
+                    <div className="description"><p>{this.state.description.title}</p><span dangerouslySetInnerHTML={{__html:this.state.description.text}} /></div>
                     <img className="diagram" src={this.state.description.donutChart} alt="circle diagram" />
                     <img className="chart" src={this.state.description.lineChart} alt="chart" />
                 </div>

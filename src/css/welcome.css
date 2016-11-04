@@ -35,24 +35,30 @@ section {
 .welcome-carousel {
     background-color: rgb(230, 230, 230);
     height: 25vh;
-    width: 100vw;
+    width: 100%;
 }
 
 .aircraft_card {
     background-color: inherit;
-    width: 25vw;
+    width: 25%;
     height: 100%;
     display: inline-block;
     overflow-y: auto;
     position: relative;
 }
+.aircraft_card + div {
+    border-left: 0.2vh solid lightgrey;
+}
 .aircraft_card img {
     left: 50%;
     transform: translateX(-50%);
-    top: 2vh;
     position: relative;
     width: 22vw;
-    filter: drop-shadow(0vh 2vh 0.5vh, lightgrey);
+    filter: drop-shadow(0vh 2vh 0.5vh, grey);
+}
+.clicker-zone {
+    width: 100%;
+    height: 100%;
 }
 .inside-block {
     height: 80%;
@@ -64,6 +70,7 @@ section {
     border-left: 0.2vh solid black;
 }
 .aircraft_card.selected {
+    border: 0.2vh solid red;
     border-color: red;
 }
 .aircraft_card:hover {
@@ -92,28 +99,39 @@ section {
 * Tabs styles
 */
 .tablist {
-    border-bottom: 0.3vh solid #eee;
+    margin-bottom: 2vh;
+    background-color: #eee;
+    border-bottom: 0.3vh solid #ccc;
+    height: 4.3vh;
 }
 .tablist div {
     padding: 1vh 2vw;
-    border-top: 0.3vh solid #eee;
-    border-left: 0.3vh solid #eee;
-    border-right: 0.3vh solid #eee;
-    border-top-left-radius: 0.5vh;
-    border-top-right-radius: 0.7vh;
     display: inline;
 }
+.tab {
+    background-color: transparent;
+    color: #ccc;
+    font-weight: 100;
+}
+.tab:hover {
+    cursor: pointer;
+}
 .tab.selected {
-    background-color: #eee;
-    color: red;
+    color: dodgerblue;
+    border-bottom: 0.5vh solid dodgerblue;
 }
 
 /*
 * Description styles
 */
-.aircraft_details {
+.aircraft_description {
+    padding: 1em;
     background-color: #eee;
-    height: 28vh;
+    height: 53.3vh;
+}
+.aircraft_details {
+    background-color: inherit;
+    height: auto;
     overflow: hidden;
 }
 .aircraft_details .description, .aircraft_details .diagram, .aircraft_details .chart {
@@ -121,9 +139,14 @@ section {
 }
 .aircraft_details .description {
     width: 40vw;
-    height: 98%;
-    padding: 1em;
+    height: 26vh;
+    color: grey;
+    font-size: 1.5vh;
     overflow: auto;
+}
+.aircraft_details .description p {
+    font-weight: bold;
+    font-size: 2vh;
 }
 .aircraft_details .diagram {
     width: 20vw;
