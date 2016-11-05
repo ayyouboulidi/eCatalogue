@@ -50,7 +50,6 @@ class AircraftDescription extends Component {
     }
     handleSelect(event){
         let self = this;
-        console.log("Selected : " + event.target.getAttribute("name"));
         let select = event.target.getAttribute("name");
         let aircrafts = this.state.aircrafts;
         aircrafts.forEach(function(aircraft){

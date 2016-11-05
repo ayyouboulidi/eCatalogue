@@ -46,11 +46,12 @@ export default class ItemList extends Component {
 
     render(){
       let items = this.state.items
+      let type = this.state.filterItems.type
         return(
             <div className="width75 bgcurrentproject activeoverflow height300 item-list">
               {items.map(function(item,key){
                 return(
-                  <PopupItem className="popup-item" id={item.id} key={key}>
+                  <PopupItem className="popup-item" id={item.id} type={type} key={key}>
                       <div className="item">
                           <div><img src={"img"+item.url_image}/></div>
                           <div><b>{item.name}</b></div>

@@ -44,6 +44,11 @@ configSwitch(){
   switcherStore.setView("Config")
 }
 
+handleSelect(event){
+  console.log(event.currentTarget.getAttribute(name))
+
+}
+
   render() {
 
     const backdropStyle = {
@@ -51,16 +56,31 @@ configSwitch(){
     }
 
     let disp = this.state.item
-
+    let type = this.props.type
+    let img = type === "monument" ? "/monument/GALLEY" : "/supplier/GAIN"
+    let title = type === "monument" ? "Galley G25CFA" : "CONVECTION OVEN SELL"
     return (
       <span className='modal-example'>
         <span id={this.props.id} onClick={this.open.bind(this)}>{this.props.children}</span>
         <Modal id={"popup"+disp.id} aria-labelledby='modal-label' backdropStyle={backdropStyle} show={this.state.display[disp.id]} onHide={this.close.bind(this)}>
           <div>
             <h4 id='modal-label'></h4>
-            <img src="img/CHECKED-ICON.png" onClick={this.close.bind(this)}/>
-            <div>blablab blba {this.state.item.id}</div>
-            <button onClick={this.configSwitch.bind(this)}>Config component</button>
+            <img src="img/CLOSE-ICON.png" onClick={this.close.bind(this)}/>
+            <div><img style={{width:"60px"}} src={"img/"+img+".png"} /></div>
+            <div>{title}</div>
+            <div  style={{background:"green"}}><img src="img/FAVOURITE-ICON.png"/><img src="img/ITEM-SETTINGS-ICON.png" onClick={this.configSwitch.bind(this)}/></div>
+            <div className="aircraft_description">
+                <div className="tablist">
+                    <div className="tab" name="desc" onClick={this.handleSelect.bind(this)}>Description</div>
+                    <div className="tab" name="install" onClick={this.handleSelect.bind(this)}>INSTALATION</div>
+                    <div className="tab" name="local" onClick={this.handleSelect.bind(this)}>LOCALISATION</div>
+                    <div className="tab" name="rule" onClick={this.handleSelect.bind(this)}>RULES</div>
+                    <div className="tab" name="other" onClick={this.handleSelect.bind(this)}>OTHER</div>
+                </div>
+                <div className="aircraft_details height250 bgwhite activeoverflow">
+                  blablabla
+                </div>
+            </div>
           </div>
         </Modal>
       </span>
