@@ -1,18 +1,18 @@
 import React, { Component } from 'react'
 import zoneFilter from '../../store/ZoneFilter'
-import AccordionFilter from '../../store/AccordionFilter'
+import PackageFilter from '../../store/PackageFilter'
 
 export default class Cigare extends Component {
   constructor(props){
     super(props)
     this.state={
-      aircraftselectedzone:false,
+      packageselected:false,
       accordionselectedelement:false
     }
   }
 
   componentWillMount(){
-    this.setState({aircraftselectedzone:zoneFilter.getAircraftZone(),accordionselectedelement:AccordionFilter.getAccordionElement()})
+    this.setState({aircraftselectedzone:zoneFilter.getAircraftZone(),packageselected:PackageFilter.getPackageFilter()})
   }
 
 
@@ -23,8 +23,8 @@ export default class Cigare extends Component {
     this.setState(this.state);
   }));
 
-  this.listeners.push(AccordionFilter.getStore$().subscribe((newZone) => {
-    this.state.accordionselectedelement = newZone;
+  this.listeners.push(PackageFilter.getStore$().subscribe((newZone) => {
+    this.state.packageselected = newZone;
     this.setState(this.state);
   }))
   this.setState(this.state)
@@ -41,16 +41,16 @@ componentWillUnmount() {
 
 
   selectZone(){
-    this.state.aircraftselectedzone = this.state.accordionselectedelement ?
+    this.state.aircraftselectedzone = this.state.packageselected ?
       this.state.aircraftselectedzone : !this.state.aircraftselectedzone
     this.setState(this.state)
     zoneFilter.setAircraftZone(this.state.aircraftselectedzone)
   }
 
     render(){
-      let img = !this.state.aircraftselectedzone && !this.state.accordionselectedelement ?
+      let img = !this.state.aircraftselectedzone && !this.state.packageselected ?
                 "all":
-                this.state.aircraftselectedzone && !this.state.accordionselectedelement ?
+                this.state.aircraftselectedzone && !this.state.packageselected ?
                 "clicked":"selected"
         return(
             <div className="cigare">

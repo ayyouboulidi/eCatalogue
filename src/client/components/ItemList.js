@@ -49,7 +49,6 @@ export default class ItemList extends Component {
         return(
             <div className="width75 bgcurrentproject activeoverflow height300 item-list">
               {items.map(function(item,key){
-                console.log(item)
                 return(
                   <PopupItem className="popup-item" id={item.id} key={key}>
                       <div className="item">
