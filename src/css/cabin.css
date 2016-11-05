@@ -174,8 +174,25 @@ input[type="radio"] {
 * Cabin Catalog Mode Styles
 */
 .area-mode {
-    padding: 1.5vh;
+    padding: 0vh;
+}
+.cigare {
+    background-color: #eee;
+    border-bottom: 0.3vh solid #ddd;
 }
 .cigare img {
     width: 100%;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+}
+.accordion-elements {
+    border-top: 0.3vh solid darkgray;
+    border-bottom: 0.3vh solid darkgray;
+}
+.accordion-elements .panel-group {
+    margin-bottom: 0;
+}
+.accordion-elements .panel-group .panel + .panel {
+    margin-top: 0px;
+    border-top: 0.3vh solid darkgray;
 }
