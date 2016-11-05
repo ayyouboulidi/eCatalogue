@@ -60,7 +60,7 @@ componentWillUnmount() {
     render(){
       let items = this.state.items
         return(
-            <div>
+            <div className="accordion-elements">
               <Accordion>
                 <Panel header="Galley" eventKey="1">
                   <div className="item-list">
