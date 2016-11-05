@@ -55,8 +55,10 @@ componentWillUnmount() {
                 return(
                     <div className="verticalScroll" key={key}>
                       <div className="package-image"><img src="img/package/package.png"/></div>
-                      <div className="package-name"><b>Package name</b></div>
-                      <div className="package-description">Description {proposedItem}</div>
+                      <div className="description-block">
+                        <div className="package-name"><b>Package name</b></div>
+                        <div className="package-description">Description {proposedItem}</div>
+                      </div>
                     </div>
                 )
               })
