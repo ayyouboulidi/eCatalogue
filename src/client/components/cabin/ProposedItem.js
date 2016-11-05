@@ -53,7 +53,7 @@ componentWillUnmount() {
               displayItems ?
               proposedItems.map(function(proposedItem,key){
                 return(
-                    <div className="verticalScroll" >
+                    <div className="verticalScroll" key={key}>
                       <div><img src="img/galley.png"/></div>
                       <div><b>Galley</b></div>
                       <div>Description {proposedItem}</div>

@@ -3,6 +3,8 @@ import selectedStore from "../store/popupElement"
 import ThreeDModel from "../components/config/ThreeDModel"
 import Positions from "../components/config/Positions"
 import Features from "../components/config/Features"
+import FilterConf from "../components/config/FilterConf"
+import AdditionalInfo from "../components/config/AdditionalInfo"
 
 
 export default class ConfigMode extends Component {
@@ -26,8 +28,9 @@ export default class ConfigMode extends Component {
                 <Positions/>
                 <Features/>
               </div>
-              <div>
-                Config Hahaha je suis l'element ca doit etre une matrice {this.state.item}
+              <div className="pflex">
+                <FilterConf/>
+                <AdditionalInfo />
               </div>
             </div>
         );

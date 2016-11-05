@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import selectedCategory from "../../store/selectedCategoryStore"
 
 export default class Features extends Component {
   constructor(props){
@@ -7,7 +7,7 @@ export default class Features extends Component {
     this.state={
       option:"INACTIVE",
       standard:"INACTIVE",
-      gain:"INACTIVE"
+      gain:"ACTIVE"
     }
   }
 
@@ -19,7 +19,8 @@ export default class Features extends Component {
 
     render(){
         return(
-            <div className="width33 bgw height250">
+          selectedCategory.getSelectedCategory().type ==="monument"?
+            <div className="width33 bgw height300">
               Options
               <div>
                 <form>
@@ -33,6 +34,12 @@ export default class Features extends Component {
                 <div><img id="gain" src={"img/TOOGLE-BTN-"+this.state.gain+".png"} onClick={this.switchOptions.bind(this)}/>GAIN/NELI</div>
               </div>
             </div>
+          :
+          <div className="width33 bgw height300">
+            <div>  Additionnal Information</div>
+            <div><b>Convection Oven Zodiac P/N</b></div>
+            <div>C10x100 Left hinged door ...</div>
+          </div>
         );
     }
 }
