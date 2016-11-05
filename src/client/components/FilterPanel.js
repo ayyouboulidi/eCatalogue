@@ -19,8 +19,11 @@ export default class FilterPanel extends Component {
         this.state.displayFilters = newCategory;
         this.setState(this.state);
         let _this = this
+        let key = this.state.displayFilters.type === "supplier" ? "equipment":this.state.displayFilters.type
+        let obj = {}
+        obj[key] = this.state.displayFilters.name
         if(this.state.displayFilters.state){
-          $.post('/GetFilters',{monument:_this.state.displayFilters.name},function(data){
+          $.post('/GetFilters',obj,function(data){
             if(data.code === 0){
               _this.state.filters=data.result
             }else{
