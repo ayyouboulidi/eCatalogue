@@ -26,7 +26,7 @@ span.main_title{
   margin-top: 1.5vh;
   vertical-align: -25%;
 }
-.user_profile {
+header .user_profile {
   overflow-x: auto;
   padding-left: 2vh;
   font-size: 3vh;
@@ -35,7 +35,7 @@ span.main_title{
   background: #333;
   right: 0;
 }
-.user_profile img {
+header .user_profile img {
   vertical-align: -35%;
 }
 
