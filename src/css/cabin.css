@@ -175,6 +175,7 @@ input[type="radio"] {
 */
 .area-mode {
     padding: 0vh;
+    font-size: 2vh;
 }
 .cigare {
     background-color: #eee;
@@ -184,6 +185,36 @@ input[type="radio"] {
     width: 100%;
     margin-top: 3vh;
     margin-bottom: 3vh;
+}
+.area-mode .activeoverflowx {
+    background-color: #ddd;
+}
+.area-mode .verticalScroll {
+    height: 8vh;
+    background-color: #eee;
+    min-width: 20.5%;
+    margin: 1vw;
+    margin-right: 3vw;
+    padding: 0;
+    position:relative;
+    display: inline-block;
+}
+.area-mode .verticalScroll .package-image {
+    float: left;
+}
+.area-mode .verticalScroll .description-block {
+    float: right;
+    text-align: left;
+    width: 75%;
+    height: 100%;
+}
+.package-image {
+    max-width: 25%;
+    height: 100%;
+}
+.package-image img {
+    height: 100%;
+    vertical-align: center;
 }
 .accordion-elements {
     border-top: 0.3vh solid darkgray;
