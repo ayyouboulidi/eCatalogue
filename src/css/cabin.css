@@ -31,7 +31,7 @@
     transform: translateX(0.5vh) translateY(-18.5%);
 }
 .monument-list .verticalScroll {
-    width: 25%;
+    min-width: 20%;
 }
 .monument-list .verticalScroll + .monument-list .verticalScroll {
     margin-left:10vh;
@@ -162,7 +162,7 @@ input[type="radio"] {
     font-size: 1.75vh;
     padding: 1vh;
     width: 16.6%;
-    height: 40%;
+    max-height: 45%;
     display: inline-block;
     border-bottom: 0.2vh solid gray;
 }
