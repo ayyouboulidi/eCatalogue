@@ -30,9 +30,8 @@ export default class MonumentsList extends Component {
               {monuments.map(function(monument,key){
                 return(
                   <div className="verticalScroll" key={key} id={monument.name} onClick={_this.setSelectedCategory.bind(_this)}>
-                    <div><img src="img/galley.png"/></div>
+                    <div><img src={"img"+monument.url}/></div>
                     <div className="monument-name"><b>{monument.name}</b></div>
-                    <div className="monument-description">{monument.description} id {monument.id}</div>
                   </div>
                 )
               })}

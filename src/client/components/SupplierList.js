@@ -30,8 +30,8 @@ export default class SupplierList extends Component {
               {suppliers.map(function(supplier,key){
                 return(
                   <div className="verticalScroll" key={key}  id={supplier.name} onClick={_this.setSelectedCategory.bind(_this)}>
-                    <div><img src="img/galley.png"/></div>
-                    <div className="supplier-id">{supplier.name} {supplier.id}</div>
+                    <div><img src={"img"+supplier.url}/></div>
+                    <div className="supplier-id">{supplier.name}</div>
                   </div>
                 )
               })}

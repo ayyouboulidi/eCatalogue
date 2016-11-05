@@ -4,9 +4,18 @@ export default class contactList extends Component {
   constructor(props){
     super(props);
     this.state={
-      contacts:["Ayyoub","Benjamin","Reda"]
+      contacts:[]
     }
   }
+
+  componentWillMount(){
+    let _this = this
+    $.post('/GetContacts',function(data){
+      _this.state.contacts=data.result
+      _this.setState(_this.state)
+    },"json")
+  }
+
     render(){
         return(
             <div className="width25 fright bgcontact">
@@ -17,9 +26,9 @@ export default class contactList extends Component {
                     this.state.contacts.map(function(contact,key){
                       return(
                       <tr key={key}>
-                        <td className="contact-list-name">{contact}</td>
-                        <td><img className="fright contact-list-settings" src="img/SETTINGS-ICON.png"/></td>
-                        <td><img className="fright contact-list-mail" src="img/MAIL-ICON.png"/></td>
+                        <td className="contact-list-name">{contact.name}</td>
+                        <td>{contact.role}</td>
+                        <td><a href={contact.email}><img className="fright contact-list-mail" src="img/MAIL-ICON.png"/></a></td>
                       </tr>
                     )
                     })

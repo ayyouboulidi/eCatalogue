@@ -32,8 +32,6 @@ export default class ItemList extends Component {
         if(this.state.filterItems.state){
           $.post('/GetItems',obj,function(data){
             if(data.code === 0){
-              console.log(obj)
-              console.log(data.result)
               _this.state.items=data.result
               _this.setState(_this.state)
             }
@@ -51,12 +49,12 @@ export default class ItemList extends Component {
         return(
             <div className="width75 bgcurrentproject activeoverflow height300 item-list">
               {items.map(function(item,key){
+                console.log(item)
                 return(
                   <PopupItem className="popup-item" id={item.id} key={key}>
                       <div className="item">
-                          <div><img src="img/galley.png"/></div>
+                          <div><img src={"img"+item.url_image}/></div>
                           <div><b>{item.name}</b></div>
-                          <div>{item.title} id {item.id}</div>
                       </div>
                   </PopupItem>
                 )
