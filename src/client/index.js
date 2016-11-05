@@ -7,6 +7,7 @@ import Connection from './root/connection'
 import Dashboard from './root/dashboard'
 import Welcome from './root/welcome'
 import Cabin from './root/cabin'
+import Project from './root/project'
 
 const App = React.createClass({
 			  render() {
@@ -28,8 +29,8 @@ ReactDOM.render((
       {/*<Route path="System" component={System}/>
       <Route path="Airplane" component={Airplane}/>
       <Route path="crew" component={Crew}/>
-      <Route path="emergency" component={Emergency}/>
-      <Route path="cart" component={Cart}/>*/}
+      <Route path="emergency" component={Emergency}/>*/}
+      <Route path="project" component={Project}/>
     </Route>
   </Router>
 ),document.getElementById('root')

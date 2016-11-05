@@ -18,7 +18,7 @@ export default class SideMenu extends React.Component{
         <Link to="" ><div className={(this.state.selected == "system") ? "side_menu_box selected" : "side_menu_box"}><img src="/img/SYSTEM-ICON.png"/><span>System</span></div></Link>
         <Link to="" ><div className={(this.state.selected == "emergency") ? "side_menu_box selected" : "side_menu_box"}><img src="/img/EMERGENCY-ICON.png"/><span>Emergency Equipment</span></div></Link>
         <Link to="" ><div className={(this.state.selected == "favorites") ? "side_menu_box selected" : "side_menu_box"}><img src="/img/FAVOURITE-ICON.png"/><span>My Favourites</span></div></Link>
-        <Link to="" ><div className={(this.state.selected == "project") ? "side_menu_box selected" : "side_menu_box"}><img src="/img/MY-PROJECT-ICON.png"/><span>My Project</span></div></Link>
+        <Link to="/project" ><div className={(this.state.selected == "project") ? "side_menu_box selected" : "side_menu_box"}><img src="/img/MY-PROJECT-ICON.png"/><span>My Project</span></div></Link>
       </div>
     )
   }
