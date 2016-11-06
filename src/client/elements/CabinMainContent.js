@@ -4,6 +4,7 @@ import CatalogMode from "./CatalogMode"
 import ConfigMode from "./ConfigMode"
 import HeadCabin from "../components/HeadCabin"
 import switcherView from "../store/switcherView"
+import sectionNameStore from "../store/sectionName"
 
 export default class MainContent extends Component {
   constructor(props){
@@ -20,6 +21,10 @@ export default class MainContent extends Component {
     this.disposable = switcherView.getStore$().subscribe((newView) => {
       this.state.viewMode = newView;
       this.setState(this.state);
+      let prevValue = sectionNameStore.getSectionName()
+      let name = this.state.viewMode === "Catalog" ? "Cabin Catalog" : this.state.viewMode === "Area" ? "Cabin Location" : "Cabin Configuration"
+      let progress = "Cabin > "+prevValue.aircraft + " > " + name
+      sectionNameStore.setSectionName({name:name,progress:progress,aircraft:prevValue.aircraft})
     })
   }
 

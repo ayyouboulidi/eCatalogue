@@ -45,7 +45,7 @@ configSwitch(){
 }
 
 handleSelect(event){
-  console.log(event.currentTarget.getAttribute(name))
+  console.log(event.currentTarget.id)
 
 }
 
@@ -74,11 +74,11 @@ handleSelect(event){
             <div  style={{background:"green"}}><img src="img/FAVOURITE-ICON.png"/><img src="img/ITEM-SETTINGS-ICON.png" onClick={this.configSwitch.bind(this)}/></div>
             <div className="aircraft_description">
                 <div className="tablist">
-                    <div className="tab" name="desc" onClick={this.handleSelect.bind(this)}>DESCRIPTION</div>
-                    <div className="tab" name="install" onClick={this.handleSelect.bind(this)}>INSTALATION</div>
-                    <div className="tab" name="local" onClick={this.handleSelect.bind(this)}>LOCALISATION</div>
-                    <div className="tab" name="rule" onClick={this.handleSelect.bind(this)}>RULES</div>
-                    <div className="tab" name="other" onClick={this.handleSelect.bind(this)}>OTHER</div>
+                    <div className="tab" id="desc" onClick={this.handleSelect.bind(this)}>DESCRIPTION</div>
+                    <div className="tab" id="install" onClick={this.handleSelect.bind(this)}>INSTALATION</div>
+                    <div className="tab" id="local" onClick={this.handleSelect.bind(this)}>LOCALISATION</div>
+                    <div className="tab" id="rule" onClick={this.handleSelect.bind(this)}>RULES</div>
+                    <div className="tab" id="other" onClick={this.handleSelect.bind(this)}>OTHER</div>
                 </div>
                 <div className="aircraft_details height250 bgwhite activeoverflow">
                   <b>Convection Oven Zodiac P/N</b><br/>

@@ -18,7 +18,7 @@ export default class MainContent extends Component {
             <div className="content">
               <div className="headdashboard">
                 <Title />
-                <SearchBox />
+                <SearchBox page="all" />
               </div>
               <div  className="firstblockContent">
                 {user === "admin" ? <MyCustomers /> : <CurrentProjects /> }

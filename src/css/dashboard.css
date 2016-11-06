@@ -2,7 +2,7 @@
 * Dashboard view Style
 */
 @media (width: 1024px) {
-    
+
 }
 .title {
     font-size: 3vh;
@@ -195,7 +195,6 @@ input.view_details {
     display: inline;
 }
 .bgcontact .second_title img {
-    width: 10%;
     float: right;
 }
 .last-visits-list .last-visit-details {
