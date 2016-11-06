@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import popupStore from "../store/popupElement"
+import UserStore from "../store/connect"
 import switcherStore from "../store/switcherView"
 import {Modal, Button} from 'react-bootstrap'
 
@@ -45,6 +46,19 @@ export default class popup extends Component {
     switcherStore.setView("Config")
   }
 
+  addProject(){
+    let _this = this
+    let user = UserStore.getUser()
+    let obj={user:user,id_item:this.state.item.id,quantity:3}
+    $.post('/AddProjects',obj,function(data){
+      if(data.code === 0){
+        alert("Your item had been Add ")
+      }else if (data.code === -1){
+        alert("An Error happened please try later")
+      }
+    },"json")
+  }
+
   handleSelect(event){
     let id = event.currentTarget.id
     this.setState({tab:id})
@@ -72,7 +86,7 @@ export default class popup extends Component {
       <div className="product-title">{title}</div>
       <div className="product-short-description">ELECTRICAL INSERT EUROPE PART NUMBER 6762-001-003</div>
       </div>
-      <div  style={{background:"green"}}><img src="img/FAVOURITE-ICON.png"/><img src="img/ITEM-SETTINGS-ICON.png" onClick={this.configSwitch.bind(this)}/></div>
+      <div  style={{background:"green"}}><img src="img/FAVOURITE-ICON.png" onClick={this.addProject.bind(this)}/><img src="img/ITEM-SETTINGS-ICON.png" onClick={this.configSwitch.bind(this)}/></div>
       <div className="aircraft_description">
       <div className="tablist">
       <div className={this.state.tab ==="desc" ? "tab selected" : "tab"} id="desc" onClick={this.handleSelect.bind(this)}>DESCRIPTION</div>
