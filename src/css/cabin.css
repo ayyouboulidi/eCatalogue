@@ -239,3 +239,24 @@ input[type="radio"] {
 .area-mode .item-list {
     width: 100%;
 }
+
+/*
+* Modal box Styling
+*/
+.fade.in.modal {
+    background-color: rgba(0, 0, 0, 0.5)
+}
+.modal-dialog {
+    position: relative;
+    font-size: 2.2vh;
+    margin-top: 19vh;
+    width: 61vw;
+    height: 64vh;
+}
+.modal-content > div > img {
+    width: 2vh;
+    height: 2vh;
+    position: absolute;
+    top: 1vh;
+    right: 1vh;
+}

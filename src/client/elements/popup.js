@@ -66,19 +66,38 @@ handleSelect(event){
           <div>
             <h4 id='modal-label'></h4>
             <img src="img/CLOSE-ICON.png" onClick={this.close.bind(this)}/>
-            <div><img style={{width:"60px"}} src={"img/"+img+".png"} /></div>
-            <div>{title}</div>
+            <div className="modal-description">
+              <div className="product-image"><img style={{width:"60px"}} src={"img/"+img+".png"} /></div>
+              <div className="product-title">{title}</div>
+              <div className="product-short-description">ELECTRICAL INSERT EUROPE PART NUMBER 6762-001-003</div>
+            </div>
             <div  style={{background:"green"}}><img src="img/FAVOURITE-ICON.png"/><img src="img/ITEM-SETTINGS-ICON.png" onClick={this.configSwitch.bind(this)}/></div>
             <div className="aircraft_description">
                 <div className="tablist">
-                    <div className="tab" name="desc" onClick={this.handleSelect.bind(this)}>Description</div>
+                    <div className="tab" name="desc" onClick={this.handleSelect.bind(this)}>DESCRIPTION</div>
                     <div className="tab" name="install" onClick={this.handleSelect.bind(this)}>INSTALATION</div>
                     <div className="tab" name="local" onClick={this.handleSelect.bind(this)}>LOCALISATION</div>
                     <div className="tab" name="rule" onClick={this.handleSelect.bind(this)}>RULES</div>
                     <div className="tab" name="other" onClick={this.handleSelect.bind(this)}>OTHER</div>
                 </div>
                 <div className="aircraft_details height250 bgwhite activeoverflow">
-                  blablabla
+                  <b>Convection Oven Zodiac P/N</b><br/>
+                  C10x100 Left hinged door<br/>
+                  C10x200 Right hinged door<br/>
+                  "x" defined by Trim and Finish<br/>
+                  see ADD Annex "Trim and Finish"<br/>
+                  V2523CC1100237<br/>
+                  <br/>
+                  <b>Description</b><br/>
+                  <li>Unpressurized oven cavity</li>
+                  <li>Standard Convection Mode run at 170°</li>
+                  <li>Keep Warm Mode</li>
+                  <li>Defrost Mode: max 170° and max 30 min</li>
+                  <li>Selection of Combination Modes</li>
+                  <li>Selection of Pre set Time before Program Start</li>
+                  <li>27 predefined programs (Time-Temperature)</li>
+                  <li>Up to 100 program places for user defined setups (Time-Temperature)</li>
+                  <li>Large graphical display</li>
                 </div>
             </div>
           </div>
