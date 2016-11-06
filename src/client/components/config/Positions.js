@@ -26,8 +26,8 @@ export default class Positions extends Component {
       let items = this.state.items
         return(
           selectedCategory.getSelectedCategory().type ==="monument"?
-            <div className="width33 bgy height300">
-              <div>Positions</div>
+            <div className="width33 bgy height300 positions">
+              <div className="title">Positions</div>
               <img src="img/position.png"/>
                     <div className="filters-list">
                       <select className="filters">
@@ -40,14 +40,14 @@ export default class Positions extends Component {
                     </div>
             </div>
             :
-            <div className="width33 bgcurrentproject activeoverflow height300">
+            <div className="width33 bgcurrentproject activeoverflow height300 positions">
               <div className="item-list">
                 {items.map(function(item,key){
                   return(
                     <PopupItem className="popup-item" id={item.id} key={key}>
                         <div className="item">
-                            <div><img src={"img"+item.url_image}/></div>
-                            <div><b>{item.name}</b></div>
+                            <div className="item-image"><img src={"img"+item.url_image}/></div>
+                            <div className="item-name"><b>{item.name}</b></div>
                         </div>
                       </PopupItem>
                   )

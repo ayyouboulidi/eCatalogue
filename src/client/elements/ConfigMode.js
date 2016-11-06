@@ -25,13 +25,13 @@ export default class ConfigMode extends Component {
     render(){
       let type = selectedCategoryStore.getSelectedCategory().type
         return(
-            <div>
-              <div className="pflex">
+            <div className="config-mode">
+              <div className="pflex first-block">
                 <ThreeDModel />
                 <Positions/>
                 <Features/>
               </div>
-              <div className="pflex">
+              <div className="pflex second-block">
                 <FilterConf/>
                 {type === "monument" ? <AdditionalInfoGalley /> : <AdditionalInfoEquipment />}
               </div>

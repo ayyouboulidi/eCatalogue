@@ -20,25 +20,25 @@ export default class Features extends Component {
     render(){
         return(
           selectedCategory.getSelectedCategory().type ==="monument"?
-            <div className="width33 bgw height300">
+            <div className="width33 bgw height300 features">
               Options
-              <div>
+              <div className="options">
                 <form>
                   <input type="radio" name="master" value="Master 1" defaultChecked/> Master 1<br/>
                   <input type="radio" name="master" value="Master 2"/> Master 2
                 </form>
               </div>
-              <div>
+              <div className="options">
                 <div><img id="option" src={"img/TOOGLE-BTN-"+this.state.option+".png"} onClick={this.switchOptions.bind(this)}/>OPTIONS</div>
                 <div><img id="standard" src={"img/TOOGLE-BTN-"+this.state.standard+".png"} onClick={this.switchOptions.bind(this)}/>STANDARD</div>
                 <div><img id="gain" src={"img/TOOGLE-BTN-"+this.state.gain+".png"} onClick={this.switchOptions.bind(this)}/>GAIN/NELI</div>
               </div>
             </div>
           :
-          <div className="width33 bgw height300">
-            <div>  Additionnal Information</div>
-            <div><b>Convection Oven Zodiac P/N</b></div>
-            <div>C10x100 Left hinged door ...</div>
+          <div className="width33 bgw height300 features">
+            <div className="features-additional-infos">  Additionnal Information</div>
+            <div className="title"><b>Convection Oven Zodiac P/N</b></div>
+            <div className="description">C10x100 Left hinged door ...</div>
           </div>
         );
     }

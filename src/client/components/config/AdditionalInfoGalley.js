@@ -31,7 +31,7 @@ constructor(props){
     render(){
       let tabs = this.state.tabs
         return(
-            <div className="width80 bgg height300">
+            <div className="width80 bgg height300 additional-infos">
               <table className="width100">
               <tbody>
                 <tr>

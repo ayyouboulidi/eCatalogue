@@ -22,7 +22,7 @@ export default class AdditionalInfoEquipment extends Component {
     render(){
       let items = this.state.items
         return(
-          <div className="width80 bgcurrentproject activeoverflow height300">
+          <div className="width80 bgcurrentproject activeoverflow height300 additional-infos">
             <div className="item-list">
               {items.map(function(item,key){
                 return(
