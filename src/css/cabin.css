@@ -314,11 +314,12 @@ input[type="radio"] {
 .product_description > .tablist {
     width: 95%;
     margin: 0 auto;
+    height: 3.8vh;
 }
 .product_description > .tablist > .tab {
     padding: 1vh 0.9vw;
 }
-.product_details {
+.popup_details {
     padding: 1vh 2vw;
     height: 87%;
     overflow: auto;
