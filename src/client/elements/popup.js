@@ -82,12 +82,12 @@ export default class popup extends Component {
       <h4 id='modal-label'></h4>
       <img src="img/CLOSE-ICON.png" onClick={this.close.bind(this)}/>
       <div className="modal-description">
-      <div className="product-image"><img style={{width:"60px"}} src={"img/"+img+".png"} /></div>
+      <div className="product-image"><img src={"img/"+img+".png"} /></div>
       <div className="product-title">{title}</div>
       <div className="product-short-description">ELECTRICAL INSERT EUROPE PART NUMBER 6762-001-003</div>
       </div>
-      <div  style={{background:"green"}}><img src="img/FAVOURITE-ICON.png" onClick={this.addProject.bind(this)}/><img src="img/ITEM-SETTINGS-ICON.png" onClick={this.configSwitch.bind(this)}/></div>
-      <div className="aircraft_description">
+      <div className="modal-action"><img src="img/FAVOURITE-ICON.png" onClick={this.addProject.bind(this)}/><img src="img/ITEM-SETTINGS-ICON.png" onClick={this.configSwitch.bind(this)}/></div>
+      <div className="product_description">
       <div className="tablist">
       <div className={this.state.tab ==="desc" ? "tab selected" : "tab"} id="desc" onClick={this.handleSelect.bind(this)}>DESCRIPTION</div>
       <div className={this.state.tab ==="install" ? "tab selected" : "tab"}  id="install" onClick={this.handleSelect.bind(this)}>INSTALATION</div>
@@ -157,5 +157,4 @@ export default class popup extends Component {
     </span>
   )
 }
-
 }
