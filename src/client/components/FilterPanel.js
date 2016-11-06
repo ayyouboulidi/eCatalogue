@@ -43,7 +43,7 @@ export default class FilterPanel extends Component {
       let filters = this.state.filters
       let displayFilters = this.state.displayFilters.state
         return(
-            <div className="width25 filter-panel">
+            <div className="width25 filter-panel activeoverflow">
               <div className="filter-text">Filter by:</div>
               {displayFilters ?
                 filters.map(function(filt,key){
