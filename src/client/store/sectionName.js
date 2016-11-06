@@ -1,7 +1,7 @@
 import Store from './store'
 
 const store = Store();
-let section= {name:"Airbus Dashboard",progress:"dashboard > airline",aircraft:"A320"};
+let section= {name:"Airbus Dashboard",progress:"dashboard > ",aircraft:"A320"};
 
 store.getStore$().subscribe((newSection) => {
   section = newSection

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import UserStore from '../store/connect'
 
 export default class projectList extends Component {
   constructor(props){
@@ -9,7 +10,8 @@ export default class projectList extends Component {
   }
   componentWillMount(){
     let _this = this
-    $.post('/GetProjects',{user:"user"},function(data){
+    let user = UserStore.getUser()
+    $.post('/GetProjects',{user:user},function(data){
       if(data.code === 0){
         _this.state.projects=data.result
         _this.setState(_this.state)
