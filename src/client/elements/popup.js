@@ -67,12 +67,12 @@ handleSelect(event){
             <h4 id='modal-label'></h4>
             <img src="img/CLOSE-ICON.png" onClick={this.close.bind(this)}/>
             <div className="modal-description">
-              <div className="product-image"><img style={{width:"60px"}} src={"img/"+img+".png"} /></div>
+              <div className="product-image"><img src={"img/"+img+".png"} /></div>
               <div className="product-title">{title}</div>
               <div className="product-short-description">ELECTRICAL INSERT EUROPE PART NUMBER 6762-001-003</div>
             </div>
-            <div  style={{background:"green"}}><img src="img/FAVOURITE-ICON.png"/><img src="img/ITEM-SETTINGS-ICON.png" onClick={this.configSwitch.bind(this)}/></div>
-            <div className="aircraft_description">
+            <div className="modal-action" ><img src="img/FAVOURITE-ICON.png"/><img src="img/ITEM-SETTINGS-ICON.png" onClick={this.configSwitch.bind(this)}/></div>
+            <div className="product_description">
                 <div className="tablist">
                     <div className="tab" name="desc" onClick={this.handleSelect.bind(this)}>DESCRIPTION</div>
                     <div className="tab" name="install" onClick={this.handleSelect.bind(this)}>INSTALATION</div>
@@ -80,7 +80,7 @@ handleSelect(event){
                     <div className="tab" name="rule" onClick={this.handleSelect.bind(this)}>RULES</div>
                     <div className="tab" name="other" onClick={this.handleSelect.bind(this)}>OTHER</div>
                 </div>
-                <div className="aircraft_details height250 bgwhite activeoverflow">
+                <div className="product_details height250 bgwhite activeoverflow">
                   <b>Convection Oven Zodiac P/N</b><br/>
                   C10x100 Left hinged door<br/>
                   C10x200 Right hinged door<br/>
