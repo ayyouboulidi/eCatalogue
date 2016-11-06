@@ -162,7 +162,6 @@ input[type="radio"] {
     font-size: 1.75vh;
     padding: 1vh;
     width: 16.6%;
-    max-height: 45%;
     display: inline-block;
     border-bottom: 0.3vh solid #ddd;
 }
@@ -232,7 +231,7 @@ input[type="radio"] {
     font-size: 2vh;
 }
 .area-mode .panel-body {
-    height: 39vh;
+    height: 20vh;
     padding-left: 1vh;
     padding-right: 1vh;
 }
