@@ -45,7 +45,8 @@ export default class ItemList extends Component {
     this.listeners.push(selectedFilters.getStore$().subscribe((newFiltering) => {
       let _this = this
       if(newFiltering.length != 0){
-        $.post('/GetItems',newFiltering,function(data){
+
+        $.post('/GetItems',{"filter":newFiltering},function(data){
           if(data.code === 0){
             _this.state.items=data.result
             _this.setState(_this.state)

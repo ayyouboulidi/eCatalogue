@@ -48,8 +48,9 @@ export default class FilterPanel extends Component {
 
       let filterslist = listFilters.getFilters()
       let index = filterslist.findIndex(x => x.name==filt)
-      console.log(index)
-      index === -1 ? filterslist.push({name:filt,value:val}) : filterslist[index] = {name:filt,value:val}
+      console.log(filterslist)
+      index === -1 ? filterslist.push({name:filt,value:val}) : (filt===val ? filterslist.splice(index,1) : filterslist[index] = {name:filt,value:val})
+      console.log(filterslist)
       listFilters.setFilters(filterslist)
     }
 
@@ -65,7 +66,7 @@ export default class FilterPanel extends Component {
                   return(
                     <div className="filters-list" key={key}>
                       <select id={filt.name} className="filters" defaultValue={filt.name} onChange={_this.selectedFilter.bind(_this)}>
-                          <option value={filt.name} disabled>{filt.name}</option>
+                          <option value={filt.name}>{filt.name}</option>
                           {filt.values.map(function(val,key){
                             return(
                               <option key={key} value={val} >{val}</option>

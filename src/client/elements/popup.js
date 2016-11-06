@@ -49,8 +49,8 @@ export default class popup extends Component {
   addProject(){
     let _this = this
     let user = UserStore.getUser()
-    let obj={user:user,id_item:this.state.item.id,quantity:3}
-    $.post('/AddProjects',obj,function(data){
+    let obj=[{user:user,id_item:this.state.item.id,quantity:3}]
+    $.post('/AddProjects',{projects:obj},function(data){
       if(data.code === 0){
         alert("Your item had been Add ")
       }else if (data.code === -1){
