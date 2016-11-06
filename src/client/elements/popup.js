@@ -8,7 +8,8 @@ export default class popup extends Component {
     super(props)
     this.state = {
       item:{id:null,display:false},
-      display:{}
+      display:{},
+      tab:"desc"
     }
   }
 
@@ -45,8 +46,8 @@ configSwitch(){
 }
 
 handleSelect(event){
-  console.log(event.currentTarget.id)
-
+  let id = event.currentTarget.id
+  this.setState({tab:id})
 }
 
   render() {
@@ -74,30 +75,38 @@ handleSelect(event){
             <div  style={{background:"green"}}><img src="img/FAVOURITE-ICON.png"/><img src="img/ITEM-SETTINGS-ICON.png" onClick={this.configSwitch.bind(this)}/></div>
             <div className="aircraft_description">
                 <div className="tablist">
-                    <div className="tab" id="desc" onClick={this.handleSelect.bind(this)}>DESCRIPTION</div>
-                    <div className="tab" id="install" onClick={this.handleSelect.bind(this)}>INSTALATION</div>
-                    <div className="tab" id="local" onClick={this.handleSelect.bind(this)}>LOCALISATION</div>
-                    <div className="tab" id="rule" onClick={this.handleSelect.bind(this)}>RULES</div>
-                    <div className="tab" id="other" onClick={this.handleSelect.bind(this)}>OTHER</div>
+                    <div className={this.state.tab ==="desc" ? "tab selected" : "tab"} id="desc" onClick={this.handleSelect.bind(this)}>DESCRIPTION</div>
+                    <div className={this.state.tab ==="install" ? "tab selected" : "tab"}  id="install" onClick={this.handleSelect.bind(this)}>INSTALATION</div>
+                    <div className={this.state.tab ==="local" ? "tab selected" : "tab"}  id="local" onClick={this.handleSelect.bind(this)}>LOCALISATION</div>
+                    <div className={this.state.tab ==="rule" ? "tab selected" : "tab"}  id="rule" onClick={this.handleSelect.bind(this)}>RULES</div>
+                    <div className={this.state.tab ==="other" ? "tab selected" : "tab"}  id="other" onClick={this.handleSelect.bind(this)}>OTHER</div>
                 </div>
-                <div className="aircraft_details height250 bgwhite activeoverflow">
-                  <b>Convection Oven Zodiac P/N</b><br/>
-                  C10x100 Left hinged door<br/>
-                  C10x200 Right hinged door<br/>
-                  "x" defined by Trim and Finish<br/>
-                  see ADD Annex "Trim and Finish"<br/>
-                  V2523CC1100237<br/>
-                  <br/>
-                  <b>Description</b><br/>
-                  <li>Unpressurized oven cavity</li>
-                  <li>Standard Convection Mode run at 170°</li>
-                  <li>Keep Warm Mode</li>
-                  <li>Defrost Mode: max 170° and max 30 min</li>
-                  <li>Selection of Combination Modes</li>
-                  <li>Selection of Pre set Time before Program Start</li>
-                  <li>27 predefined programs (Time-Temperature)</li>
-                  <li>Up to 100 program places for user defined setups (Time-Temperature)</li>
-                  <li>Large graphical display</li>
+                <div className="popup_details bgwhite activeoverflow">
+                  {this.state.tab === "desc"?
+                    <div>
+                      <b>Convection Oven Zodiac P/N</b><br/>
+                      C10x100 Left hinged door<br/>
+                      C10x200 Right hinged door<br/>
+                      "x" defined by Trim and Finish<br/>
+                      see ADD Annex "Trim and Finish"<br/>
+                      V2523CC1100237<br/>
+                      <br/>
+                      <b>Description</b><br/>
+                      <li>Unpressurized oven cavity</li>
+                      <li>Standard Convection Mode run at 170°</li>
+                      <li>Keep Warm Mode</li>
+                      <li>Defrost Mode: max 170° and max 30 min</li>
+                      <li>Selection of Combination Modes</li>
+                      <li>Selection of Pre set Time before Program Start</li>
+                      <li>27 predefined programs (Time-Temperature)</li>
+                      <li>Up to 100 program places for user defined setups (Time-Temperature)</li>
+                      <li>Large graphical display</li>
+                    </div>
+                    :
+                    <div>
+                      {this.state.tab}
+                    </div>
+                }
                 </div>
             </div>
           </div>

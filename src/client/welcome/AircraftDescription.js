@@ -10,7 +10,6 @@ class AircraftDescription extends Component {
     componentWillMount(){
         let filter = this.props.selected;
         var aircrafts = welcome.getAircrafts();
-        console.log("Searching for " + filter);
         aircrafts.forEach(function(aircraft) {
             if (aircraft.family == filter) {
                 if (this.state.selected == ""){
@@ -32,7 +31,6 @@ class AircraftDescription extends Component {
             self.state.selected = "";
             let filter = self.props.selected;
             var aircrafts = welcome.getAircrafts();
-            console.log("Searching for " + filter);
             aircrafts.forEach(function(aircraft) {
                 if (aircraft.family == filter) {
                     if (self.state.selected == ""){

@@ -21,7 +21,6 @@ class AircraftTypes extends Component {
         if ( name == null ) {
             this.getName(node.parentNode);
         } else {
-            console.log("Selected : " + name);
             this.state.selected = name;
             this.setState(this.state);
             sectionNameStore.setSectionName({name:"Airbus Dashboard",progress:"dashboard > "+name,aircraft:name})

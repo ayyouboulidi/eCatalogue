@@ -13,21 +13,20 @@ function Filter(name,values){
 Filters.prototype.getFilters = function(callback) {
 	if (this.filters==undefined){
 		var result = [];
-		if (this.monument == undefined || this.monuments.indexOf(this.monument)>-1){	
+		if (this.monument == undefined || this.monuments.indexOf(this.monument)>-1){
 			var statement = "Select DISTINCT filter.name, filter.value from filter,items";
 			var whereStatement; var param;
 			if (this.monument){
 				 statement +=",monuments ";
 				 whereStatement =  "AND monuments.id = items.id_monument AND monuments.name =? ";
 				 param = new Array(this.monument);
-			}else{	
+			}else{
 				 statement +=",supplier ";
 				 whereStatement =  "AND supplier.id = items.id_supplier AND supplier.name =? ";
 				 param = new Array(this.equipment);
 			}
 			statement += "WHERE  filter.id_item=items.id "+whereStatement
-			+"ORDER BY filter.name" ;		
-			console.log(statement);		
+			+"ORDER BY filter.name" ;
 			this.db.all(statement,param
 			, function(err, rows) {
 					if (err){
@@ -49,13 +48,13 @@ Filters.prototype.getFilters = function(callback) {
 				});
 		 }else{
 			result = undefined;
-			callback(result); 
-		} 
+			callback(result);
+		}
 	}else{
 		callback(this.filters);
 	}
-	
-	
+
+
 };
 
 module.exports = Filters;
