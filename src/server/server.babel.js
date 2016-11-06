@@ -45,10 +45,9 @@ app.post("/GetItems",function(req,res){
 	items.getItems(function(result){
 		if (result != undefined)
 			res.send({"code":0,"result":result});
-		else	
-			res.json({"code":-1});	
+		else
+			res.json({"code":-1});
 	});
-	console.log("/GetItems: arguments="+JSON.stringify(req.body));
 });
 
 app.post("/SearchItems",function(req,res){
@@ -57,26 +56,24 @@ app.post("/SearchItems",function(req,res){
 	items.searchItems(function(result){
 		if (result != undefined)
 			res.send({"code":0,"result":result});
-		else	
-			res.json({"code":-1});	
+		else
+			res.json({"code":-1});
 	},req.body.req);
-	console.log("/SearchItem: arguments="+JSON.stringify(req.body));
 });
 
 app.post("/GetFilters",function(req,res){
- 	res.setHeader('Content-Type', 'application/json'); 
+ 	res.setHeader('Content-Type', 'application/json');
 	if ( req.body!= undefined && (req.body.monument!=undefined || req.body.equipment!=undefined) ){
 		var filters = new Filters(req.body.monument,req.body.equipment,db.db,monumentsTmp.value.monumentsArray);
 		filters.getFilters(function(result){
 			if (result)
 				res.send({"code":0,"result":result});
-			else	
-				res.json({"code":-1});	
+			else
+				res.json({"code":-1});
 		});
 	}else{
 		res.json({"code":-1});
 	}
-	console.log("/GetFilters: arguments="+JSON.stringify(req.body));
 });
 
 app.post("/GetContacts",function(req,res){
@@ -89,10 +86,9 @@ app.post("/GetContacts",function(req,res){
 	contacts.getContacts(function(c){
 		if (c)
 			res.json({"code":0,"result":c});
-		else	
+		else
 			res.json({"code":-1});
 	});
-	console.log("/GetContacts: arguments="+JSON.stringify(req.body));
 });
 
 app.post("/GetMonuments",function(req,res){
@@ -103,9 +99,8 @@ app.post("/GetMonuments",function(req,res){
 		monuments = monumentsTmp.getValue();
 	}
 	monuments.getMonuments(function(r){
-		res.json({"code":0,"result":r});	
+		res.json({"code":0,"result":r});
 	});
-	console.log("/GetMonuments: arguments="+JSON.stringify(req.body));
 });
 
 app.post("/GetSuppliers",function(req,res){
@@ -118,10 +113,9 @@ app.post("/GetSuppliers",function(req,res){
 	suppliers.getSuppliers(function(r){
 		if (r)
 			res.json({"code":0,"result":r});
-		else	
-			res.json({"code":-1});	
+		else
+			res.json({"code":-1});
 	});
-	console.log("/GetSuppliers: arguments="+JSON.stringify(req.body));
 });
 
 app.post("/GetProjects",function(req,res){
@@ -134,10 +128,9 @@ app.post("/GetProjects",function(req,res){
 	projects.getProjects(function(p){
 		if (p)
 			res.json({"code":0,"result":p});
-		else	
+		else
 			res.json({"code":-1});
 	},req.body.user);
-	console.log("/GetProjects : arguments="+JSON.stringify(req.body));
 });
 
 app.post("/AddProjects",function(req,res){
@@ -150,10 +143,9 @@ app.post("/AddProjects",function(req,res){
 	projects.addProjects(function(p){
 		if (p!=undefined)
 			res.json({code:0,changes:p});
-		else	
+		else
 			res.json({code:-1});
 	},req.body.projects);
-	console.log("/AddProjects : arguments="+JSON.stringify(req.body));
 });
 
 app.post("/DeleteProject",function(req,res){
@@ -169,10 +161,9 @@ app.post("/DeleteProject",function(req,res){
 	projects.deleteProject(function(p){
 		if (p!=undefined)
 			res.json({code:0,changes:p});
-		else	
+		else
 			res.json({code:-1});
 	},project);
-	console.log("/DeleteProjects : arguments="+JSON.stringify(req.body));
 });
 
 

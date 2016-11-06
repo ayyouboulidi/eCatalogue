@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import projectStore from "../store/projectList"
+import UserStore from '../store/connect'
 
 export default class projectList extends Component {
   constructor(props){
@@ -9,8 +9,14 @@ export default class projectList extends Component {
     }
   }
   componentWillMount(){
-    this.state.projects = projectStore.getProjects()
-    this.setState(this.state)
+    let _this = this
+    let user = UserStore.getUser()
+    $.post('/GetProjects',{user:user},function(data){
+      if(data.code === 0){
+        _this.state.projects=data.result
+        _this.setState(_this.state)
+      }
+    },"json")
   }
 
 
@@ -23,10 +29,10 @@ export default class projectList extends Component {
           return(
             <tr key={key}>
             <td><input type="checkbox"/></td>
-            <td>{project.name}</td>
+            <td>{project.id_item}</td>
             <td>{project.user}</td>
             <td>{project.date}</td>
-            <td><img className="fright" src="img/DELETE-ICON-SMALL.png"/></td>
+            <td>Quantity {project.quantity}</td>
             </tr>
           )
         })

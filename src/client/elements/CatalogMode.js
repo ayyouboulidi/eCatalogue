@@ -5,7 +5,6 @@ import FilterPanel from "../components/FilterPanel"
 import ItemList from "../components/ItemList"
 
 export default class CatalogMode extends Component {
-
     render(){
         return(
             <div className="catalog_mode">

@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router'
 import Header from '../elements/header'
 import SideMenu from '../elements/sideMenu'
+import ProjectMainContent from '../elements/ProjectMainContent'
 
 
 export default class Project extends React.Component{
@@ -13,7 +14,7 @@ export default class Project extends React.Component{
       <div>
         <Header />
         <SideMenu />
-        <div>This is the list of your selected Items</div>
+        <ProjectMainContent/>
       </div>
     )
   }

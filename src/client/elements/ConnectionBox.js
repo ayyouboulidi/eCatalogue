@@ -11,7 +11,6 @@ class ConnectionBox extends Component {
     }
 
     goToWelcome(){
-        console.log("Logged In");
         connectStore.setUser(this.state.userName)
     }
 

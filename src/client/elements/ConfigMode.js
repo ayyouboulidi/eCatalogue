@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
 import selectedStore from "../store/popupElement"
+import selectedCategoryStore from "../store/selectedCategoryStore"
 import ThreeDModel from "../components/config/ThreeDModel"
 import Positions from "../components/config/Positions"
 import Features from "../components/config/Features"
 import FilterConf from "../components/config/FilterConf"
-import AdditionalInfo from "../components/config/AdditionalInfo"
+import AdditionalInfoGalley from "../components/config/AdditionalInfoGalley"
+import AdditionalInfoEquipment from "../components/config/AdditionalInfoEquipment"
 
 
 export default class ConfigMode extends Component {
@@ -21,6 +23,7 @@ export default class ConfigMode extends Component {
   }
 
     render(){
+      let type = selectedCategoryStore.getSelectedCategory().type
         return(
             <div>
               <div className="pflex">
@@ -30,7 +33,7 @@ export default class ConfigMode extends Component {
               </div>
               <div className="pflex">
                 <FilterConf/>
-                <AdditionalInfo />
+                {type === "monument" ? <AdditionalInfoGalley /> : <AdditionalInfoEquipment />}
               </div>
             </div>
         );

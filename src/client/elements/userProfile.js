@@ -3,7 +3,6 @@ import connectStore from "../store/connect"
 
 export default class UserProfile extends React.Component{
   render() {
-    console.log(connectStore.getUser());
     if (connectStore.getUser() != undefined) {
       return (
         <div className="user_profile">

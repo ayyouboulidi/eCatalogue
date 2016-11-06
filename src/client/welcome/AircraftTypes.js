@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import welcome from '../store/welcome';
+import sectionNameStore from '../store/sectionName';
 import AircraftDescription from './AircraftDescription';
 
 class AircraftTypes extends Component {
@@ -17,14 +18,12 @@ class AircraftTypes extends Component {
     }
     getName(node){
         let name = node.getAttribute("name");
-        console.log(name);
         if ( name == null ) {
             this.getName(node.parentNode);
         } else {
-            console.log("Selected : " + name);
             this.state.selected = name;
             this.setState(this.state);
-            console.log(this.state);
+            sectionNameStore.setSectionName({name:"Airbus Dashboard",progress:"dashboard > "+name,aircraft:name})
         }
     }
     render(){
