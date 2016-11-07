@@ -47,6 +47,9 @@
     padding: 1vh 1vw;
     background: linear-gradient(to left, #eee, #ddd);
 }
+.first-block > .features > .options > div {
+    margin: 1vh 0;
+}
 .first-block > .features > .options > div > img {
     max-width: 3vw;
     height: 2vh;
