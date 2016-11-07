@@ -2,6 +2,42 @@
 * Projects View Styles
 */
 .project-section {
-    padding: 1vh 1vw;
-    height: 60vh;
+    font-size: 3vh;
+    padding: 0vh 15vw;
+    height: 78vh;
+}
+.subclass {
+
+}
+.project-section .projects-table {
+    height: 24vh;
+    overflow: auto;
+    padding-left: 5vw;
+}
+.project-section fieldset {
+    border-bottom: 0.3vh solid #777;
+    border-left: 0.3vh solid #777;
+}
+.project-section legend {
+    font-size: 3vh;
+}
+.project-section legend:before {
+    content: "- ";
+}
+.project-section .subclass.unselected {
+    border-bottom: 0.3vh solid #777;
+    margin-top: 1vh;
+    padding-bottom: 1vh;
+}
+.project-section .subclass.unselected:before {
+    content: "+ ";
+}
+.project-section .projects-list {
+    font-size: 2.3vh;
+}
+.content .modal-action {
+    position: fixed;
+    width: 20vh;
+    top: 93vh;
+    right: 13vw;
 }
