@@ -2,28 +2,32 @@ function Projects(db) {
 	this.db = db;
 }
 
-function Project(id,user,id_item,date,quantity){
+function Project(id,user,itemName,itemUrl,itemDescription,itemTitle,date,quantity){
     this.id = id;
     this.user = user;
-	this.id_item = id_item;
+	this.item_url = itemUrl;
+	this.item_name = itemName;
+	this.item_description = itemDescription;
+	this.item_title = itemTitle;
     this.date = date;
     this.quantity = quantity;
 }
 
 Projects.prototype.getProjects = function(callback,user) {
 	var result = [];
-	var statement = "Select * from projects where user=?";
-    if (user == undefined){
-        statement += " OR 1";
-        user = "";
+	var statement = "Select projects.id, projects.user, items.name, items.url_image, items.description, items.title, projects.date, projects.quantity "+
+	"from projects,items where items.id = projects.id_item ";
+    if (user != undefined){
+        statement +="AND user=?";
     }
 	this.db.all(statement,
 	user, function(err, rows) {
 	    if (err){
+			console.log(err);
 		    callback(undefined);
 		}else{
 			rows.forEach(function (row) {
-					result.push(new Project(row.id,row.user,row.id_item,row.date,row.quantity));
+					result.push(new Project(row.id,row.user,row.name,row.url,row.description,row.title,row.date,row.quantity));
 			});
 			this.projects = result;
 			callback(this.projects);
