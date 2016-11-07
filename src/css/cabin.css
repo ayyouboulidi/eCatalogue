@@ -293,7 +293,6 @@ input[type="radio"] {
 .modal-action {
     position: absolute;
     background-color: inherit;
-    width: 12vh;
     height: 5vh;
     top: 20vh;
     right: 2vw;
