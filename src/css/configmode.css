@@ -1,3 +1,78 @@
 /*
 * Config Mode view styles
 */
+.config-mode {
+    height: 78.5vh;
+}
+.config-mode > .first-block {
+    height: 50%;
+}
+.config-mode > .second-block {
+    height: 50%;
+}
+
+.first-block > div + div {
+    border-left: 0.2vw solid #ccc;
+}
+.first-block > .three-model {
+    width: 33%;
+    height: 100%;
+    padding: 7vh 3vw;
+    background-color: #eee;
+}
+.three-model > img {
+    max-width: 100%;
+    max-height: 100%;
+}
+.first-block > .positions {
+    width: 34%;
+    height: 100%;
+    padding: 1vw;
+    background: linear-gradient(to left, #eee, #ddd);
+}
+.first-block > .positions > .item-list {
+    width: 100%;
+}
+.first-block > .positions > .item-list > .modal-example {
+    width: 50%;
+}
+.first-block > .positions > img {
+    max-width: 100%;
+    height: 66%;
+}
+.first-block > .features {
+    width: 33%;
+    height: 100%;
+    padding: 1vh 1vw;
+    background: linear-gradient(to left, #eee, #ddd);
+}
+.first-block > .features > .options > div > img {
+    max-width: 3vw;
+    height: 2vh;
+    margin-right: 1vw;
+}
+.first-block > .features > .options > form {
+    border-bottom: 0.3vh solid #ccc;
+    padding-bottom: 1vh;
+    margin-bottom: 2vh;
+    margin-top: 1vh;
+}
+
+.second-block > div + div {
+    border-left: 0.2vw solid #ccc;
+}
+.second-block > .filter-panel {
+    width: 20%;
+    max-height: 100%
+}
+.second-block > .additional-infos{
+    overflow: auto;
+    padding: 1vh 1vw;
+    width: 80%;
+    height: 42vh;
+    max-height: 100%;
+    background: rgb(250, 250, 250);
+}
+.second-block > .additional-infos > .item-list {
+    width: 100%;
+}
