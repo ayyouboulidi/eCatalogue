@@ -27,7 +27,7 @@ Projects.prototype.getProjects = function(callback,user) {
 		    callback(undefined);
 		}else{
 			rows.forEach(function (row) {
-					result.push(new Project(row.id,row.user,row.name,row.url,row.description,row.title,row.date,row.quantity));
+					result.push(new Project(row.id,row.user,row.name,row.url_image,row.description,row.title,row.date,row.quantity));
 			});
 			this.projects = result;
 			callback(this.projects);
