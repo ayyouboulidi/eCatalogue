@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import categoryStore from "../store/selectedCategoryStore"
+import listFilters from "../store/selectedFilters"
 
 export default class FilterPanel extends Component {
     constructor(props){
@@ -26,6 +27,7 @@ export default class FilterPanel extends Component {
           $.post('/GetFilters',obj,function(data){
             if(data.code === 0){
               _this.state.filters=data.result
+              listFilters.setFilters([])
             }else{
               _this.state.displayFilters.state=false
             }
@@ -37,11 +39,25 @@ export default class FilterPanel extends Component {
 
     componentWillUnmount() {
       this.disposable.dispose()
+      listFilters.setFilters([])
+    }
+
+    selectedFilter(e){
+      let filt = e.currentTarget.id
+      let val = e.currentTarget.value
+
+      let filterslist = listFilters.getFilters()
+      let index = filterslist.findIndex(x => x.name==filt)
+      console.log(filterslist)
+      index === -1 ? filterslist.push({name:filt,value:val}) : (filt===val ? filterslist.splice(index,1) : filterslist[index] = {name:filt,value:val})
+      console.log(filterslist)
+      listFilters.setFilters(filterslist)
     }
 
     render(){
       let filters = this.state.filters
       let displayFilters = this.state.displayFilters.state
+      let _this = this
         return(
             <div className="width25 filter-panel activeoverflow">
               <div className="filter-text">Filter by:</div>
@@ -49,11 +65,11 @@ export default class FilterPanel extends Component {
                 filters.map(function(filt,key){
                   return(
                     <div className="filters-list" key={key}>
-                      <select className="filters">
-                          <option>{filt.name}</option>
+                      <select id={filt.name} className="filters" defaultValue={filt.name} onChange={_this.selectedFilter.bind(_this)}>
+                          <option value={filt.name}>{filt.name}</option>
                           {filt.values.map(function(val,key){
                             return(
-                              <option key={key} value={val}>{val}</option>
+                              <option key={key} value={val} >{val}</option>
                             )
                           })}
                       </select>
