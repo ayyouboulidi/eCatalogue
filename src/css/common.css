@@ -203,3 +203,6 @@ button, input[type="submit"] {
   color: blue;
   text-decoration: underline;
 }
+tbody tr:nth-child(odd) {
+  background: #ccc;
+}
