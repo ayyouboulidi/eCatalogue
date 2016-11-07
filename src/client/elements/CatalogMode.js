@@ -11,10 +11,12 @@ export default class CatalogMode extends Component {
               <div className="monument_list">
                 <div className="monument-left-title">MONUMENTS</div>
                 <MonumentsList />
+                <div className="arrow left"><img src="/img/ARROW-LEFT-ICON.png"/></div><div className="arrow right"><img src="/img/ARROW-RIGHT-ICON.png"/></div>
               </div>
               <div className="supplier_list">
                 <div className="features-left-title">FEATURES</div>
                 <SupplierList />
+                <div className="arrow left"><img src="/img/ARROW-LEFT-ICON.png"/></div><div className="arrow right"><img src="/img/ARROW-RIGHT-ICON.png"/></div>
               </div>
               <div className="cabin_bottom_block">
                 <FilterPanel/>
