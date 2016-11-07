@@ -37,7 +37,6 @@
 }
 .content .modal-action {
     position: fixed;
-    width: 20vh;
     top: 93vh;
     right: 13vw;
 }

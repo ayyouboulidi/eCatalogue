@@ -38,16 +38,3 @@ header .user_profile {
 header .user_profile img {
   vertical-align: -35%;
 }
-
-/*
-* Waiting for design
-*/
-/*.user_profile .main_title:after {
-  background-image: url("/img/ARROW-DOWN-ICON.png");
-  background-size: 2vh 1vh;
-  background-repeat: no-repeat;
-  display: inline-block;
-  width: 2vh;
-  height: 1vh;
-  content:"";
-}*/
