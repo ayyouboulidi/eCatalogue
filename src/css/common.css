@@ -193,3 +193,7 @@ button, input[type="submit"] {
   height:39.4vh;
   display:flex
 }
+.clickable {
+  color: blue;
+  text-decoration: underline;
+}
