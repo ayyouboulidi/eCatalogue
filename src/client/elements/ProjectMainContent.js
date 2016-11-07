@@ -33,10 +33,10 @@ export default class ProjectMainContent extends Component {
                 <Title />
                 <SearchBox page="all" />
               </div>
-              <div>
-                <div>cabin</div>
+              <div className="project-section">
+                <div className="subclass selected">Cabin</div>
                 <div>
-                  <table className="width100 padding2">
+                  <table className="width100 padding2 projects-list">
                     <tbody>
                     {
                       this.state.projects.map(function(project,key){
@@ -53,19 +53,20 @@ export default class ProjectMainContent extends Component {
                     </tbody>
                   </table>
                 </div>
-                <div>cabin System</div>
-                <div>
+                <div className="subclass">Cabin System</div>
+                <div className="subclass">
                   Cabin System Items
                 </div>
-                <div>System</div>
-                <div>
+                <div className="subclass">System</div>
+                <div className="subclass">
                   System Items
                 </div>
-                <div>Emergency</div>
-                <div>
+                <div className="subclass">Emergency</div>
+                <div className="subclass">
                   Emergency Items
                 </div>
               </div>
+              <div className="action-icons"><img src="/img/TRASH-ICON-2.png" /><img src="/img/EXPORT-ICON-2.png" /><img src="/img/SEND-ICON.png" /></div>
             </div>
         );
     }
