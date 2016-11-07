@@ -77,3 +77,12 @@
 .second-block > .additional-infos > .item-list {
     width: 100%;
 }
+.popup-img {
+    height: 40vh;
+}
+.popup-img .matrice-image {
+    width: 100%;
+}
+.popup-img .matrice-image img {
+    width: 100%;
+}
