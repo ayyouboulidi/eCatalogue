@@ -25,6 +25,7 @@
     max-height: 100%;
 }
 .first-block > .positions {
+    text-align: center;
     width: 34%;
     height: 100%;
     padding: 1vw;
@@ -38,7 +39,7 @@
 }
 .first-block > .positions > img {
     max-width: 100%;
-    height: 66%;
+    max-height: 66%;
 }
 .first-block > .features {
     width: 33%;
