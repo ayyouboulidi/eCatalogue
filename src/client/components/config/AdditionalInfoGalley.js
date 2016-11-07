@@ -43,11 +43,11 @@ constructor(props){
                 <tr>
                   <td></td>
                   <td></td>
-                  <td ><PopupImg id="pc11">Pre-Conf 1</PopupImg></td>
-                  <td  ><PopupImg id="pc12">PC2</PopupImg></td>
+                  <td className="clickable"><PopupImg id="pc11">Pre-Conf 1</PopupImg></td>
+                  <td  className="clickable" ><PopupImg id="pc12">PC2</PopupImg></td>
                   <td>PC3</td>
-                  <td ><PopupImg id="pc21">Pre-Conf 1</PopupImg></td>
-                  <td ><PopupImg id="pc22">PC2</PopupImg></td>
+                  <td  className="clickable"><PopupImg id="pc21">Pre-Conf 1</PopupImg></td>
+                  <td  className="clickable"><PopupImg id="pc22">PC2</PopupImg></td>
                   <td>PC3</td>
                 </tr>
                 {tabs.map(function(tab,key){
