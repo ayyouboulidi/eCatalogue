@@ -24,27 +24,25 @@ class AircraftDescription extends Component {
         }, this);
         this.setState(this.state);
     }
-    componentWillReceiveProps(){
+    componentWillReceiveProps(props){
         let self = this;
-        setTimeout(function(){
-            self.state.aircrafts = [];
-            self.state.selected = "";
-            let filter = self.props.selected;
-            var aircrafts = welcome.getAircrafts();
-            aircrafts.forEach(function(aircraft) {
-                if (aircraft.family == filter) {
-                    if (self.state.selected == ""){
-                        self.state.selected = aircraft.type;
-                        self.state.description.text = aircraft.text;
-                        self.state.description.title = aircraft.title;
-                        self.state.description.lineChart = aircraft.lineChart;
-                        self.state.description.donutChart = aircraft.donutChart;
-                    }
-                    self.state.aircrafts.push(aircraft);
+        self.state.aircrafts = [];
+        self.state.selected = "";
+        let filter = props.selected;
+        var aircrafts = welcome.getAircrafts();
+        aircrafts.forEach(function(aircraft) {
+            if (aircraft.family == filter) {
+                if (self.state.selected == ""){
+                    self.state.selected = aircraft.type;
+                    self.state.description.text = aircraft.text;
+                    self.state.description.title = aircraft.title;
+                    self.state.description.lineChart = aircraft.lineChart;
+                    self.state.description.donutChart = aircraft.donutChart;
                 }
-            }, self);
-            self.setState(self.state);
-        }, 100);
+                self.state.aircrafts.push(aircraft);
+            }
+        }, self);
+        self.setState(self.state);
     }
     handleSelect(event){
         let self = this;
