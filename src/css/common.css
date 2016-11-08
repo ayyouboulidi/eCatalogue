@@ -160,8 +160,7 @@ button, input[type="submit"] {
   padding-left: 1em;
 }
 .search{
-  position:absolute;
-  top: 2vh;
+  padding-top:1em;
   width: 100%;
   padding-right: 1em;
 }
