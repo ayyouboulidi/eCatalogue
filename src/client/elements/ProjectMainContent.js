@@ -33,39 +33,43 @@ export default class ProjectMainContent extends Component {
                 <Title />
                 <SearchBox page="all" />
               </div>
-              <div>
-                <div>cabin</div>
-                <div>
-                  <table className="width100 padding2">
-                    <tbody>
-                    {
-                      this.state.projects.map(function(project,key){
-                        return(
-                          <tr key={key}>
-                          <td><img src="img/monument/GALLEY.png"/></td>
-                          <td>{project.id_item} {project.user} {project.date}</td>
-                          <td>Quantity {project.quantity}</td>
-                          <td><img src="img/TRASH-ICON.png"/></td>
-                          </tr>
-                        )
-                      })
-                    }
-                    </tbody>
-                  </table>
-                </div>
-                <div>cabin System</div>
-                <div>
+              <div className="project-section">
+                <form className="subclass selected">
+                  <fieldset><legend>Cabin</legend>
+                  <div className="projects-table">
+                    <table className="width100 padding2 projects-list">
+                      <tbody>
+                      {
+                        this.state.projects.map(function(project,key){
+                          return(
+                            <tr key={key}>
+                            <td><img src="img/monument/GALLEY.png"/></td>
+                            <td>{project.id_item} {project.user} {project.date}</td>
+                            <td>Quantity {project.quantity}</td>
+                            <td><img src="img/TRASH-ICON.png"/></td>
+                            </tr>
+                          )
+                        })
+                      }
+                      </tbody>
+                    </table>
+                  </div>
+                  </fieldset>
+                </form>
+                <div className="subclass unselected">Cabin System</div>
+                <div className="subclass unselected">
                   Cabin System Items
                 </div>
-                <div>System</div>
-                <div>
+                <div className="subclass unselected">System</div>
+                <div className="subclass unselected">
                   System Items
                 </div>
-                <div>Emergency</div>
-                <div>
+                <div className="subclass unselected">Emergency</div>
+                <div className="subclass unselected">
                   Emergency Items
                 </div>
               </div>
+              <div className="modal-action"><img src="/img/TRASH-ICON-2.png" /><img src="/img/EXPORT-ICON-2.png" /><img src="/img/SEND-ICON.png" /></div>
             </div>
         );
     }

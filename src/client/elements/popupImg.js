@@ -33,17 +33,17 @@ export default class popupImg extends Component {
     }
     return (
       <span className='modal-example'>
-      <span id={this.props.id} onClick={this.open.bind(this)}>{this.props.children}</span>
-      <Modal id="popimg" aria-labelledby='modal-label' backdropStyle={backdropStyle} show={this.state.display} onHide={this.close.bind(this)}>
-      <div>
-      <h4 id='modal-label'></h4>
-      <img src="img/CLOSE-ICON.png" onClick={this.close.bind(this)}/>
-      <div>
-      <img src={"img/matrice/"+this.props.id+".png"}/>
-      </div>
-      </div>
-    </Modal>
-    </span>
+        <span id={this.props.id} onClick={this.open.bind(this)}>{this.props.children}</span>
+          <Modal id="popimg" aria-labelledby='modal-label' backdropStyle={backdropStyle} show={this.state.display} onHide={this.close.bind(this)}>
+            <div className=" popup-img">
+              <h4 id='modal-label'></h4>
+              <img src="img/CLOSE-ICON.png" onClick={this.close.bind(this)}/>
+              <div className="matrice-image">
+                <img src={"img/matrice/"+this.props.id+".png"}/>
+              </div>
+            </div>
+        </Modal>
+      </span>
   )
 }
 

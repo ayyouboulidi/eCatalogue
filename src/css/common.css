@@ -162,6 +162,12 @@ button, input[type="submit"] {
 .search * {
   float:right;
 }
+.search img {
+  height: 5vh;
+  width: 5vh;
+  margin-right: 1.25vw;
+  transform: translateY(-8%);
+}
 .progress_title{
   position:relative;
   left:0;
@@ -192,4 +198,11 @@ button, input[type="submit"] {
 .secondblockContent{
   height:39.4vh;
   display:flex
+}
+.clickable {
+  color: blue;
+  text-decoration: underline;
+}
+.bgcurrentproject tbody tr:nth-child(odd), .additional-infos tbody tr:nth-child(odd) {
+  background: #ddd;
 }
