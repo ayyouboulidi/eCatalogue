@@ -254,6 +254,7 @@ input[type="radio"] {
 }
 .package-image img {
     height: 100%;
+    width:100%;
     vertical-align: center;
 }
 .accordion-elements {

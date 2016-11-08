@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import {Accordion,Panel} from 'react-bootstrap'
 import zoneFilter from '../../store/ZoneFilter'
 import PackageFilter from '../../store/PackageFilter'
+import PackageStore from '../../store/PackageStore'
 import PopupItem from '../../elements/popup'
 
 export default class AccordionElements extends Component {
@@ -17,8 +18,23 @@ export default class AccordionElements extends Component {
   componentWillMount(){
     this.setState({aircraftselectedzone:zoneFilter.getAircraftZone(),packageSelectedItem:PackageFilter.getPackageFilter()})
     let _this = this
+      $.post('/GetItems',function(data){
+        if(data.code === 0){
+          _this.state.items=data.result
+          _this.setState(_this.state)
+        }
+      },"json")
+  }
+
+
+  componentDidMount() {
+  this.listeners = [];
+  this.listeners.push(zoneFilter.getStore$().subscribe((newZone) =>{
+    this.state.aircraftselectedzone = newZone;
+    this.setState(this.state);
+    let _this = this
     if(this.state.aircraftselectedzone){
-      $.post('/GetItems',{monument:"Galley"},function(data){
+      $.post('/GetItems',{"filter":[{name:"SubZone",value:"D2 CTR"}]},function(data){
         if(data.code === 0){
           _this.state.items=data.result
           _this.setState(_this.state)
@@ -32,19 +48,36 @@ export default class AccordionElements extends Component {
         }
       },"json")
     }
-  }
-
-
-  componentDidMount() {
-  this.listeners = [];
-  this.listeners.push(zoneFilter.getStore$().subscribe((newZone) =>{
-    this.state.aircraftselectedzone = newZone;
-    this.setState(this.state);
   }));
 
-  this.listeners.push(PackageFilter.getStore$().subscribe((newZone) => {
+  this.listeners.push(PackageStore.getStore$().subscribe((newZone) => {
     this.state.packageSelectedItem = newZone;
     this.setState(this.state);
+    let _this = this
+    if(this.state.packageSelectedItem){
+      $.post('/GetItems',{"filter":[{name:"Trolley",value:"5 Trolleys"},{name:"SubZone",value:"D2 CTR"}]},function(data){
+        if(data.code === 0){
+          _this.state.items=data.result
+          _this.setState(_this.state)
+        }
+      },"json")
+    }else{
+      if(this.state.aircraftselectedzone){
+        $.post('/GetItems',{"filter":[{name:"SubZone",value:"D2 CTR"}]},function(data){
+          if(data.code === 0){
+            _this.state.items=data.result
+            _this.setState(_this.state)
+          }
+        },"json")
+      }else{
+        $.post('/GetItems',function(data){
+          if(data.code === 0){
+            _this.state.items=data.result
+            _this.setState(_this.state)
+          }
+        },"json")
+      }
+    }
   }))
   this.setState(this.state)
 }

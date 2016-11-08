@@ -30,6 +30,7 @@ export default class MainContent extends Component {
 
   componentWillUnmount() {
     this.disposable.dispose()
+    switcherView.setView("Catalog")
   }
 
     render(){
