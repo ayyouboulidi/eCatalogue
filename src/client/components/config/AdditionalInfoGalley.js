@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PopupImg from "../../elements/popupImg"
-
+import masterStore from "../../store/masterStore"
 
 export default class AdditionalInfoGalley extends Component {
 constructor(props){
@@ -26,6 +26,26 @@ constructor(props){
       {style:{whiteSpace: "pre"},name:"  Sink",pc11:1,pc12:2,pc13:3,pc21:0,pc22:0,pc23:0},
       {style:{whiteSpace: "pre"},name:"  GWDU",pc11:1,pc12:2,pc13:3,pc21:0,pc22:0,pc23:0}
     ],
+    tabsbis:[
+      {style:{},name:"Standard Unit",pc11:1,pc12:2,pc13:3},
+      {style:{},name:"ARINC Size 1",pc11:2,pc12:null,pc13:3},
+      {style:{whiteSpace: "pre"},name:"  Beverage Maker",pc11:1,pc12:2,pc13:3},
+      {style:{whiteSpace: "pre"},name:"  Espresso/Cappuccino",pc11:1,pc12:2,pc13:3},
+      {style:{whiteSpace: "pre"},name:"  Water Heater",pc11:1,pc12:2,pc13:3},
+      {style:{whiteSpace: "pre"},name:"  Beverage Cup",pc11:1,pc12:2,pc13:3},
+      {style:{},name:"ARINC Size 2",pc11:1,pc12:2,pc13:3},
+      {style:{whiteSpace: "pre"},name:"  Steam Oven",pc11:1,pc12:2,pc13:3},
+      {style:{whiteSpace: "pre"},name:"  Convection Oven",pc11:1,pc12:2,pc13:3},
+      {style:{whiteSpace: "pre"},name:"  Multifunctional Unit",pc11:1,pc12:2,pc13:3},
+      {style:{whiteSpace: "pre"},name:"  3-Mode Fridge/Freezer",pc11:1,pc12:2,pc13:3},
+      {style:{whiteSpace: "pre"},name:"  SCS-Chiller",pc11:1,pc12:2,pc13:3},
+      {style:{whiteSpace: "pre"},name:"  Warming Compartment",pc11:1,pc12:2,pc13:3},
+      {style:{whiteSpace: "pre"},name:"  Ice drawer",pc11:1,pc12:2,pc13:3},
+      {style:{},name:"ARINC Size 4",pc11:1,pc12:2,pc13:3},
+      {style:{whiteSpace: "pre"},name:"  Microwave",pc11:1,pc12:2,pc13:3},
+      {style:{whiteSpace: "pre"},name:"  Sink",pc11:1,pc12:2,pc13:3},
+      {style:{whiteSpace: "pre"},name:"  GWDU",pc11:1,pc12:2,pc13:3}
+    ],
     tabs2:[
       {name:"Electrical control panel",Master1:"x",Master2:"x"},
       {name:"Individual Air outlet (directional)",Master1:"x*",Master2:null},
@@ -48,43 +68,98 @@ constructor(props){
       {name:"Turn buttons",Master1:"x",Master2:"x"},
       {name:"Miscellaneous compartment above work deck",Master1:"x",Master2:"x"},
       {name:"Miscellaneous stowage in center column",Master1:"x",Master2:"x"}
-    ]
+    ],
+    master:{master1:true,master2:false,options:false,standard:false,gain:true}
   }
 }
+
+
+  componentDidMount(){
+    this.disposable = masterStore.getStore$().subscribe((newMaster) => {
+      this.state.master = newMaster;
+      this.setState(this.state);
+      console.log(this.state.master)
+    })
+  }
+
     render(){
       let tabs = this.state.tabs
+      let tabsbis = this.state.tabsbis
+      let tabs2 = this.state.tabs2
         return(
             <div className="width80 bgg height300 additional-infos">
               <div className="table-overflow">
                 <table className="width100">
-                <tbody>
-                  <tr>
-                    <th></th>
-                    <th></th>
-                    <th colSpan="3">Master 1</th>
-                    <th colSpan="3">Master 2</th>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td className="clickable"><PopupImg id="pc11">Pre-Configuration 1</PopupImg></td>
-                    <td  className="clickable" ><PopupImg id="pc12">Pre-Configuration 2</PopupImg></td>
-                    <td className="clickable">Pre-Configuration 3</td>
-                    <td  className="clickable"><PopupImg id="pc21">Pre-Configuration 1</PopupImg></td>
-                    <td  className="clickable"><PopupImg id="pc22">Pre-Configuration 2</PopupImg></td>
-                    <td className="clickable">Pre-Configuration 3</td>
-                  </tr>
-                  {tabs.map(function(tab,key){
-                    return(
-                    <tr key={key}>
-                      <td style={tab.style}>{tab.name}</td>
-                      <td>{tab.pc11}</td>
-                      <td>{tab.pc12}</td>
-                      <td>{tab.pc13}</td>
-                      <td>{tab.pc21}</td>
-                      <td>{tab.pc22}</td>
-                      <td>{tab.pc23}</td>
-                    </tr>)})}
-                </tbody>
+                {
+                  this.state.master.master1 && this.state.master.master2 && this.state.master.gain?
+                  <tbody>
+                    <tr>
+                      <th></th>
+                      <th colSpan="3">Master 1</th>
+                      <th colSpan="3">Master 2</th>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td className="clickable"><PopupImg id="pc11">Pre-Configuration 1</PopupImg></td>
+                      <td  className="clickable" ><PopupImg id="pc12">Pre-Configuration 2</PopupImg></td>
+                      <td className="clickable">Pre-Configuration 3</td>
+                      <td  className="clickable"><PopupImg id="pc21">Pre-Configuration 1</PopupImg></td>
+                      <td  className="clickable"><PopupImg id="pc22">Pre-Configuration 2</PopupImg></td>
+                      <td className="clickable">Pre-Configuration 3</td>
+                    </tr>
+                        {tabs.map(function(tab,key){
+                        return(
+                        <tr key={key}>
+                          <td style={tab.style}>{tab.name}</td>
+                          <td>{tab.pc11}</td>
+                          <td>{tab.pc12}</td>
+                          <td>{tab.pc13}</td>
+                          <td>{tab.pc21}</td>
+                          <td>{tab.pc22}</td>
+                          <td>{tab.pc23}</td>
+                        </tr>)})
+                      }
+                  </tbody>
+                  :this.state.master.master1 && !this.state.master.master2 && this.state.master.gain?
+                  <tbody>
+                    <tr>
+                      <th></th>
+                      <th colSpan="3">Master 1</th>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td className="clickable"><PopupImg id="pc11">Pre-Configuration 1</PopupImg></td>
+                      <td  className="clickable" ><PopupImg id="pc12">Pre-Configuration 2</PopupImg></td>
+                      <td className="clickable">Pre-Configuration 3</td>
+                    </tr>
+                      {  tabsbis.map(function(tab,key){
+                        return(
+                        <tr key={key}>
+                          <td>{tab.name}</td>
+                          <td>{tab.pc11}</td>
+                          <td>{tab.pc12}</td>
+                          <td>{tab.pc13}</td>
+                        </tr>)})
+                      }
+                  </tbody>
+                  :this.state.master.options?
+                  <tbody>
+                    <tr>
+                      <th></th>
+                      <th>Master 1</th>
+                      <th>Master 2</th>
+                    </tr>
+                      {  tabs2.map(function(tab,key){
+                        return(
+                        <tr key={key}>
+                          <td>{tab.name}</td>
+                          <td>{tab.Master1}</td>
+                          <td>{tab.Master2}</td>
+                        </tr>)})
+                      }
+                  </tbody>
+                  :null
+                }
                 </table>
               </div>
               <div className="table-head">
