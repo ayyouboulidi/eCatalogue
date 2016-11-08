@@ -7,7 +7,7 @@ export default class FilterConf extends Component {
     super(props)
     this.state={
       filters:[{"name":"Orientation",values:["1 Trolley","5 Trolley"]},{"name":"Subzone",values:[]},{"name":"System",values:[]},{"name":"Trolley",values:[]},{"name":"Zone",values:[]}],
-      filtersOven:[{"name":"Equipment",values:[]},{"name":"Supplier",values:[]},{"name":"System",values:[]}]
+      filtersOven:[{"name":"Orientation",values:["1 Trolley","5 Trolley"]},{"name":"Subzone",values:[]},{"name":"System",values:[]},{"name":"Trolley",values:[]},{"name":"Zone",values:[]}]
     }
   }
   render(){
