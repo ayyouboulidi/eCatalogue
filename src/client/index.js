@@ -8,6 +8,10 @@ import Dashboard from './root/dashboard'
 import Welcome from './root/welcome'
 import Cabin from './root/cabin'
 import Project from './root/project'
+require("jquery");
+require("jquery-ui-bundle");
+//require("jquery-ui/themes/base/jquery-ui.css");
+//require("jquery-ui/themes/base/jquery-ui.theme.css");
 
 const App = React.createClass({
 			  render() {

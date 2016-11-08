@@ -10,7 +10,6 @@ module.exports = {
   },
   module: {
     loaders: [
-      { test: /\.(jpe?g|png|gif)$/i, loader:"file" },
       {
         test: /\.js$/,
         exclude: /node_modules/,
@@ -21,7 +20,7 @@ module.exports = {
        loader: ExtractTextPlugin.extract("css?modules&importLoaders=1&localIdentName=[local]"),
        //exclude: /node_modules/,
      },
-     { test: /\.(png|woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=100000' },
+     { test: /\.(jpe?g|png|gif|woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=100000' },
     /* {
         test: /\.(woff|woff2)(\?v=\d+\.\d+\.\d+)?$/,
         loader: 'url?limit=10000&mimetype=application/font-woff'
@@ -44,16 +43,10 @@ module.exports = {
     new ExtractTextPlugin("styles.css"),
     new webpack.ProvidePlugin({
            $: "jquery",
-           jQuery: "jquery",
-           "window.jQuery":"jquery"
+           jQuery: "jquery"
        })
    ],
   resolve: {
     extensions: ['', '.js', '.json','.css'],
-    alias: {
-      "jquery-ui": "jquery-ui/jquery-ui.js",
-      'jquery-ui-css': 'jquery-ui-bundle'
-     },
-     
   }
 };
