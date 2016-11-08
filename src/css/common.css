@@ -132,7 +132,10 @@ button, input[type="submit"] {
 }
 .switch-view {
   color: white;
+  width: 30vh;
+  text-align: center;
   background-color: dodgerblue;
+  transform: translateY(-5%);
   font-size: 2vh;
   padding: 1vh 2vw;
   margin-right: 0.5vw;
@@ -142,11 +145,11 @@ button, input[type="submit"] {
   border-bottom-right-radius: 2vh 50%;
 }
 .blue {
-  background-color: dodgerblue;
+  /*background-color: dodgerblue;*/
 }
 .button-menu {
-  border: 0.3vh solid transparent;
-  border-radius: 50%;
+  /*border: 0.3vh solid transparent;
+  border-radius: 50%;*/
 }
 
 /*
@@ -160,7 +163,6 @@ button, input[type="submit"] {
   position:absolute;
   top: 2vh;
   width: 100%;
-  float:right;
   padding-right: 1em;
 }
 .search .blockAlign {
