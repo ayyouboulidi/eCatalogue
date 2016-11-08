@@ -37,8 +37,8 @@ export default class Features extends Component {
             </div>
           :
           <div className="width33 bgw height300 features">
-            <div className="features-additional-infos">  Additionnal Information</div>
-            <div className="title"><b>Convection Oven Zodiac P/N</b></div>
+            <div className="features-additional-infos title">  Additionnal Information</div>
+            <div className="name"><b>Convection Oven Zodiac P/N</b></div>
             <div className="description">C10x100 Left hinged door ...</div>
           </div>
         );
