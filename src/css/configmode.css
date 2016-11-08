@@ -83,7 +83,10 @@
         height: 100%;
 }
 .second-block > .additional-infos tbody tr:first-child {
-    background-color: #bbb;
+    background-color: #ccc;
+}
+.second-block > .additional-infos tbody td, .second-block > .additional-infos tbody th {
+    padding: 1vh 1vw;
 }
 .second-block > .additional-infos > .item-list {
     width: 100%;

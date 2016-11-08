@@ -218,9 +218,18 @@ button, input[type="submit"] {
   display:flex
 }
 .clickable {
-  color: blue;
+  color: dodgerblue;
   text-decoration: underline;
 }
 .bgcurrentproject tbody tr:nth-child(odd), .additional-infos tbody tr:nth-child(odd) {
   background: #ddd;
+}
+.border-left {
+  border-left: 0.3vh solid #bbb;
+}
+.border-right {
+  border-right: 0.3vh solid #bbb;
+}
+.center {
+  text-align: center;
 }
