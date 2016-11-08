@@ -89,7 +89,7 @@ constructor(props){
         return(
             <div className="width80 bgg height300 additional-infos">
               <div className="table-overflow">
-                <table className="width100">
+                <table className="width100 center">
                 {
                   this.state.master.master1 && this.state.master.master2 && this.state.master.gain?
                   <tbody>
@@ -100,12 +100,12 @@ constructor(props){
                     </tr>
                     <tr>
                       <td></td>
-                      <td className="clickable border-left"><PopupImg id="pc11">Pre-Configuration 1</PopupImg></td>
-                      <td className="clickable" ><PopupImg id="pc12">Pre-Configuration 2</PopupImg></td>
-                      <td className="clickable">Pre-Configuration 3</td>
-                      <td className="clickable border-left"><PopupImg id="pc21">Pre-Configuration 1</PopupImg></td>
-                      <td className="clickable"><PopupImg id="pc22">Pre-Configuration 2</PopupImg></td>
-                      <td className="clickable border-right">Pre-Configuration 3</td>
+                      <td className="clickable border-left intitle"><PopupImg id="pc11">Pre-Configuration 1</PopupImg></td>
+                      <td className="clickable intitle" ><PopupImg id="pc12">Pre-Configuration 2</PopupImg></td>
+                      <td className="clickable intitle border-right">Pre-Configuration 3</td>
+                      <td className="clickable border-left intitle"><PopupImg id="pc21">Pre-Configuration 1</PopupImg></td>
+                      <td className="clickable intitle"><PopupImg id="pc22">Pre-Configuration 2</PopupImg></td>
+                      <td className="clickable border-right intitle">Pre-Configuration 3</td>
                     </tr>
                         {tabs.map(function(tab,key){
                         return(
@@ -128,9 +128,9 @@ constructor(props){
                     </tr>
                     <tr>
                       <td></td>
-                      <td className="border-left center clickable"><PopupImg id="pc11">Pre-Configuration 1</PopupImg></td>
-                      <td  className="clickable center" ><PopupImg id="pc12">Pre-Configuration 2</PopupImg></td>
-                      <td className="clickable center">Pre-Configuration 3</td>
+                      <td className="border-left center clickable intitle"><PopupImg id="pc11">Pre-Configuration 1</PopupImg></td>
+                      <td  className="clickable center intitle" ><PopupImg id="pc12">Pre-Configuration 2</PopupImg></td>
+                      <td className="clickable center intitle border-right">Pre-Configuration 3</td>
                     </tr>
                       {  tabsbis.map(function(tab,key){
                         return(
