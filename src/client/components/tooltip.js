@@ -42,12 +42,12 @@ export default class tooltip extends Component {
               {this.state.viewMode != "Config"?
               <div>
                 <img className="blue button-menu" title="Favorites" src="img/FAVOURITE-ICON.png"/>
-                <img className="blue button-menu" title="Aircraft" src="img/PROJECT-ICON.png"/>
+                <img className="project" title="Aircraft" src="img/ADD-TO-PROJECT-ICON.png"/>
                 <div className="switch-view" onClick={this.switchMode.bind(this)}>{this.state.viewMode == "Catalog"? "Switch to Cabin Location":"Switch to Catalog"}</div>
               </div>
               :<span>
                 <img className="blue button-menu" title="Favorites" src="img/FAVOURITE-ICON.png"/>
-                <img className="blue button-menu" title="Aircraft" src="img/PROJECT-ICON.png"/>
+                <img className="project" title="Aircraft" src="img/ADD-TO-PROJECT-ICON.png"/>
                 <img src="img/BACK-ICON-2.png" title="Back" onClick={this.setModeCatalog.bind(this)}/>
               </span>
               }
