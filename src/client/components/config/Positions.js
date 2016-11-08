@@ -58,17 +58,20 @@ export default class Positions extends Component {
             </div>
             :
             <div className="width33 bgcurrentproject activeoverflow height300 positions">
-              <div className="item-list">
-                {items.map(function(item,key){
-                  return(
-                    <PopupItem className="popup-item" id={item.id} key={key}>
-                        <div className="item">
-                            <div className="item-image"><img src={"img"+item.url_image}/></div>
-                            <div className="item-name"><b>{item.name}</b></div>
-                        </div>
+              <div className="title">Can be replaced by :</div>
+              <div className="items-overflow">
+                <div className="item-list">
+                  {items.map(function(item,key){
+                    return(
+                      <PopupItem className="popup-item" id={item.id} key={key}>
+                          <div className="item">
+                              <div className="item-image"><img src={"img"+item.url_image}/></div>
+                              <div className="item-name"><b>{item.name}</b></div>
+                          </div>
                       </PopupItem>
-                  )
-                })}
+                    )
+                  })}
+                </div>
               </div>
             </div>
         );

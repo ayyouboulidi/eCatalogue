@@ -164,7 +164,7 @@ constructor(props){
               </div>
               <div className="table-head">
                 <div className="title">Data table</div>
-                <div className="menu-bar"><img src="/img/UPDATE-ICON.png"/><img src="/img/EXPORT-ICON.png"/></div>
+                <div className="menu-bar"><img title="Update" src="/img/UPDATE-ICON.png"/><img title="Export Excel" src="/img/EXPORT-ICON.png"/></div>
               </div>
             </div>
         );

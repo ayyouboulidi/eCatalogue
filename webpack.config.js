@@ -20,7 +20,7 @@ module.exports = {
        loader: ExtractTextPlugin.extract("css?modules&importLoaders=1&localIdentName=[local]"),
        //exclude: /node_modules/,
      },
-     { test: /\.(png|woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=100000' },
+     { test: /\.(jpe?g|png|gif|woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=100000' },
     /* {
         test: /\.(woff|woff2)(\?v=\d+\.\d+\.\d+)?$/,
         loader: 'url?limit=10000&mimetype=application/font-woff'
@@ -45,8 +45,8 @@ module.exports = {
            $: "jquery",
            jQuery: "jquery"
        })
-  ],
+   ],
   resolve: {
-    extensions: ['', '.js', '.json','.css']
+    extensions: ['', '.js', '.json','.css'],
   }
 };

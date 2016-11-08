@@ -44,7 +44,7 @@ updateStore(){
         return(
           selectedCategory.getSelectedCategory().type ==="monument"?
             <div className="width33 bgw height300 features">
-              Options
+              <div className="title">Options</div>
               <div className="options">
                 <form>
                 <div><img id="master1" src={"img/TOOGLE-BTN-"+this.state.master1+".png"} onClick={this.switchOptions.bind(this)}/>Master 1</div>
@@ -58,11 +58,12 @@ updateStore(){
                 <Radio value="gain" />GAIN/NELI
               </RadioGroup>
               </div>
+              <div className="package switch-button blue rounded-box">Package</div>
             </div>
           :
           <div className="width33 bgw height300 features">
-            <div className="features-additional-infos">  Additionnal Information</div>
-            <div className="title"><b>Convection Oven Zodiac P/N</b></div>
+            <div className="features-additional-infos title">  Additionnal Information</div>
+            <div className="name"><b>Convection Oven Zodiac P/N</b></div>
             <div className="description">
               • Unpressurized oven cavity<br/>
               • Standard Convection Mode run at 170°C<br/>

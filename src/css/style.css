@@ -11,6 +11,7 @@
 @import "./popup.css";
 @import "./configmode.css";
 @import "./projects.css";
+@import "./autocomplete.css";
 
 /*
 * Basic shape style surface pro 4 2736*1824
@@ -56,6 +57,7 @@ input[type="search"] {
     border-top-right-radius: 2vh 50%;
     border-bottom-left-radius: 2vh 50%;
     border-bottom-right-radius: 2vh 50%;
+    padding-left: 1em;
 }
 input[type="checkbox"]{
   margin: 0;
