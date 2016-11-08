@@ -23,6 +23,8 @@ export default class AdditionalInfoEquipment extends Component {
       let items = this.state.items
         return(
           <div className="width80 bgcurrentproject activeoverflow height300 additional-infos">
+          <div className="title"> Monuments where Oven can be placed </div>
+          <div className="item-overflow">
             <div className="item-list">
               {items.map(function(item,key){
                 return(
@@ -34,6 +36,7 @@ export default class AdditionalInfoEquipment extends Component {
                     </PopupItem>
                 )
               })}
+            </div>
             </div>
           </div>
         );
