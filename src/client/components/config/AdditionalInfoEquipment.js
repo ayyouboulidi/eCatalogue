@@ -12,7 +12,7 @@ export default class AdditionalInfoEquipment extends Component {
 
   componentWillMount(){
     let _this = this
-    $.post('/GetItems',{equipment:"Gain"},function(data){
+    $.post('/GetItems',{monument:"Galley"},function(data){
       if(data.code === 0){
         _this.state.items=data.result
         _this.setState(_this.state)
