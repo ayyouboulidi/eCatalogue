@@ -233,3 +233,10 @@ button, input[type="submit"] {
 .center {
   text-align: center;
 }
+.rounded-box {
+  border-top-left-radius: 2vh 50%;
+  border-top-right-radius: 2vh 50%;
+  border-bottom-left-radius: 2vh 50%;
+  border-bottom-right-radius: 2vh 50%;
+
+}

@@ -33,7 +33,7 @@ export default class Features extends Component {
                 <div><img id="standard" src={"img/TOOGLE-BTN-"+this.state.standard+".png"} onClick={this.switchOptions.bind(this)}/>STANDARD</div>
                 <div><img id="gain" src={"img/TOOGLE-BTN-"+this.state.gain+".png"} onClick={this.switchOptions.bind(this)}/>GAIN/NELI</div>
               </div>
-              <div className="package switch-button">Package</div>
+              <div className="package switch-button blue rounded-box">Package</div>
             </div>
           :
           <div className="width33 bgw height300 features">

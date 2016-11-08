@@ -73,6 +73,17 @@
     margin-bottom: 2vh;
     margin-top: 1vh;
 }
+.first-block > .features .package.switch-button {
+    position: absolute;
+    bottom: 1vh;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2vh;
+    padding: 1vh 2vw;
+    color: white;
+    background-color: dodgerblue;
+}
+
 
 .second-block > div + div {
     border-left: 0.2vw solid #ccc;
