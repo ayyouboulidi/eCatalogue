@@ -159,6 +159,10 @@ input.view_details {
 .bgcontact {
     background: #ddd;
 }
+.bgcontact .contact-overflow {
+    overflow-y: auto;
+    height: 75%;
+}
 .contact-list tr {
     border: 1vh solid #ddd;
     font-size: 1.5vh;

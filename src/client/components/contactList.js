@@ -20,6 +20,7 @@ export default class contactList extends Component {
         return(
             <div className="width25 fright bgcontact">
               <div className="second_title">My Airbus Contacts</div>
+              <div className="contact-overflow">
               <table className="width100 padding2 contact-list">
                 <tbody>
                   {
@@ -35,6 +36,7 @@ export default class contactList extends Component {
                   }
                 </tbody>
               </table>
+              </div>
             </div>
         );
     }

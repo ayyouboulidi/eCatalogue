@@ -95,28 +95,28 @@ constructor(props){
                   <tbody>
                     <tr>
                       <th></th>
-                      <th colSpan="3">Master 1</th>
-                      <th colSpan="3">Master 2</th>
+                      <th className="border-left center" colSpan="3">Master 1</th>
+                      <th className="border-left border-right center" colSpan="3">Master 2</th>
                     </tr>
                     <tr>
                       <td></td>
-                      <td className="clickable"><PopupImg id="pc11">Pre-Configuration 1</PopupImg></td>
-                      <td  className="clickable" ><PopupImg id="pc12">Pre-Configuration 2</PopupImg></td>
+                      <td className="clickable border-left"><PopupImg id="pc11">Pre-Configuration 1</PopupImg></td>
+                      <td className="clickable" ><PopupImg id="pc12">Pre-Configuration 2</PopupImg></td>
                       <td className="clickable">Pre-Configuration 3</td>
-                      <td  className="clickable"><PopupImg id="pc21">Pre-Configuration 1</PopupImg></td>
-                      <td  className="clickable"><PopupImg id="pc22">Pre-Configuration 2</PopupImg></td>
-                      <td className="clickable">Pre-Configuration 3</td>
+                      <td className="clickable border-left"><PopupImg id="pc21">Pre-Configuration 1</PopupImg></td>
+                      <td className="clickable"><PopupImg id="pc22">Pre-Configuration 2</PopupImg></td>
+                      <td className="clickable border-right">Pre-Configuration 3</td>
                     </tr>
                         {tabs.map(function(tab,key){
                         return(
                         <tr key={key}>
                           <td style={tab.style}>{tab.name}</td>
-                          <td>{tab.pc11}</td>
+                          <td className="border-left">{tab.pc11}</td>
                           <td>{tab.pc12}</td>
                           <td>{tab.pc13}</td>
-                          <td>{tab.pc21}</td>
+                          <td className="border-left">{tab.pc21}</td>
                           <td>{tab.pc22}</td>
-                          <td>{tab.pc23}</td>
+                          <td className="border-right">{tab.pc23}</td>
                         </tr>)})
                       }
                   </tbody>
@@ -124,21 +124,21 @@ constructor(props){
                   <tbody>
                     <tr>
                       <th></th>
-                      <th colSpan="3">Master 1</th>
+                      <th className="border-left border-right center" colSpan="3">Master 1</th>
                     </tr>
                     <tr>
                       <td></td>
-                      <td className="clickable"><PopupImg id="pc11">Pre-Configuration 1</PopupImg></td>
-                      <td  className="clickable" ><PopupImg id="pc12">Pre-Configuration 2</PopupImg></td>
-                      <td className="clickable">Pre-Configuration 3</td>
+                      <td className="border-left center clickable"><PopupImg id="pc11">Pre-Configuration 1</PopupImg></td>
+                      <td  className="clickable center" ><PopupImg id="pc12">Pre-Configuration 2</PopupImg></td>
+                      <td className="clickable center">Pre-Configuration 3</td>
                     </tr>
                       {  tabsbis.map(function(tab,key){
                         return(
                         <tr key={key}>
                           <td>{tab.name}</td>
-                          <td>{tab.pc11}</td>
+                          <td className="border-left">{tab.pc11}</td>
                           <td>{tab.pc12}</td>
-                          <td>{tab.pc13}</td>
+                          <td className="border-right">{tab.pc13}</td>
                         </tr>)})
                       }
                   </tbody>
@@ -146,15 +146,15 @@ constructor(props){
                   <tbody>
                     <tr>
                       <th></th>
-                      <th>Master 1</th>
-                      <th>Master 2</th>
+                      <th className="border-left center">Master 1</th>
+                      <th className="border-left border-right center">Master 2</th>
                     </tr>
                       {  tabs2.map(function(tab,key){
                         return(
                         <tr key={key}>
                           <td>{tab.name}</td>
-                          <td>{tab.Master1}</td>
-                          <td>{tab.Master2}</td>
+                          <td className="border-left">{tab.Master1}</td>
+                          <td className="border-right">{tab.Master2}</td>
                         </tr>)})
                       }
                   </tbody>
