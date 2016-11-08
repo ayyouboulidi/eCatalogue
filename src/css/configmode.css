@@ -11,10 +11,20 @@
     height: 50%;
 }
 
+.config-mode > .first-block > .three-model .title, .config-mode > .first-block > .positions .title, .config-mode > .first-block > .features .title {
+    position: absolute;
+    top: 1vh;
+    left: 0.5vw;
+}
+.config-mode > .first-block > div {
+    padding-top: 6vh;
+}
+
 .first-block > div + div {
     border-left: 0.2vw solid #ccc;
 }
 .first-block > .three-model {
+    position: relative;
     width: 33%;
     height: 100%;
     padding: 7vh 3vw;
@@ -25,6 +35,7 @@
     max-height: 100%;
 }
 .first-block > .positions {
+    position: relative;
     text-align: center;
     width: 34%;
     height: 100%;
@@ -42,6 +53,7 @@
     height: 66%;
 }
 .first-block > .features {
+    position: relative;
     width: 33%;
     height: 100%;
     padding: 1vh 1vw;

@@ -21,7 +21,7 @@ export default class Features extends Component {
         return(
           selectedCategory.getSelectedCategory().type ==="monument"?
             <div className="width33 bgw height300 features">
-              Options
+              <div className="title">Options</div>
               <div className="options">
                 <form>
                   <input type="radio" name="master" value="Master 1" defaultChecked/> Master 1<br/>
@@ -33,6 +33,7 @@ export default class Features extends Component {
                 <div><img id="standard" src={"img/TOOGLE-BTN-"+this.state.standard+".png"} onClick={this.switchOptions.bind(this)}/>STANDARD</div>
                 <div><img id="gain" src={"img/TOOGLE-BTN-"+this.state.gain+".png"} onClick={this.switchOptions.bind(this)}/>GAIN/NELI</div>
               </div>
+              <div className="package switch-button">Package</div>
             </div>
           :
           <div className="width33 bgw height300 features">
