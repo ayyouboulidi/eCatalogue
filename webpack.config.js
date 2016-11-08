@@ -9,6 +9,7 @@ module.exports = {
   },
   module: {
     loaders: [
+      { test: /\.(jpe?g|png|gif)$/i, loader:"file" },
       {
         test: /\.js$/,
         exclude: /node_modules/,
@@ -41,10 +42,16 @@ module.exports = {
     new ExtractTextPlugin("styles.css"),
     new webpack.ProvidePlugin({
            $: "jquery",
-           jQuery: "jquery"
+           jQuery: "jquery",
+           "window.jQuery":"jquery"
        })
-  ],
+   ],
   resolve: {
-    extensions: ['', '.js', '.json','.css']
+    extensions: ['', '.js', '.json','.css'],
+    alias: {
+      "jquery-ui": "jquery-ui/jquery-ui.js",
+      'jquery-ui-css': 'jquery-ui-bundle'
+     },
+     
   }
 };
