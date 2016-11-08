@@ -38,15 +38,15 @@ export default class tooltip extends Component {
         return(
           this.props.page === "cabin"?
             <div style={{position:"relative",marginTop:"0.5vh"}}>
-              <img src="img/TOOLTIP.png"/>
+              <img title="Expand Menu" src="img/TOOLTIP.png"/>
               {this.state.viewMode != "Config"?
-              <div><img src="img/SWITCH-MODE-ICON.png" onClick={this.switchMode.bind(this)}/></div>
-              :<span><img src="img/BACK-ICON-2.png" onClick={this.setModeCatalog.bind(this)}/></span>
+              <div><img src="img/SWITCH-MODE-ICON.png" title="Switch View" onClick={this.switchMode.bind(this)}/></div>
+              :<span><img src="img/BACK-ICON-2.png" title="Back" onClick={this.setModeCatalog.bind(this)}/></span>
               }
             </div>
           :
           <div style={{position:"relative",marginTop:"0.5vh"}}>
-            <img src="img/TOOLTIP.png"/>
+            <img title="Expand Menu" src="img/TOOLTIP.png"/>
           </div>
         );
     }
