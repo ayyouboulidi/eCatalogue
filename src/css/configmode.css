@@ -42,16 +42,23 @@
     padding: 1vw;
     background: linear-gradient(to left, #eee, #ddd);
 }
-.first-block > .positions > .item-list {
+.first-block > .positions .item-list {
     width: 100%;
 }
-.first-block > .positions > .item-list > .modal-example {
+.first-block > .positions .item-list > .modal-example {
     width: 50%;
 }
 .first-block > .positions > img {
     max-width: 100%;
     height: 66%;
 }
+.items-overflow {
+    overflow-y: auto;
+    height: 100%;
+    width: 100%;
+}
+
+
 .first-block > .features {
     position: relative;
     width: 33%;
