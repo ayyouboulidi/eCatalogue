@@ -58,6 +58,12 @@ input[type="search"] {
     border-bottom-left-radius: 2vh 50%;
     border-bottom-right-radius: 2vh 50%;
     padding-left: 1em;
+    font-size: 14px;
+    width: 40%;
+    height: 40px;
+}
+input[type="search"]:focus {
+  background:white;
 }
 input[type="checkbox"]{
   margin: 0;
