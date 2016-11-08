@@ -121,6 +121,10 @@
 .second-block > .additional-infos > .item-list {
     width: 100%;
 }
+.second-block > .additional-infos .clickable.intitle {
+    font-size: 1.6vh;
+    padding: 0.5vh;
+}
 .second-block > .additional-infos > .table-head {
     position: absolute;
     width: 100%;

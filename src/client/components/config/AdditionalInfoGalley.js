@@ -65,12 +65,12 @@ constructor(props){
                   </tr>
                   <tr>
                     <td></td>
-                    <td className="border-left clickable"><PopupImg id="pc11">Pre-Configuration 1</PopupImg></td>
-                    <td  className="clickable" ><PopupImg id="pc12">Pre-Configuration 2</PopupImg></td>
-                    <td className="clickable">Pre-Configuration 3</td>
-                    <td  className="border-left clickable"><PopupImg id="pc21">Pre-Configuration 1</PopupImg></td>
-                    <td  className="clickable"><PopupImg id="pc22">Pre-Configuration 2</PopupImg></td>
-                    <td className="border-right clickable">Pre-Configuration 3</td>
+                    <td className="border-left clickable intitle"><PopupImg id="pc11">Pre-Configuration 1</PopupImg></td>
+                    <td  className="clickable intitle" ><PopupImg id="pc12">Pre-Configuration 2</PopupImg></td>
+                    <td className="clickable intitle">Pre-Configuration 3</td>
+                    <td  className="border-left clickable intitle"><PopupImg id="pc21">Pre-Configuration 1</PopupImg></td>
+                    <td  className="clickable intitle"><PopupImg id="pc22">Pre-Configuration 2</PopupImg></td>
+                    <td className="border-right clickable intitle">Pre-Configuration 3</td>
                   </tr>
                   {tabs.map(function(tab,key){
                     return(
