@@ -90,8 +90,8 @@ export default class popup extends Component {
       <div className="product_description">
       <div className="tablist">
       <div className={this.state.tab ==="desc" ? "tab selected" : "tab"} id="desc" onClick={this.handleSelect.bind(this)}>DESCRIPTION</div>
-      <div className={this.state.tab ==="install" ? "tab selected" : "tab"}  id="install" onClick={this.handleSelect.bind(this)}>INSTALATION</div>
-      <div className={this.state.tab ==="local" ? "tab selected" : "tab"}  id="local" onClick={this.handleSelect.bind(this)}>LOCALISATION</div>
+      <div className={this.state.tab ==="install" ? "tab selected" : "tab"}  id="install" onClick={this.handleSelect.bind(this)}>INSTALLATION</div>
+      <div className={this.state.tab ==="local" ? "tab selected" : "tab"}  id="local" onClick={this.handleSelect.bind(this)}>LOCATION</div>
       <div className={this.state.tab ==="rule" ? "tab selected" : "tab"}  id="rule" onClick={this.handleSelect.bind(this)}>RULES</div>
       <div className={this.state.tab ==="other" ? "tab selected" : "tab"}  id="other" onClick={this.handleSelect.bind(this)}>OTHER</div>
       </div>
