@@ -161,17 +161,20 @@ input.view_details {
 }
 .contact-list tr {
     border: 1vh solid #ddd;
-    font-size: 2vh;
+    font-size: 1.5vh;
 }
 .contact-list img {
     width: 80%;
     height: auto;
 }
 .contact-list-name {
-    width: 70%;
+    width: 35%;
 }
-.contact-list-settings {
-    width: 15%;
+.contact .phone {
+    width: 25%;
+}
+.contact .email {
+    width: 13%;
 }
 .contact-list-mail {
     width: 15%;

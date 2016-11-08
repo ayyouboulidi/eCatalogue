@@ -11,10 +11,20 @@
     height: 50%;
 }
 
+.config-mode > .first-block > .three-model .title, .config-mode > .first-block > .positions .title, .config-mode > .first-block > .features .title {
+    position: absolute;
+    top: 1vh;
+    left: 0.5vw;
+}
+.config-mode > .first-block > div {
+    padding-top: 6vh;
+}
+
 .first-block > div + div {
     border-left: 0.2vw solid #ccc;
 }
 .first-block > .three-model {
+    position: relative;
     width: 33%;
     height: 100%;
     padding: 7vh 3vw;
@@ -25,23 +35,32 @@
     max-height: 100%;
 }
 .first-block > .positions {
+    position: relative;
     text-align: center;
     width: 34%;
     height: 100%;
     padding: 1vw;
     background: linear-gradient(to left, #eee, #ddd);
 }
-.first-block > .positions > .item-list {
+.first-block > .positions .item-list {
     width: 100%;
 }
-.first-block > .positions > .item-list > .modal-example {
+.first-block > .positions .item-list > .modal-example {
     width: 50%;
 }
 .first-block > .positions > img {
     max-width: 100%;
     height: 66%;
 }
+.items-overflow {
+    overflow-y: auto;
+    height: 100%;
+    width: 100%;
+}
+
+
 .first-block > .features {
+    position: relative;
     width: 33%;
     height: 100%;
     padding: 1vh 1vw;
@@ -61,7 +80,20 @@
     margin-bottom: 2vh;
     margin-top: 1vh;
 }
+.first-block > .features .package.switch-button {
+    position: absolute;
+    bottom: 1vh;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2vh;
+    padding: 1vh 2vw;
+    color: white;
+    background-color: dodgerblue;
+}
 
+.second-block {
+    border-top: 0.2vh solid #ccc;
+}
 .second-block > div + div {
     border-left: 0.2vw solid #ccc;
 }
@@ -83,10 +115,17 @@
         height: 100%;
 }
 .second-block > .additional-infos tbody tr:first-child {
-    background-color: #bbb;
+    background-color: #ccc;
+}
+.second-block > .additional-infos tbody td, .second-block > .additional-infos tbody th {
+    padding: 1vh 1vw;
 }
 .second-block > .additional-infos > .item-list {
     width: 100%;
+}
+.second-block > .additional-infos .clickable.intitle {
+    font-size: 1.6vh;
+    padding: 0.5vh;
 }
 .second-block > .additional-infos > .table-head {
     position: absolute;
@@ -109,6 +148,10 @@
 /*
 * Popup Styles
 */
+.popup-info {
+    height: 25vh;
+    padding: 1vh 1vw;
+}
 .popup-img {
     height: 40vh;
 }

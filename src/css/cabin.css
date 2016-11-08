@@ -54,7 +54,7 @@
     transform: translateX(0.5vh) translateY(-18.5%);
 }
 .monument-list .verticalScroll {
-    min-width: 20%;
+    min-width: 16vw;
 }
 .monument-list .verticalScroll + .monument-list .verticalScroll {
     margin-left:10vh;
@@ -90,7 +90,7 @@
     transform: translateX(0.5vh) translateY(-23%);
 }
 .supplier-list .verticalScroll {
-    width: 20%;
+    min-width: 13vw;
     height: auto;
 }
 .supplier-list .verticalScroll img {

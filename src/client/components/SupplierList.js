@@ -1,13 +1,15 @@
 import React, { Component } from 'react'
 import categoryStroe from "../store/selectedCategoryStore"
-import PopupItem from '../elements/popup'
+import PopupInfo from '../elements/popupInfo'
+import categoryStore from "../store/selectedCategoryStore"
 
 export default class SupplierList extends Component {
     constructor(props){
       super(props)
       this.state={
         suppliers:[],
-        selected: ""
+        selected: "",
+        selectedCategory:{}
       }
     }
 
@@ -17,6 +19,13 @@ export default class SupplierList extends Component {
         _this.state.suppliers=data.result
         _this.setState(_this.state)
       },"json")
+    }
+
+    componentDidMount(){
+      this.disposable = categoryStore.getStore$().subscribe((newCategory) => {
+        this.state.selectedCategory = newCategory;
+        this.setState(this.state);
+      })
     }
 
     setSelectedCategory(e){
@@ -39,12 +48,12 @@ export default class SupplierList extends Component {
             <div className="pflex activeoverflowx height100 supplier-list">
               {suppliers.map(function(supplier,key){
                 return(
-                  <div className={(_this.state.selected == supplier.id)?"verticalScroll selected":"verticalScroll"} key={key} name={supplier.id} id={supplier.name} onClick={_this.setSelectedCategory.bind(_this)}>
+                  <div className={(_this.state.selected == supplier.id && _this.state.selectedCategory.type === "supplier")?"verticalScroll selected":"verticalScroll"} key={key} name={supplier.id} id={supplier.name} onClick={_this.setSelectedCategory.bind(_this)}>
                     <div><img src={"img"+supplier.url}/></div>
                     <div className="supplier-id">{supplier.name}</div>
-                    <PopupItem id={supplier.id} type="supplier" key={key}>
+                    <PopupInfo id={supplier.id} type="equipment" key={key}>
                       <div className="infos"><img src="/img/INFOS-ICON.png" /></div>
-                    </PopupItem>
+                    </PopupInfo>
                   </div>
                 )
               })}

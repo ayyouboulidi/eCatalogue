@@ -90,8 +90,8 @@ export default class popup extends Component {
       <div className="product_description">
       <div className="tablist">
       <div className={this.state.tab ==="desc" ? "tab selected" : "tab"} id="desc" onClick={this.handleSelect.bind(this)}>DESCRIPTION</div>
-      <div className={this.state.tab ==="install" ? "tab selected" : "tab"}  id="install" onClick={this.handleSelect.bind(this)}>INSTALATION</div>
-      <div className={this.state.tab ==="local" ? "tab selected" : "tab"}  id="local" onClick={this.handleSelect.bind(this)}>LOCALISATION</div>
+      <div className={this.state.tab ==="install" ? "tab selected" : "tab"}  id="install" onClick={this.handleSelect.bind(this)}>INSTALLATION</div>
+      <div className={this.state.tab ==="local" ? "tab selected" : "tab"}  id="local" onClick={this.handleSelect.bind(this)}>LOCATION</div>
       <div className={this.state.tab ==="rule" ? "tab selected" : "tab"}  id="rule" onClick={this.handleSelect.bind(this)}>RULES</div>
       <div className={this.state.tab ==="other" ? "tab selected" : "tab"}  id="other" onClick={this.handleSelect.bind(this)}>OTHER</div>
       </div>
@@ -129,23 +129,26 @@ export default class popup extends Component {
         :
         this.state.tab===  "other"?
         <div>
-        <b>Convection Oven Zodiac P/N</b><br/>
-        C10x100 Left hinged door<br/>
-        C10x200 Right hinged door<br/>
-        "x" defined by Trim and Finish<br/>
-        see ADD Annex "Trim and Finish"<br/>
-        V2523CC1100237<br/>
+        <b>Power supply and cooling capacity</b><br/>
+        Available galley power supply capacity is available in the associated description<br/>
+        <li> Center galleys are always chilled galleys.</li>
         <br/>
-        <b>Description</b><br/>
-        <li>Unpressurized oven cavity</li>
-        <li>Standard Convection Mode run at 170°</li>
-        <li>Keep Warm Mode</li>
-        <li>Defrost Mode: max 170° and max 30 min</li>
-        <li>Selection of Combination Modes</li>
-        <li>Selection of Pre set Time before Program Start</li>
-        <li>27 predefined programs (Time-Temperature)</li>
-        <li>Up to 100 program places for user defined setups (Time-Temperature)</li>
-        <li>Large graphical display</li>
+        <b>Galley gross weight</b><br/>
+        The weight of every galley configuration has to be checked after the selection of all GAINs, NELIs, galley options and other equipments (baby bassinet, IFE screen...) to ensure the allowed gross weight is not exceeded. If there is no comment for the galley configuration, the NELI weights are given as follows:<br/>
+        <li>Standard Units (SU): 10kg (upper row) / 15kg (middle row) / 20kg (lower row)</li>
+        <li> Half-size trolleys:</li>
+        <li>a) 50 kg for all lateral galleys and all galleys fwd D1</li>
+        <li>b) 60 kg for all center galleys (except fwd D1) and all galleys aft D4.</li>
+        <li> Full-size trolleys: 100kg </li>
+        Exception to the general rule may be accepted up to 20kg for SUs and 60kg for HS trolleys. The technical feasibility has to be checked on a case-by-case basis.<br/>
+        <b>Handling space</b><br/>
+        To ensure that the trolley can be pulled out of its bay and can be easily handled, the minimum distance between two facing galleys is 39”.
+The applicability of full-size trolleys in lateral galleys is always depending on the layout (aisle width).<br/>
+        <b>Single trolley bays</b><br/>
+        <li> Half-size trolleys:</li>
+        <li>a) 50 kg for all lateral galleys and all galleys fwd D1</li>
+        <li>b) 60 kg for all center galleys (except fwd D1) and all galleys aft D4.</li>
+        <li> Full-size trolleys: 100kg </li>
         </div>
         :
         null
