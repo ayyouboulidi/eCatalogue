@@ -145,7 +145,7 @@ button, input[type="submit"] {
   border-bottom-right-radius: 2vh 50%;
 }
 .blue {
-  background-color: dodgerblue;
+  background-color: #c7c7c7;
 }
 .button-menu {
   border: 0.3vh solid transparent;

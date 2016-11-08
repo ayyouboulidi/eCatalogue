@@ -47,7 +47,7 @@ export default class popup extends Component {
   }
 
   addProject(){
-    let _this = this
+  /*  let _this = this
     let user = UserStore.getUser()
     let obj=[{user:user,id_item:this.state.item.id,quantity:3}]
     $.post('/AddProjects',{projects:obj},function(data){
@@ -56,7 +56,7 @@ export default class popup extends Component {
       }else if (data.code === -1){
         alert("An Error happened please try later")
       }
-    },"json")
+    },"json")*/
   }
 
   handleSelect(event){

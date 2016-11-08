@@ -1,11 +1,14 @@
 import React, { Component } from 'react'
 import switcherView from "../store/switcherView"
+import UserStore from "../store/connect"
+import popupStore from "../store/popupElement"
 
 export default class tooltip extends Component {
   constructor(props){
     super(props)
     this.state={
-      viewMode:null
+      viewMode:null,
+      add:"DISABLED"
     }
   }
 
@@ -22,6 +25,7 @@ export default class tooltip extends Component {
 
   componentWillUnmount() {
     this.disposable.dispose()
+    this.setState({add:"DISABLED"})
   }
 
   switchMode(){
@@ -34,6 +38,22 @@ export default class tooltip extends Component {
     switcherView.setView(mode)
   }
 
+  addProject(){
+    console.log()
+    let _this = this
+    let user = UserStore.getUser()
+    let item =  popupStore.getItem().id
+    let obj=[{user:user,id_item:item,quantity:3}]
+    $.post('/AddProjects',{projects:obj},function(data){
+      if(data.code === 0){
+        _this.setState({add:"ENABLED"})
+      }else if (data.code === -1){
+        _this.setState({add:"DISABLED"})
+        alert("An Error happened please try later")
+      }
+    },"json")
+  }
+
     render(){
         return(
           this.props.page === "cabin"?
@@ -42,12 +62,12 @@ export default class tooltip extends Component {
               {this.state.viewMode != "Config"?
               <div>
                 <img className="blue button-menu" title="Favorites" src="img/FAVOURITE-ICON.png"/>
-                <img className="project" title="Aircraft" src="img/ADD-TO-PROJECT-ICON.png"/>
+                <img className="project" title="Aircraft" src={"img/ADD-TO-PROJECT-ICON-DISABLED.png"}/>
                 <div className="switch-view" onClick={this.switchMode.bind(this)}>{this.state.viewMode == "Catalog"? "Switch to Cabin Location":"Switch to Catalog"}</div>
               </div>
               :<span>
                 <img className="blue button-menu" title="Favorites" src="img/FAVOURITE-ICON.png"/>
-                <img className="project" title="Aircraft" src="img/ADD-TO-PROJECT-ICON.png"/>
+                <img className="project" title="Aircraft" src={"img/ADD-TO-PROJECT-ICON-"+this.state.add+".png"}  onClick={this.addProject.bind(this)}/>
                 <img src="img/BACK-ICON-2.png" title="Back" onClick={this.setModeCatalog.bind(this)}/>
               </span>
               }
