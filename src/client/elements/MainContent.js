@@ -16,7 +16,7 @@ import Title from "../components/title"
 export default class MainContent extends Component {
   componentWillMount(){
     let prevValue = sectionNameStore.getSectionName()
-    let progress = "Dashboard > > "+prevValue.aircraft
+    let progress = "Dashboard > "+prevValue.aircraft
     sectionNameStore.setSectionName({name:"Dashboard",progress:progress,aircraft:prevValue.aircraft})
   }
     render(){

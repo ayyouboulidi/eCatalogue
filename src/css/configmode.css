@@ -109,6 +109,9 @@
 /*
 * Popup Styles
 */
+.popup-info {
+    height: 20vh;
+}
 .popup-img {
     height: 40vh;
 }

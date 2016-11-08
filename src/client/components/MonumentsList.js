@@ -1,13 +1,15 @@
 import React, { Component } from 'react'
 import categoryStroe from "../store/selectedCategoryStore"
-import PopupItem from '../elements/popup'
+import PopupInfo from '../elements/popupInfo'
+import categoryStore from "../store/selectedCategoryStore"
 
 export default class MonumentsList extends Component {
     constructor(props){
       super(props)
       this.state={
         monuments:[],
-        selected: ""
+        selected: "",
+        selectedCategory:{}
       }
     }
 
@@ -17,6 +19,13 @@ export default class MonumentsList extends Component {
         _this.state.monuments=data.result
         _this.setState(_this.state)
       },"json")
+    }
+
+    componentDidMount(){
+      this.disposable = categoryStore.getStore$().subscribe((newCategory) => {
+        this.state.selectedCategory = newCategory;
+        this.setState(this.state);
+      })
     }
 
     setSelectedCategory(e){
@@ -39,12 +48,12 @@ export default class MonumentsList extends Component {
             <div className="pflex activeoverflowx height100 monument-list">
               {monuments.map(function(monument,key){
                 return(
-                  <div className={(_this.state.selected == monument.id)?"verticalScroll selected":"verticalScroll"} key={key} name={monument.id} id={monument.name} onClick={_this.setSelectedCategory.bind(_this)}>
+                  <div className={(_this.state.selected == monument.id && _this.state.selectedCategory.type === "monument")?"verticalScroll selected":"verticalScroll"} key={key} name={monument.id} id={monument.name} onClick={_this.setSelectedCategory.bind(_this)}>
                     <div><img src={"img"+monument.url}/></div>
                     <div className="monument-name"><b>{monument.name}</b></div>
-                    <PopupItem id={monument.id} type="monument" key={key}>
+                    <PopupInfo id={monument.id} type="monument" key={key}>
                       <div className="infos" name={monument.id} onClick={_this.displayInfos.bind(_this)}><img src="/img/INFOS-ICON.png" /></div>
-                    </PopupItem>
+                    </PopupInfo>
                   </div>
                 )
               })}
