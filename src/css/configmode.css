@@ -91,7 +91,9 @@
     background-color: dodgerblue;
 }
 
-
+.second-block {
+    border-top: 0.2vh solid #ccc;
+}
 .second-block > div + div {
     border-left: 0.2vw solid #ccc;
 }
