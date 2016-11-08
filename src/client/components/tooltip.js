@@ -40,15 +40,21 @@ export default class tooltip extends Component {
             <div style={{position:"relative",marginTop:"0.5vh"}}>
               <img title="Expand Menu" src="img/TOOLTIP.png"/>
               {this.state.viewMode != "Config"?
-              <div className="switch-view" onClick={this.switchMode.bind(this)}>{this.state.viewMode == "Catalog"? "Switch to Cabin Location":"Switch to Catalog"}</div>
-              :<span><img src="img/BACK-ICON-2.png" title="Back" onClick={this.setModeCatalog.bind(this)}/></span>
+              <div>
+                <img className="blue button-menu" title="Favorites" src="img/FAVOURITE-ICON.png"/>
+                <img className="blue button-menu" title="Aircraft" src="img/PROJECT-ICON.png"/>
+                <div className="switch-view" onClick={this.switchMode.bind(this)}>{this.state.viewMode == "Catalog"? "Switch to Cabin Location":"Switch to Catalog"}</div>
+              </div>
+              :<span>
+                <img className="blue button-menu" title="Favorites" src="img/FAVOURITE-ICON.png"/>
+                <img className="blue button-menu" title="Aircraft" src="img/PROJECT-ICON.png"/>
+                <img src="img/BACK-ICON-2.png" title="Back" onClick={this.setModeCatalog.bind(this)}/>
+              </span>
               }
             </div>
           :
           <div style={{position:"relative",marginTop:"0.5vh"}}>
             <img title="Expand Menu" src="img/TOOLTIP.png"/>
-            <img className="blue button-menu" title="Favorites" src="img/FAVOURITE-ICON.png"/>
-            <img className="blue button-menu" title="Aircraft" src="img/PROJECT-ICON.png"/>
           </div>
         );
     }
