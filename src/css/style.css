@@ -60,7 +60,7 @@ input[type="search"] {
     padding-left: 1em;
     font-size: 14px;
     width: 40%;
-    height: 35px;
+    height: 5vh;
 }
 input[type="search"]:focus {
   background:white;
