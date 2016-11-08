@@ -145,11 +145,11 @@ button, input[type="submit"] {
   border-bottom-right-radius: 2vh 50%;
 }
 .blue {
-  /*background-color: dodgerblue;*/
+  background-color: dodgerblue;
 }
 .button-menu {
-  /*border: 0.3vh solid transparent;
-  border-radius: 50%;*/
+  border: 0.3vh solid transparent;
+  border-radius: 50%;
 }
 
 /*

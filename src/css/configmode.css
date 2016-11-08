@@ -94,6 +94,16 @@
 .second-block {
     border-top: 0.2vh solid #ccc;
 }
+.second-block .title {
+    position: absolute;
+    top: 1vh;
+    left: 0.5vw;
+}
+.second-block .item-overflow {
+    overflow-y: auto;
+    height: 100%;
+    width: 100%;
+}
 .second-block > div + div {
     border-left: 0.2vw solid #ccc;
 }
