@@ -43,8 +43,9 @@ export default class ProjectMainContent extends Component {
                         this.state.projects.map(function(project,key){
                           return(
                             <tr key={key}>
-                            <td><img src="img/monument/GALLEY.png"/></td>
-                            <td>{project.id_item} {project.user} {project.date}</td>
+                            <td><img src={"img"+project.item_url}/></td>
+                            <td>{project.item_name}</td>
+                            <td>{project.user}</td>
                             <td>Quantity {project.quantity}</td>
                             <td><img src="img/TRASH-ICON.png"/></td>
                             </tr>
