@@ -74,6 +74,7 @@ export default class popup extends Component {
     let type = this.props.type
     let img = type === "monument" ? "/monument/GALLEY" : "/supplier/GAIN"
     let title = type === "monument" ? "Galley G25CFA" : "CONVECTION OVEN SELL"
+    let text = type === "monument" ? "Galleys is installed in D2 forward central positions with a Transversal orientation and is Aft facing, this galley is full-height (with upper attachments) and full size (39” deep)":"ELECTRICAL INSERT EUROPE PART NUMBER 6762-001-003"
     return (
       <span className='modal-example'>
       <span id={this.props.id} onClick={this.open.bind(this)}>{this.props.children}</span>
@@ -84,7 +85,7 @@ export default class popup extends Component {
       <div className="modal-description">
       <div className="product-image"><img src={"img/"+img+".png"} /></div>
       <div className="product-title">{title}</div>
-      <div className="product-short-description">ELECTRICAL INSERT EUROPE PART NUMBER 6762-001-003</div>
+      <div className="product-short-description">{text}</div>
       </div>
       <div className="modal-action"><img src="img/FAVOURITE-ICON.png" onClick={this.addProject.bind(this)}/><img src="img/ITEM-SETTINGS-ICON.png" onClick={this.configSwitch.bind(this)}/></div>
       <div className="product_description">

@@ -39,7 +39,6 @@ export default class tooltip extends Component {
   }
 
   addProject(){
-    console.log()
     let _this = this
     let user = UserStore.getUser()
     let item =  popupStore.getItem().id
