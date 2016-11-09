@@ -61,8 +61,6 @@ export default class tooltip extends Component {
               <img title="Expand Menu" src="img/TOOLTIP.png"/>
               {this.state.viewMode != "Config"?
               <div>
-                <img className="blue button-menu" title="Favorites" src="img/FAVOURITE-ICON.png"/>
-                <img className="project" title="Aircraft" src={"img/ADD-TO-PROJECT-ICON-DISABLED.png"}/>
                 <div className="switch-view" onClick={this.switchMode.bind(this)}>{this.state.viewMode == "Catalog"? "Switch to Cabin Location":"Switch to Catalog"}</div>
               </div>
               :<span>

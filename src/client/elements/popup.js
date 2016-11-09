@@ -101,8 +101,7 @@ export default class popup extends Component {
           type === "monument" ?
           <div>
           <b>Galley design</b><br/>
-          The structure of the galley is defined for ARINC 810 GAINs and ATLAS-based <br/>
-          standard NELIs (refer to category in eCatalogue for details). <br/>
+          The structure of the galley is defined for ARINC 810 GAINs and ATLAS-based standard NELIs (refer to category in eCatalogue for details). <br/>
           The master galley arrangements shown correspond to the primary level of configuration.<br/>
           </div>
           :

@@ -40,8 +40,8 @@ export default class popupInfo extends Component {
               <h4 id='modal-label'></h4>
               <img src="img/CLOSE-ICON.png" onClick={this.close.bind(this)}/>
               <div className="matrice-image">
-                <div><b>{this.props.type}</b></div>
-                {this.state.text[this.props.type]}
+                <div className="capitalize"><b>{this.props.type}</b></div>
+                <div>{this.state.text[this.props.type]}</div>
               </div>
             </div>
         </Modal>
