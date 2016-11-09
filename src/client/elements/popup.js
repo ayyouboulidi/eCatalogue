@@ -72,7 +72,7 @@ export default class popup extends Component {
 
     let disp = this.state.item
     let type = this.props.type
-    let img = type === "monument" ? "/monument/GALLEY" : "/supplier/GAIN"
+    let img = type === "monument" ? "Galley-5Tr-1" : "supplier/GAIN"
     let title = type === "monument" ? "Galley G25CFA" : "CONVECTION OVEN SELL"
     let text = type === "monument" ? "Galleys is installed in D2 forward central positions with a Transversal orientation and is Aft facing, this galley is full-height (with upper attachments) and full size (39” deep)":"ELECTRICAL INSERT EUROPE PART NUMBER 6762-001-003"
     return (
