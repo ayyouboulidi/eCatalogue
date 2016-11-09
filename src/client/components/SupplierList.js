@@ -28,6 +28,10 @@ export default class SupplierList extends Component {
       })
     }
 
+    componentWillUnmount(){
+      this.disposable.dispose()
+    }
+
     setSelectedCategory(e){
       let name = e.currentTarget.id
       let id = e.currentTarget.getAttribute("name")

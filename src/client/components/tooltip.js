@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import switcherView from "../store/switcherView"
 import UserStore from "../store/connect"
 import popupStore from "../store/popupElement"
+import PopupWarning from "../elements/popupWarning"
 
 export default class tooltip extends Component {
   constructor(props){
@@ -13,19 +14,20 @@ export default class tooltip extends Component {
   }
 
   componentWillMount(){
-    this.setState({viewMode:switcherView.getView()})
+    this.setState({viewMode:switcherView.getView(),add:"DISABLED"})
+
   }
 
   componentDidMount() {
     this.disposable = switcherView.getStore$().subscribe((newView) => {
       this.state.viewMode = newView;
+      this.state.add = "DISABLED"
       this.setState(this.state);
     })
   }
 
   componentWillUnmount() {
     this.disposable.dispose()
-    this.setState({add:"DISABLED"})
   }
 
   switchMode(){
@@ -39,18 +41,9 @@ export default class tooltip extends Component {
   }
 
   addProject(){
-    let _this = this
-    let user = UserStore.getUser()
-    let item =  popupStore.getItem().id
-    let obj=[{user:user,id_item:item,quantity:3}]
-    $.post('/AddProjects',{projects:obj},function(data){
-      if(data.code === 0){
-        _this.setState({add:"ENABLED"})
-      }else if (data.code === -1){
-        _this.setState({add:"DISABLED"})
-        alert("An Error happened please try later")
-      }
-    },"json")
+
+    this.setState({add:"ENABLED"})
+
   }
 
     render(){
@@ -64,7 +57,7 @@ export default class tooltip extends Component {
               </div>
               :<span>
                 <img className="blue button-menu" title="Favorites" src="img/FAVOURITE-ICON.png"/>
-                <img className="project" title="Aircraft" src={"img/ADD-TO-PROJECT-ICON-"+this.state.add+".png"}  onClick={this.addProject.bind(this)}/>
+                <PopupWarning><img className="project" title="Aircraft" src={"img/ADD-TO-PROJECT-ICON-"+this.state.add+".png"} onClick={this.addProject.bind(this)}/></PopupWarning>
                 <img src="img/BACK-ICON-2.png" title="Back" onClick={this.setModeCatalog.bind(this)}/>
               </span>
               }
