@@ -76,7 +76,7 @@ export default class popupWarning extends Component {
               <div className="matrice-image">
                 {this.state.warning ?<div className="center red"><b>WARNING !</b></div>:<div className="center"><b>CONFIRM</b></div>}
                 <div style={{height:"20vh"}} className="center">{this.state.warning ? "Item is not compatible with you have already selected !" :"Do you want to add this Item to your project?"}</div>
-                <div className="center" style={{paddingBottom:"10px"}}><input type="submit" className="view_details" onClick={this.close.bind(this)} value="Cacel"/><input type="submit" className="view_details" value="Add to my project" onClick={this.addProject.bind(this)}/></div>
+                <div className="center" style={{paddingBottom:"10px"}}><input type="submit" className="view_details" onClick={this.close.bind(this)} value="Cancel"/><input type="submit" className="view_details" value="Add to my project" onClick={this.addProject.bind(this)}/></div>
               </div>
             </div>
         </Modal>
